@@ -1,0 +1,45 @@
+{
+  "name": "@mjt-engine/animate",
+  "version": "2025.3.28-1717",
+  "sideEffects": false,
+  "description": "animate module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "docs": "typedoc src/index.ts",
+    "build": "tsc -b",
+    "build-docs": "pnpm run build && pnpm run docs",
+    "changelog": "./scripts/changes.sh > CHANGELOG.md",
+    "changelog-version": "pnpm run changelog && ./scripts/version.sh",
+    "publish": "pnpm run build-docs && pnpm run changelog-version"
+  },
+  "keywords": [],
+  "author": "Matt Taylor (https://mjt.dev)",
+  "license": "MIT",
+  "devDependencies": {
+    "typedoc": "^0.27.9",
+    "typescript": "^5.8.2",
+    "@types/d3-array": "^3.0.3",
+    "@types/offscreencanvas": "^2019.7.0"
+  },
+  "peerDependencies": {
+    "@babylonjs/core": "^7.5.0",
+    "@babylonjs/inspector": "^7.5.0",
+    "@babylonjs/loaders": "^7.5.0",
+    "d3-array": "^3.1.1"
+  },
+  "dependencies": {
+    "@mjt-engine/animate": "github:mjt-engine/animate",
+    "@mjt-engine/assert": "github:mjt-engine/assert",
+    "@mjt-engine/color": "github:mjt-engine/color",
+    "@mjt-engine/image": "github:mjt-engine/image",
+    "@mjt-engine/input": "github:mjt-engine/input",
+    "@mjt-engine/magica-voxels": "github:mjt-engine/magica-voxels",
+    "@mjt-engine/math": "github:mjt-engine/math",
+    "@mjt-engine/noise": "github:mjt-engine/noise",
+    "@mjt-engine/object": "github:mjt-engine/object",
+    "@mjt-engine/random": "github:mjt-engine/random",
+    "@mjt-engine/string": "github:mjt-engine/string"
+  }
+}

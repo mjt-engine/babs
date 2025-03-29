@@ -1,0 +1,1 @@
+{"version":3,"file":"Shadows.js","sourceRoot":"","sources":["../../src/shadow/Shadows.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AAEpD,MAAM,CAAC,MAAM,OAAO,GAAG;IACrB,eAAe;CAChB,CAAC","sourcesContent":["import { addShadowToMesh } from \"./addShadowToMesh\";\n\nexport const Shadows = {\n  addShadowToMesh,\n};\n"]}
