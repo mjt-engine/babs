@@ -2,6 +2,7 @@
 
 
 ## 2025-04-24
+- better imports for tree shaking, using vite as builder ([e0299c9](https://github.com/mjt-engine/babs/commit/e0299c95a17a8b1d794868f0a61bd8ccb3c7cea1)) by Matt Taylor
 - bump deps ([b7b7d4d](https://github.com/mjt-engine/babs/commit/b7b7d4d7774a64f58107e1b3ae9dee0ab23f417e)) by Matt Taylor
 
 ## 2025-03-28
