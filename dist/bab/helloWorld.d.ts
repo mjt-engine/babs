@@ -1,2 +1,3 @@
 import type { Engine } from "@babylonjs/core";
-export declare const helloWorld: (engine?: Engine) => void;
+import { Scene } from "@babylonjs/core";
+export declare const helloWorld: (engine?: Engine) => Scene;

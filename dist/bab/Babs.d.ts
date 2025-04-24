@@ -15,7 +15,7 @@ export declare const Babs: {
     c3: (color: string) => import("@babylonjs/core").Color3;
     c4: (color: string) => import("@babylonjs/core").Color4;
     describeMesh: (mesh: import("@babylonjs/core").AbstractMesh, search?: RegExp, depth?: number) => void;
-    helloWorld: (engine?: import("@babylonjs/core").Engine) => void;
+    helloWorld: (engine?: import("@babylonjs/core").Engine) => import("@babylonjs/core").Scene;
     attachEditorControls: (camera: import("@babylonjs/core").ArcRotateCamera, options?: Partial<{
         keySensitivity: number;
         mouseSensitivity: number;
