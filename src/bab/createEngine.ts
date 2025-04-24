@@ -2,20 +2,32 @@ import type { EngineOptions } from "@babylonjs/core/Engines/thinEngine";
 import { createCanvas } from "./createCanvas";
 import { Engine } from "@babylonjs/core";
 
+export type CreateEngineOptions = EngineOptions & {
+  antialias?: boolean;
+  width?: number;
+  height?: number;
+  canvas?: HTMLCanvasElement | OffscreenCanvas;
+};
 export const createEngine = (
-  options: EngineOptions & {
-    antialias?: boolean;
-    width?: number;
-    height?: number;
-    canvas?: HTMLCanvasElement | OffscreenCanvas;
-  } = {}
+  optionsOrCanvas?: CreateEngineOptions | HTMLCanvasElement | OffscreenCanvas
 ) => {
-  const {
-    width = 320,
-    height = 320,
-    antialias,
-    canvas = createCanvas({ width, height }),
-  } = options;
+  const options: CreateEngineOptions = !(
+    optionsOrCanvas instanceof HTMLCanvasElement ||
+    optionsOrCanvas instanceof OffscreenCanvas
+  )
+    ? optionsOrCanvas ?? {}
+    : {};
+  const canvas =
+    optionsOrCanvas instanceof HTMLCanvasElement ||
+    optionsOrCanvas instanceof OffscreenCanvas
+      ? optionsOrCanvas
+      : createCanvas({
+          width: optionsOrCanvas?.width ?? 320,
+          height: optionsOrCanvas?.height ?? 320,
+        });
+  const { antialias } = options;
+
+  // const prop
   const engine = new Engine(canvas, antialias, {
     powerPreference: "high-performance",
     ...options,
