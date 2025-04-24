@@ -39,5 +39,5 @@ export default defineConfig({
     },
     target: "esnext",
   },
-  // plugins: [emitDtsPlugin()],
+  plugins: [emitDtsPlugin()],
 });
