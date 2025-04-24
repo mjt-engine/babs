@@ -1,6 +1,6 @@
 {
   "name": "@mjt-engine/babs",
-  "version": "2025.4.24-1228",
+  "version": "2025.4.24-1307",
   "sideEffects": false,
   "description": "babs module",
   "main": "./dist/index.js",

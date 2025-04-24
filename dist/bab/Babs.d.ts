@@ -1,11 +1,6 @@
 import { v3 } from "./v3";
 export declare const Babs: {
-    createEngine: (options?: import("@babylonjs/core").EngineOptions & {
-        antialias?: boolean;
-        width?: number;
-        height?: number;
-        canvas?: HTMLCanvasElement | OffscreenCanvas;
-    }) => import("@babylonjs/core").Engine;
+    createEngine: (optionsOrCanvas?: import("./createEngine").CreateEngineOptions | HTMLCanvasElement | OffscreenCanvas) => import("@babylonjs/core").Engine;
     createCanvas: ({ width, height, }: {
         width: number;
         height: number;

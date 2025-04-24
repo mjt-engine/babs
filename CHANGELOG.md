@@ -2,6 +2,7 @@
 
 
 ## 2025-04-24
+- allow canvas to be based in directly to createEngine for better DX ([db237ad](https://github.com/mjt-engine/babs/commit/db237ad07ca5d09f10be31b576f98ee38959f77f)) by Matt Taylor
 - re-enable the helloWorld ([7e489a2](https://github.com/mjt-engine/babs/commit/7e489a207a8eabb4f156c7b05b2a49f87a082cb4)) by Matt Taylor
 - re-enable typedefs ([a5192c9](https://github.com/mjt-engine/babs/commit/a5192c985136cc7b763daa713d83bee95e292f9b)) by Matt Taylor
 - better imports for tree shaking, using vite as builder ([e0299c9](https://github.com/mjt-engine/babs/commit/e0299c95a17a8b1d794868f0a61bd8ccb3c7cea1)) by Matt Taylor
