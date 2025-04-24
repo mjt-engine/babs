@@ -19,7 +19,7 @@ importers:
         version: 7.54.3(@babylonjs/core@7.54.3)(babylonjs-gltf2interface@7.54.3)
       '@mjt-engine/animate':
         specifier: github:mjt-engine/animate
-        version: https://codeload.github.com/mjt-engine/animate/tar.gz/505631dd65a12a35e88aeedec06c93f4aad7c902
+        version: https://codeload.github.com/mjt-engine/animate/tar.gz/3a7302f491c51e81b0188002d1f2c0aa0c8c991a
       '@mjt-engine/assert':
         specifier: github:mjt-engine/assert
         version: https://codeload.github.com/mjt-engine/assert/tar.gz/58b808f45ca8a23cd7d613e75ba9e76c5fb70e55
@@ -55,17 +55,17 @@ importers:
         version: 3.2.4
     devDependencies:
       '@types/d3-array':
-        specifier: ^3.0.3
+        specifier: ^3.2.1
         version: 3.2.1
       '@types/offscreencanvas':
-        specifier: ^2019.7.0
+        specifier: ^2019.7.3
         version: 2019.7.3
       typedoc:
         specifier: ^0.27.9
-        version: 0.27.9(typescript@5.8.2)
+        version: 0.27.9(typescript@5.8.3)
       typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
+        specifier: ^5.8.3
+        version: 5.8.3
 
 packages:
 
@@ -140,17 +140,17 @@ packages:
   '@gerrit0/mini-shiki@1.27.2':
     resolution: {integrity: sha512-GeWyHz8ao2gBiUW4OJnQDxXQnFgZQwwQk05t/CVVgNBN7/rK8XZ7xY6YhLVv9tH3VppWWmr9DCl3MwemB/i+Og==}
 
-  '@mjt-engine/animate@https://codeload.github.com/mjt-engine/animate/tar.gz/505631dd65a12a35e88aeedec06c93f4aad7c902':
-    resolution: {tarball: https://codeload.github.com/mjt-engine/animate/tar.gz/505631dd65a12a35e88aeedec06c93f4aad7c902}
-    version: 2025.3.28-1717
+  '@mjt-engine/animate@https://codeload.github.com/mjt-engine/animate/tar.gz/3a7302f491c51e81b0188002d1f2c0aa0c8c991a':
+    resolution: {tarball: https://codeload.github.com/mjt-engine/animate/tar.gz/3a7302f491c51e81b0188002d1f2c0aa0c8c991a}
+    version: 2025.4.22-2046
 
   '@mjt-engine/assert@https://codeload.github.com/mjt-engine/assert/tar.gz/58b808f45ca8a23cd7d613e75ba9e76c5fb70e55':
     resolution: {tarball: https://codeload.github.com/mjt-engine/assert/tar.gz/58b808f45ca8a23cd7d613e75ba9e76c5fb70e55}
     version: 2025.1.19-1221
 
-  '@mjt-engine/byte@https://codeload.github.com/mjt-engine/byte/tar.gz/16c78d57ba1965475b4c44ec849b47d66325bd17':
-    resolution: {tarball: https://codeload.github.com/mjt-engine/byte/tar.gz/16c78d57ba1965475b4c44ec849b47d66325bd17}
-    version: 2025.3.16-1235
+  '@mjt-engine/byte@https://codeload.github.com/mjt-engine/byte/tar.gz/02fcb5bdd8acbb1675c6aa34777955c6d88aa399':
+    resolution: {tarball: https://codeload.github.com/mjt-engine/byte/tar.gz/02fcb5bdd8acbb1675c6aa34777955c6d88aa399}
+    version: 2025.4.19-1529
 
   '@mjt-engine/color@https://codeload.github.com/mjt-engine/color/tar.gz/7e6d8911d8ed201b09d196e1f7a5d43950c2fccb':
     resolution: {tarball: https://codeload.github.com/mjt-engine/color/tar.gz/7e6d8911d8ed201b09d196e1f7a5d43950c2fccb}
@@ -317,8 +317,8 @@ packages:
     resolution: {integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==}
     engines: {node: '>= 0.4'}
 
-  detect-libc@2.0.3:
-    resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
+  detect-libc@2.0.4:
+    resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
     engines: {node: '>=8'}
 
   dunder-proto@1.0.1:
@@ -380,8 +380,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  json-stable-stringify@1.2.1:
-    resolution: {integrity: sha512-Lp6HbbBgosLmJbjx0pBLbgvx68FaFU1sdkmBuckmhhJ88kL13OA51CDtR2yJB50eCNMH9wRqtQNNiAqQH4YXnA==}
+  json-stable-stringify@1.3.0:
+    resolution: {integrity: sha512-qtYiSSFlwot9XHtF9bD9c7rwKjr+RecWT//ZnPvSmEjpV5mmPOCN4j8UjY5hbjNkOwZ/jQv3J6R1/pL7RwgMsg==}
     engines: {node: '>= 0.4'}
 
   jsonify@0.0.1:
@@ -444,16 +444,16 @@ packages:
     peerDependencies:
       typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x
 
-  typescript@5.8.2:
-    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
+  typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
-  yaml@2.7.0:
-    resolution: {integrity: sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==}
+  yaml@2.7.1:
+    resolution: {integrity: sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==}
     engines: {node: '>= 14'}
     hasBin: true
 
@@ -526,11 +526,11 @@ snapshots:
       '@shikijs/types': 1.29.2
       '@shikijs/vscode-textmate': 10.0.2
 
-  '@mjt-engine/animate@https://codeload.github.com/mjt-engine/animate/tar.gz/505631dd65a12a35e88aeedec06c93f4aad7c902': {}
+  '@mjt-engine/animate@https://codeload.github.com/mjt-engine/animate/tar.gz/3a7302f491c51e81b0188002d1f2c0aa0c8c991a': {}
 
   '@mjt-engine/assert@https://codeload.github.com/mjt-engine/assert/tar.gz/58b808f45ca8a23cd7d613e75ba9e76c5fb70e55': {}
 
-  '@mjt-engine/byte@https://codeload.github.com/mjt-engine/byte/tar.gz/16c78d57ba1965475b4c44ec849b47d66325bd17':
+  '@mjt-engine/byte@https://codeload.github.com/mjt-engine/byte/tar.gz/02fcb5bdd8acbb1675c6aa34777955c6d88aa399':
     dependencies:
       '@mjt-engine/assert': https://codeload.github.com/mjt-engine/assert/tar.gz/58b808f45ca8a23cd7d613e75ba9e76c5fb70e55
       msgpackr: 1.11.2
@@ -544,13 +544,13 @@ snapshots:
   '@mjt-engine/image@https://codeload.github.com/mjt-engine/image/tar.gz/2cd6d886e621e71e2e5091c5b97e219b9f6e756c':
     dependencies:
       '@mjt-engine/assert': https://codeload.github.com/mjt-engine/assert/tar.gz/58b808f45ca8a23cd7d613e75ba9e76c5fb70e55
-      '@mjt-engine/byte': https://codeload.github.com/mjt-engine/byte/tar.gz/16c78d57ba1965475b4c44ec849b47d66325bd17
+      '@mjt-engine/byte': https://codeload.github.com/mjt-engine/byte/tar.gz/02fcb5bdd8acbb1675c6aa34777955c6d88aa399
       '@mjt-engine/color': https://codeload.github.com/mjt-engine/color/tar.gz/7e6d8911d8ed201b09d196e1f7a5d43950c2fccb
       '@mjt-engine/object': https://codeload.github.com/mjt-engine/object/tar.gz/75263a186b55c31764efb3a1bc075285f971946b
 
   '@mjt-engine/input@https://codeload.github.com/mjt-engine/input/tar.gz/d839a7f606563884485f68a5e075983884d9988d':
     dependencies:
-      '@mjt-engine/animate': https://codeload.github.com/mjt-engine/animate/tar.gz/505631dd65a12a35e88aeedec06c93f4aad7c902
+      '@mjt-engine/animate': https://codeload.github.com/mjt-engine/animate/tar.gz/3a7302f491c51e81b0188002d1f2c0aa0c8c991a
       '@mjt-engine/object': https://codeload.github.com/mjt-engine/object/tar.gz/75263a186b55c31764efb3a1bc075285f971946b
 
   '@mjt-engine/magica-voxels@https://codeload.github.com/mjt-engine/magica-voxels/tar.gz/11a83c901b0d400a5f67b25920ed843cc0e8954d':
@@ -567,7 +567,7 @@ snapshots:
   '@mjt-engine/object@https://codeload.github.com/mjt-engine/object/tar.gz/75263a186b55c31764efb3a1bc075285f971946b':
     dependencies:
       '@sinclair/typebox': 0.33.22
-      json-stable-stringify: 1.2.1
+      json-stable-stringify: 1.3.0
 
   '@mjt-engine/random@https://codeload.github.com/mjt-engine/random/tar.gz/beedd2a2b4ac0e2e902d3e620898cb2a66143ffe':
     dependencies:
@@ -699,7 +699,7 @@ snapshots:
       es-errors: 1.3.0
       gopd: 1.2.0
 
-  detect-libc@2.0.3:
+  detect-libc@2.0.4:
     optional: true
 
   dunder-proto@1.0.1:
@@ -758,7 +758,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  json-stable-stringify@1.2.1:
+  json-stable-stringify@1.3.0:
     dependencies:
       call-bind: 1.0.8
       call-bound: 1.0.4
@@ -809,7 +809,7 @@ snapshots:
 
   node-gyp-build-optional-packages@5.2.2:
     dependencies:
-      detect-libc: 2.0.3
+      detect-libc: 2.0.4
     optional: true
 
   object-keys@1.1.1: {}
@@ -831,17 +831,17 @@ snapshots:
     dependencies:
       is-arrayish: 0.3.2
 
-  typedoc@0.27.9(typescript@5.8.2):
+  typedoc@0.27.9(typescript@5.8.3):
     dependencies:
       '@gerrit0/mini-shiki': 1.27.2
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
-      typescript: 5.8.2
-      yaml: 2.7.0
+      typescript: 5.8.3
+      yaml: 2.7.1
 
-  typescript@5.8.2: {}
+  typescript@5.8.3: {}
 
   uc.micro@2.1.0: {}
 
-  yaml@2.7.0: {}
+  yaml@2.7.1: {}
