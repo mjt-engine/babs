@@ -2,6 +2,7 @@
 
 
 ## 2025-04-24
+- set the name on the texture for url texture ([3fd101d](https://github.com/mjt-engine/babs/commit/3fd101d43e550d502d42b0f89a3537edef89f17f)) by Matt Taylor
 - added rest of cameras back after treeshake import cleanup ([b7c0872](https://github.com/mjt-engine/babs/commit/b7c0872c68bf74f795761b48f698e11b1776c007)) by Matt Taylor
 - allow canvas to be based in directly to createEngine for better DX ([db237ad](https://github.com/mjt-engine/babs/commit/db237ad07ca5d09f10be31b576f98ee38959f77f)) by Matt Taylor
 - re-enable the helloWorld ([7e489a2](https://github.com/mjt-engine/babs/commit/7e489a207a8eabb4f156c7b05b2a49f87a082cb4)) by Matt Taylor

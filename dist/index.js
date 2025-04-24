@@ -844,7 +844,7 @@ const rt = (t) => {
   return new Promise((o, s) => {
     try {
       const a = new R(n, t, !1, !0);
-      a.hasAlpha = !0, a.onLoadObservable.addOnce(() => {
+      a.name = r, a.hasAlpha = !0, a.onLoadObservable.addOnce(() => {
         o(a);
       });
     } catch (a) {
