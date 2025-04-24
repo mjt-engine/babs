@@ -2,6 +2,7 @@
 
 
 ## 2025-04-24
+- added rest of cameras back after treeshake import cleanup ([b7c0872](https://github.com/mjt-engine/babs/commit/b7c0872c68bf74f795761b48f698e11b1776c007)) by Matt Taylor
 - allow canvas to be based in directly to createEngine for better DX ([db237ad](https://github.com/mjt-engine/babs/commit/db237ad07ca5d09f10be31b576f98ee38959f77f)) by Matt Taylor
 - re-enable the helloWorld ([7e489a2](https://github.com/mjt-engine/babs/commit/7e489a207a8eabb4f156c7b05b2a49f87a082cb4)) by Matt Taylor
 - re-enable typedefs ([a5192c9](https://github.com/mjt-engine/babs/commit/a5192c985136cc7b763daa713d83bee95e292f9b)) by Matt Taylor
