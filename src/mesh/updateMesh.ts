@@ -1,7 +1,7 @@
-import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
-import type { InstancedMesh } from "@babylonjs/core/Meshes/instancedMesh";
-import { Mesh } from "@babylonjs/core/Meshes/mesh";
-import type { Scene } from "@babylonjs/core/scene";
+import { StandardMaterial } from "@babylonjs/core";
+import type { InstancedMesh } from "@babylonjs/core";
+import { Mesh } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { Colors } from "@mjt-engine/color";
 import type { Point2, Point3 } from "@mjt-engine/math";
 import { iff, isDefined } from "@mjt-engine/object";

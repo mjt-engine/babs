@@ -1,1 +1,0 @@
-{"version":3,"file":"ImmediateImage.js","sourceRoot":"","sources":["../../src/texture/ImmediateImage.ts"],"names":[],"mappings":"","sourcesContent":["export type ImmediateImage =\n  | HTMLCanvasElement\n  | HTMLImageElement\n  | OffscreenCanvas;\n"]}

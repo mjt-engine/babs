@@ -1,7 +1,7 @@
-import { Sprite } from "@babylonjs/core/Sprites/sprite";
-import { SpriteManager } from "@babylonjs/core/Sprites/spriteManager";
-import type { Scene } from "@babylonjs/core/scene";
-import { assertValue } from "@mjt-engine/assert/dist/assertValue";
+import { Sprite } from "@babylonjs/core";
+import { SpriteManager } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
+import { assertValue } from "@mjt-engine/assert";
 import { isDefined } from "@mjt-engine/object";
 
 export type SpriteManagerOptions = Partial<{

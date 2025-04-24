@@ -1,6 +1,6 @@
 import { BoundingInfo } from "@babylonjs/core/Culling/boundingInfo";
-import { Vector3 } from "@babylonjs/core/Maths/math.vector";
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
+import { Vector3 } from "@babylonjs/core";
+import type { AbstractMesh } from "@babylonjs/core";
 
 export const totalBoundingInfo = function (meshes: AbstractMesh[]) {
   let boundingInfo = meshes[0].getBoundingInfo();

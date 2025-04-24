@@ -1,5 +1,5 @@
-import type { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
+import type { PBRMaterial } from "@babylonjs/core";
+import type { AbstractMesh } from "@babylonjs/core";
 import { isDefined } from "@mjt-engine/object";
 export const HIDE = [
   // "Irises",

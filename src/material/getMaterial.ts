@@ -2,9 +2,9 @@ import { isDefined } from "@mjt-engine/object";
 import type { MaterialTypeMap } from "./MaterialTypeMap";
 import { updateMaterial } from "./updateMaterial";
 import type { AllMaterialOptions } from "./Materials";
-import type { Scene } from "@babylonjs/core/scene";
-import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
-import { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
+import type { Scene } from "@babylonjs/core";
+import { StandardMaterial } from "@babylonjs/core";
+import { PBRMaterial } from "@babylonjs/core";
 
 type VisualMaterialType = keyof MaterialTypeMap;
 

@@ -1,4 +1,4 @@
-import type { Scene } from "@babylonjs/core/scene";
+import type { Scene } from "@babylonjs/core";
 import { fixEyelashes } from "./fixEyelashes";
 import { fixEyes } from "./fixEyes";
 import { fixBumpMaps } from "./fixBumpMaps";

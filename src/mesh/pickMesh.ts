@@ -1,7 +1,7 @@
-import type { Camera } from "@babylonjs/core/Cameras/camera";
-import { Matrix } from "@babylonjs/core/Maths/math.vector";
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
-import type { Scene } from "@babylonjs/core/scene";
+import type { Camera } from "@babylonjs/core";
+import { Matrix } from "@babylonjs/core";
+import type { AbstractMesh } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 
 export const pickMesh = (
   scene: Scene,

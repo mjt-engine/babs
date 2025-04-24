@@ -1,6 +1,6 @@
-import { Curve3 } from "@babylonjs/core/Maths/math.path";
-import type { Vector3 } from "@babylonjs/core/Maths/math.vector";
-import type { SolidParticle } from "@babylonjs/core/Particles/solidParticle";
+import { Curve3 } from "@babylonjs/core";
+import type { Vector3 } from "@babylonjs/core";
+import type { SolidParticle } from "@babylonjs/core";
 import { Maths, toVec3 } from "@mjt-engine/math";
 import { isDefined } from "@mjt-engine/object";
 import { Randoms, type NextRandom } from "@mjt-engine/random";

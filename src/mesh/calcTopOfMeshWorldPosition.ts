@@ -1,4 +1,4 @@
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
+import type { AbstractMesh } from "@babylonjs/core";
 import type { Point3 } from "@mjt-engine/math";
 import { toVec3 } from "@mjt-engine/math";
 

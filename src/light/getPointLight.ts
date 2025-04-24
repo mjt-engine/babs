@@ -1,9 +1,9 @@
-import type { Scene } from "@babylonjs/core/scene";
+import type { Scene } from "@babylonjs/core";
 import { v3 } from "../bab/v3";
 import type { PointLightOptions } from "./Lights";
 import { getLight } from "./getLight";
 import { updateLight } from "./updateLight";
-import { PointLight } from "@babylonjs/core/Lights/pointLight";
+import { PointLight } from "@babylonjs/core";
 
 export const getPointLight = (
   scene: Scene,

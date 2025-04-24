@@ -1,7 +1,7 @@
 import type { Scene } from "@babylonjs/core";
 
 // babylon magic BS
-import "@babylonjs/core/Debug/debugLayer";
+import "@babylonjs/core";
 import "@babylonjs/inspector";
 
 export const toggleInspector = (scene: Scene) => {

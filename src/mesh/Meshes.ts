@@ -55,5 +55,5 @@ export const Meshes = {
   isInstancedMesh,
   pickMeshes,
   getPolyhedron,
-  updateMesh
+  updateMesh,
 };

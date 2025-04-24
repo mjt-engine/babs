@@ -1,6 +1,6 @@
-import type { IParticleSystem } from "@babylonjs/core/Particles/IParticleSystem";
-import { SolidParticleSystem } from "@babylonjs/core/Particles/solidParticleSystem";
-import type { Scene } from "@babylonjs/core/scene";
+import type { IParticleSystem } from "@babylonjs/core";
+import { SolidParticleSystem } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { isDefined } from "@mjt-engine/object";
 
 export type SpsOptions = Partial<{ useModelMaterial: boolean }>;

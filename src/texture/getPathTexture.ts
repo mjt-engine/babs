@@ -1,5 +1,5 @@
-import { Texture } from "@babylonjs/core/Materials/Textures/texture";
-import type { Scene } from "@babylonjs/core/scene";
+import { Texture } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import type { PathTextureOptions } from "./Textures";
 import { getTexture } from "./getTexture";
 import { samplingModeNumber } from "./samplingModeNumber";

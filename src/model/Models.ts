@@ -7,7 +7,7 @@ import { loadDazFigure } from "./loadDazFigure";
 export const Models = {
   renderOnce,
   loadDazFigure,
-  fixDazFigure,
-  loadAssetContainer,
-  builder,
+  // fixDazFigure,
+  // loadAssetContainer,
+  // builder,
 };

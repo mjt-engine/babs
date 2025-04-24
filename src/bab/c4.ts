@@ -1,4 +1,4 @@
-import { Color4 } from "@babylonjs/core/Maths/math.color";
+import { Color4 } from "@babylonjs/core";
 import { Colors } from "@mjt-engine/color";
 
 

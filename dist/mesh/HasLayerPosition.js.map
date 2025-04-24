@@ -1,1 +1,0 @@
-{"version":3,"file":"HasLayerPosition.js","sourceRoot":"","sources":["../../src/mesh/HasLayerPosition.ts"],"names":[],"mappings":"","sourcesContent":["\nexport type HasLayerPosition = { layerX: number; layerY: number; };\n"]}

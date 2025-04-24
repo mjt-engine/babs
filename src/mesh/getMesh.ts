@@ -1,6 +1,6 @@
-import type { InstancedMesh } from "@babylonjs/core/Meshes/instancedMesh";
-import type { Mesh } from "@babylonjs/core/Meshes/mesh";
-import type { Scene } from "@babylonjs/core/scene";
+import type { InstancedMesh } from "@babylonjs/core";
+import type { Mesh } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { isDefined } from "@mjt-engine/object";
 
 export const getMesh = <T extends Mesh | InstancedMesh>(

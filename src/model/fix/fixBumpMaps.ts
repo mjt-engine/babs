@@ -1,4 +1,4 @@
-import type { Scene } from "@babylonjs/core/scene";
+import type { Scene } from "@babylonjs/core";
 import type { ModelMaterial } from "../ModelBuilder";
 
 export const fixBumpMaps = (scene: Scene) => {

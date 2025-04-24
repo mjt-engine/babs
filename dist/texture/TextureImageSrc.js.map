@@ -1,1 +1,0 @@
-{"version":3,"file":"TextureImageSrc.js","sourceRoot":"","sources":["../../src/texture/TextureImageSrc.ts"],"names":[],"mappings":"","sourcesContent":["import type { ImmediateImage } from \"./ImmediateImage\";\n\n\nexport type TextureImageSrc = string | ImmediateImage;\n"]}

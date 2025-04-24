@@ -1,5 +1,5 @@
-import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
-import type { Scene } from "@babylonjs/core/scene";
+import { MeshBuilder } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { getMesh } from "./getMesh";
 import type { MeshOptions } from "./updateMesh";
 import { updateMesh } from "./updateMesh";

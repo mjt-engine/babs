@@ -1,4 +1,4 @@
-import { Vector3 } from "@babylonjs/core/Maths/math.vector";
+import { Vector3 } from "@babylonjs/core";
 import type { Point2, Point3 } from "@mjt-engine/math";
 import { toVec3 } from "@mjt-engine/math";
 

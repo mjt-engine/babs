@@ -1,5 +1,5 @@
 import type { Mesh } from "@babylonjs/core/Meshes/mesh";
-import type { Scene } from "@babylonjs/core/scene";
+import type { Scene } from "@babylonjs/core";
 import { isUndefined } from "@mjt-engine/object";
 import { getMesh } from "./getMesh";
 import type { MeshOptions } from "./updateMesh";

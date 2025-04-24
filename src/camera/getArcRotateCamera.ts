@@ -1,5 +1,5 @@
-import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera";
-import type { Scene } from "@babylonjs/core/scene";
+import { ArcRotateCamera } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { v3 } from "../bab/v3";
 import type { ArcRotateCameraOptions } from "./Cameras";
 import { getCamera } from "./getCamera";

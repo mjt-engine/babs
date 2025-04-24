@@ -1,6 +1,6 @@
-import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
-import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
-import type { Scene } from "@babylonjs/core/scene";
+import { StandardMaterial } from "@babylonjs/core";
+import { MeshBuilder } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { isDefined } from "@mjt-engine/object";
 import { Randoms } from "@mjt-engine/random";
 import { c3 } from "../bab/c3";

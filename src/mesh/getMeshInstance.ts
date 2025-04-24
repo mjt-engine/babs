@@ -1,5 +1,5 @@
 import type { Mesh } from "@babylonjs/core/Meshes/mesh";
-import type { Scene } from "@babylonjs/core/scene";
+import type { Scene } from "@babylonjs/core";
 import { Asserts } from "@mjt-engine/assert";
 import { getMesh } from "./getMesh";
 

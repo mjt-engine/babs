@@ -1,6 +1,6 @@
-import type { Material } from "@babylonjs/core/Materials/material";
-import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
-import type { Scene } from "@babylonjs/core/scene";
+import type { Material } from "@babylonjs/core";
+import { StandardMaterial } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import type { AllMaterialOptions } from "./Materials";
 import { updateStandardMaterial } from "./updateStandardMaterial";
 

@@ -3,7 +3,7 @@ import {
   type ISceneLoaderProgressEvent,
 } from "@babylonjs/core/Loading/sceneLoader";
 import type { AssetContainer } from "@babylonjs/core/assetContainer";
-import type { Scene } from "@babylonjs/core/scene";
+import type { Scene } from "@babylonjs/core";
 import { GLTF2 } from "@babylonjs/loaders/glTF";
 
 export const loadAssetContainer = (

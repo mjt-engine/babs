@@ -1,10 +1,7 @@
-import { Constants } from "@babylonjs/core/Engines/constants";
-import {
-  GlowLayer,
-  type IGlowLayerOptions,
-} from "@babylonjs/core/Layers/glowLayer";
-import { Color4 } from "@babylonjs/core/Maths/math.color";
-import type { Scene } from "@babylonjs/core/scene";
+import { Constants } from "@babylonjs/core";
+import { GlowLayer, type IGlowLayerOptions } from "@babylonjs/core";
+import { Color4 } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 
 export const addGlowLayer = (
   scene: Scene,

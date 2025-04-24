@@ -1,5 +1,5 @@
 import { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
+import type { AbstractMesh } from "@babylonjs/core";
 import { isDefined } from "@mjt-engine/object";
 
 export const updateTranslucency = (props: UpdateTranslucencyProps) => {

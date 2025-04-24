@@ -26,6 +26,6 @@ export type AllMaterialOptions = StandardMaterialOptions & PbrMaterialOptions;
 
 export const Materials = {
   getMaterial,
-  updateMaterial,
-  updateStandardMaterial,
+  // updateMaterial,
+  // updateStandardMaterial,
 };

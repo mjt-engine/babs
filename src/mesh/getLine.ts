@@ -1,6 +1,6 @@
 import type { LinesMesh } from "@babylonjs/core/Meshes/linesMesh";
-import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
-import type { Scene } from "@babylonjs/core/scene";
+import { MeshBuilder } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import type { Point3 } from "@mjt-engine/math";
 import { c4 } from "../bab/c4";
 import { v3 } from "../bab/v3";

@@ -1,5 +1,5 @@
-import { Vector3 } from "@babylonjs/core/Maths/math.vector";
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
+import { Vector3 } from "@babylonjs/core";
+import type { AbstractMesh } from "@babylonjs/core";
 import { extent } from "d3-array";
 
 /** @see https://forum.babylonjs.com/t/get-mesh-bounding-box-position-and-size-in-2d-screen-coordinates/1058  */

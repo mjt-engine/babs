@@ -1,5 +1,5 @@
-import type { BaseTexture } from "@babylonjs/core/Materials/Textures/baseTexture";
-import { DynamicTexture } from "@babylonjs/core/Materials/Textures/dynamicTexture";
+import type { BaseTexture } from "@babylonjs/core";
+import { DynamicTexture } from "@babylonjs/core";
 import { iff } from "@mjt-engine/object";
 import type { AllTextureOptions } from "./Textures";
 

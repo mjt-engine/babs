@@ -1,4 +1,4 @@
-import { Texture } from "@babylonjs/core/Materials/Textures/texture";
+import { Texture } from "@babylonjs/core";
 
 export const TEXTURE_SAMPLING_MODES = {
   linearNearest: Texture.LINEAR_NEAREST,

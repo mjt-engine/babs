@@ -18,17 +18,17 @@ import { pickMesh } from "./pickMesh";
 import { totalBoundingInfo } from "./totalBoundingInfo";
 import { updateColor } from "./updateColor";
 import { updateTranslucency } from "./updateTranslucency";
-import { Scene } from "@babylonjs/core/scene";
+import { Scene } from "@babylonjs/core";
 import { ImageProcessingConfiguration } from "@babylonjs/core/Materials/imageProcessingConfiguration";
 import { HighlightLayer } from "@babylonjs/core/Layers/highlightLayer";
 import { UniversalCamera } from "@babylonjs/core/Cameras/universalCamera";
-import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
+import { MeshBuilder } from "@babylonjs/core";
 import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 import type { FreeCamera } from "@babylonjs/core/Cameras/freeCamera";
 import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera";
 import { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
 import type { Texture } from "@babylonjs/core/Materials/Textures/texture";
-import { Mesh } from "@babylonjs/core/Meshes/mesh";
+import { Mesh } from "@babylonjs/core";
 
 export const builder = async (
   props: {

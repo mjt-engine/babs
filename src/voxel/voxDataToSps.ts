@@ -1,6 +1,6 @@
-import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
-import { SolidParticleSystem } from "@babylonjs/core/Particles/solidParticleSystem";
-import type { Scene } from "@babylonjs/core/scene";
+import { MeshBuilder } from "@babylonjs/core";
+import { SolidParticleSystem } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { Colors } from "@mjt-engine/color";
 import type { VoxData } from "@mjt-engine/magica-voxels";
 import { c3 } from "../bab/c3";

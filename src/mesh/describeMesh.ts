@@ -1,6 +1,6 @@
-import type { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
-import { Texture } from "@babylonjs/core/Materials/Textures/texture";
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
+import type { PBRMaterial } from "@babylonjs/core";
+import { Texture } from "@babylonjs/core";
+import type { AbstractMesh } from "@babylonjs/core";
 import { isDefined } from "@mjt-engine/object";
 
 export const describeMesh = (mesh: AbstractMesh, search = /.*/, depth = 0) => {

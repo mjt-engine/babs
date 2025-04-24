@@ -1,5 +1,5 @@
 import type { ShadowGenerator } from "@babylonjs/core/Lights/Shadows/shadowGenerator";
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
+import type { AbstractMesh } from "@babylonjs/core";
 import type { Mesh } from "@babylonjs/core/Meshes/mesh";
 
 export const removeShadowFromMesh = (mesh: Mesh | AbstractMesh) => {

@@ -1,4 +1,4 @@
-import type { ICanvasRenderingContext } from "@babylonjs/core/Engines/ICanvas";
+import type { ICanvasRenderingContext } from "@babylonjs/core";
 import type { TEXTURE_SAMPLING_MODES } from "./TEXTURE_SAMPLING_MODES";
 import { builder } from "./builder";
 import { clearTexture } from "./clearTexture";

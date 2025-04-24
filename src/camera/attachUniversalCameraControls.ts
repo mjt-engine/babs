@@ -3,7 +3,7 @@ import { isDefined, isUndefined } from "@mjt-engine/object";
 import { v3 } from "../bab/v3";
 import { pickMesh } from "../model/pickMesh";
 import { walkMeshes } from "../model/walkMeshes";
-import type { UniversalCamera } from "@babylonjs/core/Cameras/universalCamera";
+import type { UniversalCamera } from "@babylonjs/core";
 
 export const attachUniversalCameraControls = (
   camera: UniversalCamera,

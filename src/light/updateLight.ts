@@ -1,6 +1,6 @@
-import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
-import type { Light } from "@babylonjs/core/Lights/light";
-import { PointLight } from "@babylonjs/core/Lights/pointLight";
+import { HemisphericLight } from "@babylonjs/core";
+import type { Light } from "@babylonjs/core";
+import { PointLight } from "@babylonjs/core";
 import { iff } from "@mjt-engine/object";
 import { v3 } from "../bab/v3";
 import type { AllLightOptions } from "./Lights";

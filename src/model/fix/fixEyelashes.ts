@@ -1,5 +1,5 @@
-import { Color3 } from "@babylonjs/core/Maths/math.color";
-import type { Scene } from "@babylonjs/core/scene";
+import { Color3 } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import type { ModelMaterial } from "../ModelBuilder";
 
 export const fixEyelashes = (scene: Scene) => {

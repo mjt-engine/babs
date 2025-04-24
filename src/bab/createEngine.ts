@@ -1,6 +1,6 @@
-import { Engine } from "@babylonjs/core/Engines/engine";
 import type { EngineOptions } from "@babylonjs/core/Engines/thinEngine";
 import { createCanvas } from "./createCanvas";
+import { Engine } from "@babylonjs/core";
 
 export const createEngine = (
   options: EngineOptions & {

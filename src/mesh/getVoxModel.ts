@@ -1,4 +1,4 @@
-import type { Scene } from "@babylonjs/core/scene";
+import type { Scene } from "@babylonjs/core";
 import { isUndefined } from "@mjt-engine/object";
 import { voxDataToSps } from "../voxel/voxDataToSps";
 import type { MeshOptions } from "./updateMesh";

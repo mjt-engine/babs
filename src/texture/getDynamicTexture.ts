@@ -1,5 +1,5 @@
-import { DynamicTexture } from "@babylonjs/core/Materials/Textures/dynamicTexture";
-import type { Scene } from "@babylonjs/core/scene";
+import { DynamicTexture } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { TEXTURE_SAMPLING_MODES } from "./TEXTURE_SAMPLING_MODES";
 import type { DynamicTextureOptions } from "./Textures";
 import { getTexture } from "./getTexture";

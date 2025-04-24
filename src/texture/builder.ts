@@ -1,5 +1,5 @@
-import { Camera } from "@babylonjs/core/Cameras/camera";
-import { UniversalCamera } from "@babylonjs/core/Cameras/universalCamera";
+import { Camera } from "@babylonjs/core";
+import { UniversalCamera } from "@babylonjs/core";
 import { createEngine } from "../bab/createEngine";
 import { renderOnce } from "../bab/renderOnce";
 import { v3 } from "../bab/v3";

@@ -1,4 +1,4 @@
-import { Ray } from "@babylonjs/core/Culling/ray";
+import { Ray } from "@babylonjs/core";
 import type { Point3 } from "@mjt-engine/math";
 import { v3 } from "../bab/v3";
 

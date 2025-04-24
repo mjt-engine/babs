@@ -1,5 +1,5 @@
-import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
-import type { Scene } from "@babylonjs/core/scene";
+import { MeshBuilder } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { isDefined } from "@mjt-engine/object";
 import { c4 } from "../bab/c4";
 import { getMesh } from "./getMesh";

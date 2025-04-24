@@ -1,5 +1,5 @@
-import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
-import { Scene } from "@babylonjs/core/scene";
+import type { AbstractMesh } from "@babylonjs/core";
+import { Scene } from "@babylonjs/core";
 
 export const walkMeshes = (
   mesh: AbstractMesh | Scene,

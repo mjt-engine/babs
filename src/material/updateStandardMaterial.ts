@@ -1,5 +1,5 @@
-import type { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
-import type { Scene } from "@babylonjs/core/scene";
+import type { StandardMaterial } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { Colors } from "@mjt-engine/color";
 import { iff } from "@mjt-engine/object";
 import { c3 } from "../bab/c3";

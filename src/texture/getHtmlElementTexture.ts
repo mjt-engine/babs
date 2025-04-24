@@ -1,5 +1,5 @@
-import { HtmlElementTexture } from "@babylonjs/core/Materials/Textures/htmlElementTexture";
-import type { Scene } from "@babylonjs/core/scene";
+import { HtmlElementTexture } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import type { HtmlElementTextureOptions } from "./Textures";
 import { getTexture } from "./getTexture";
 import { samplingModeNumber } from "./samplingModeNumber";

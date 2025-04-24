@@ -1,4 +1,4 @@
-import type { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
+import type { StandardMaterial } from "@babylonjs/core";
 import type { ModelMesh, ModelTexture } from "../model/ModelBuilder";
 import type { TextureImageSrc } from "./TextureImageSrc";
 

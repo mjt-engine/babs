@@ -1,5 +1,5 @@
-import type { Engine } from "@babylonjs/core/Engines/engine";
-import { Scene } from "@babylonjs/core/scene";
+import type { Engine } from "@babylonjs/core";
+import { Scene } from "@babylonjs/core";
 import type { TextureLayer } from "./TextureLayer";
 import { layerToPlane } from "./layerToPlane";
 

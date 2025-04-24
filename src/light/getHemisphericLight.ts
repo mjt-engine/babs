@@ -1,5 +1,5 @@
-import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
-import type { Scene } from "@babylonjs/core/scene";
+import { HemisphericLight } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { v3 } from "../bab/v3";
 import type { HemisphericLightOptions } from "./Lights";
 import { getLight } from "./getLight";

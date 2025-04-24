@@ -7,7 +7,7 @@ import { getCamera } from "./getCamera";
 import { getUniversalCamera } from "./getUniversalCamera";
 import { updateCamera } from "./updateCamera";
 
-import { Camera } from "@babylonjs/core/Cameras/camera";
+import { Camera } from "@babylonjs/core";
 import { createDebugCamera } from "./createDebugCamera";
 
 export const CAMERA_MODES = {
@@ -44,11 +44,11 @@ export type AllCameraOptions = ArcRotateCameraOptions & UniversalCameraOptions;
 
 export const Cameras = {
   getArcRotateCamera,
-  getCamera,
-  updateCamera,
-  getUniversalCamera,
-  attachArcRotateCameraControls,
-  attachUniversalCameraControls,
-  createTopDownCamera,
-  createDebugCamera,
+  // getCamera,
+  // updateCamera,
+  // getUniversalCamera,
+  // attachArcRotateCameraControls,
+  // attachUniversalCameraControls,
+  // createTopDownCamera,
+  // createDebugCamera,
 };

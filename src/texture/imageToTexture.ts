@@ -1,6 +1,6 @@
-import { DynamicTexture } from "@babylonjs/core/Materials/Textures/dynamicTexture";
-import { Texture } from "@babylonjs/core/Materials/Textures/texture";
-import type { Scene } from "@babylonjs/core/scene";
+import { DynamicTexture } from "@babylonjs/core";
+import { Texture } from "@babylonjs/core";
+import type { Scene } from "@babylonjs/core";
 import { imageSrcToUrl } from "../util/imageSrcToUrl";
 
 export const imageToTexture = async (
