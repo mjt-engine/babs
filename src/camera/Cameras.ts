@@ -44,11 +44,11 @@ export type AllCameraOptions = ArcRotateCameraOptions & UniversalCameraOptions;
 
 export const Cameras = {
   getArcRotateCamera,
-  // getCamera,
-  // updateCamera,
-  // getUniversalCamera,
-  // attachArcRotateCameraControls,
-  // attachUniversalCameraControls,
-  // createTopDownCamera,
-  // createDebugCamera,
+  getCamera,
+  updateCamera,
+  getUniversalCamera,
+  attachArcRotateCameraControls,
+  attachUniversalCameraControls,
+  createTopDownCamera,
+  createDebugCamera,
 };

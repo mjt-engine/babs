@@ -1,4 +1,4 @@
-import { UniversalCamera } from "@babylonjs/core/Cameras/universalCamera";
+import { UniversalCamera } from "@babylonjs/core";
 import type { Scene } from "@babylonjs/core";
 import { v3 } from "../bab/v3";
 import type { UniversalCameraOptions } from "./Cameras";
