@@ -25,6 +25,7 @@ export const imageToTexture = async (
   return new Promise((resolve, reject) => {
     try {
       const texture = new Texture(url, scene, false, true);
+      texture.name = name;
       texture.hasAlpha = true;
       texture.onLoadObservable.addOnce(() => {
         resolve(texture);
