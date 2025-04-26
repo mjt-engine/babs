@@ -29,13 +29,10 @@
     "vite": "^6.3.3",
     "vitest": "^3.1.2"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@babylonjs/core": "^8.4.0",
     "@babylonjs/inspector": "^8.4.0",
     "@babylonjs/loaders": "^8.4.0",
-    "d3-array": "^3.1.1"
-  },
-  "dependencies": {
     "@mjt-engine/animate": "github:mjt-engine/animate",
     "@mjt-engine/assert": "github:mjt-engine/assert",
     "@mjt-engine/color": "github:mjt-engine/color",
@@ -46,6 +43,7 @@
     "@mjt-engine/noise": "github:mjt-engine/noise",
     "@mjt-engine/object": "github:mjt-engine/object",
     "@mjt-engine/random": "github:mjt-engine/random",
-    "@mjt-engine/string": "github:mjt-engine/string"
+    "@mjt-engine/string": "github:mjt-engine/string",
+    "d3-array": "^3.2.4"
   }
 }
