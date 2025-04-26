@@ -2,6 +2,8 @@
 
 
 ## 2025-04-26
+- pnpm messes with package.json and removed empty peers...grrr.... ([eab08af](https://github.com/mjt-engine/babs/commit/eab08afdf0c11da8abc309a1479894712adb9414)) by Matt Taylor
+- direct deps for babylonjs and d3 array ([8b381a9](https://github.com/mjt-engine/babs/commit/8b381a98f4d97dba31c033f8e402c4cce782d1a4)) by Matt Taylor
 - add webgpu engine ([1276b98](https://github.com/mjt-engine/babs/commit/1276b98fb3aa80451eec46d4efba98446c8c6d4f)) by Matt Taylor
 - bumped BJS to 8.4.0 ([a284e08](https://github.com/mjt-engine/babs/commit/a284e08df276e5754a7e99d66ad6d6412c4b08a2)) by Matt Taylor
 
