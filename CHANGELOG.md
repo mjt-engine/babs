@@ -1,6 +1,9 @@
 # Changelog
 
 
+## 2025-04-26
+- bumped BJS to 8.4.0 ([a284e08](https://github.com/mjt-engine/babs/commit/a284e08df276e5754a7e99d66ad6d6412c4b08a2)) by Matt Taylor
+
 ## 2025-04-24
 - set the name on the texture for url texture ([3fd101d](https://github.com/mjt-engine/babs/commit/3fd101d43e550d502d42b0f89a3537edef89f17f)) by Matt Taylor
 - added rest of cameras back after treeshake import cleanup ([b7c0872](https://github.com/mjt-engine/babs/commit/b7c0872c68bf74f795761b48f698e11b1776c007)) by Matt Taylor
