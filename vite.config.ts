@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import { exec } from "node:child_process";
-import { dependencies, peerDependencies } from "./package.json";
+import { dependencies } from "./package.json";
 
 function emitDtsPlugin() {
   return {
@@ -34,7 +34,7 @@ export default defineConfig({
       // Externalize all deps and peer deps automatically
       external: [
         ...Object.keys(dependencies || {}),
-        ...Object.keys(peerDependencies || {}),
+        // ...Object.keys(peerDependencies || {}),
       ],
     },
     target: "esnext",
