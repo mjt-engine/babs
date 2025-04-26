@@ -2,6 +2,7 @@
 
 
 ## 2025-04-26
+- properly init webgpu engine ([5581805](https://github.com/mjt-engine/babs/commit/5581805a4f5261f9308ac58c22916be51ea57813)) by Matt Taylor
 - engine->webglengine and add checking of webgpu support ([4090efc](https://github.com/mjt-engine/babs/commit/4090efcc2ab66b96316271096a04c59ce0261baf)) by Matt Taylor
 - pnpm messes with package.json and removed empty peers...grrr.... ([eab08af](https://github.com/mjt-engine/babs/commit/eab08afdf0c11da8abc309a1479894712adb9414)) by Matt Taylor
 - direct deps for babylonjs and d3 array ([8b381a9](https://github.com/mjt-engine/babs/commit/8b381a98f4d97dba31c033f8e402c4cce782d1a4)) by Matt Taylor
