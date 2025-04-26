@@ -1,11 +1,11 @@
-import type { Engine } from "@babylonjs/core";
+import { Scene } from "@babylonjs/core";
 import { Cameras } from "../camera/Cameras";
+import { createWebGlEngine } from "../engine/createWebglEngine";
 import { Lights } from "../light/Lights";
 import { Meshes } from "../mesh/Meshes";
-import { createEngine } from "./createEngine";
-import { Scene } from "@babylonjs/core";
+import { BabEngine } from "./BabEngine";
 
-export const helloWorld = (engine: Engine = createEngine()) => {
+export const helloWorld = (engine: BabEngine = createWebGlEngine()) => {
   const scene = new Scene(engine);
   const canvas = engine.getRenderingCanvas();
 

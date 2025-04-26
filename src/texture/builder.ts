@@ -1,7 +1,7 @@
 import { Camera } from "@babylonjs/core";
 import { UniversalCamera } from "@babylonjs/core";
-import { createEngine } from "../bab/createEngine";
-import { renderOnce } from "../bab/renderOnce";
+import { createWebGlEngine } from "../engine/createWebglEngine";
+import { renderOnce } from "../scene/renderOnce";
 import { v3 } from "../bab/v3";
 import { timeP } from "../util/Timers";
 import type { TextureLayer } from "./TextureLayer";
@@ -9,7 +9,7 @@ import { copyToCanvas } from "./copyToCanvas";
 import { imageLayersToScene } from "./imageLayersToScene";
 
 export const builder = ({ size } = { size: 4096 }): TextureBuilder => {
-  const engine = createEngine({ width: size, height: size });
+  const engine = createWebGlEngine({ width: size, height: size });
   const canvas = engine.getRenderingCanvas();
   const STATE = {
     layers: [] as TextureLayer[],

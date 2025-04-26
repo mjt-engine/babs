@@ -6,4 +6,4 @@ export type CreateEngineOptions = EngineOptions & {
     height?: number;
     canvas?: HTMLCanvasElement | OffscreenCanvas;
 };
-export declare const createEngine: (optionsOrCanvas?: CreateEngineOptions | HTMLCanvasElement | OffscreenCanvas) => Engine;
+export declare const createWebGlEngine: (optionsOrCanvas?: CreateEngineOptions | HTMLCanvasElement | OffscreenCanvas) => Engine;

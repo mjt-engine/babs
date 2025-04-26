@@ -30,9 +30,11 @@ import { mergeMeshes } from "./mergeMeshes";
 import { pickMeshes } from "./pickMeshes";
 import { updateArcRotateCameraPosition } from "./updateArcRotateCameraPosition";
 import { updateMesh } from "./updateMesh";
+import { describeMesh } from "./describeMesh";
 export const Meshes = {
   lookAt,
   getBox,
+  describeMesh,
   getPlane,
   getBoxInstance,
   getSphere,

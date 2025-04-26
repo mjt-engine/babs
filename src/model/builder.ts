@@ -2,8 +2,8 @@ import { isDefined, isUndefined } from "@mjt-engine/object";
 import { Randoms } from "@mjt-engine/random";
 import { c3 } from "../bab/c3";
 import { c4 } from "../bab/c4";
-import { createEngine } from "../bab/createEngine";
-import { renderOnce } from "../bab/renderOnce";
+import { createWebGlEngine } from "../engine/createWebglEngine";
+import { renderOnce } from "../scene/renderOnce";
 import { v3 } from "../bab/v3";
 import { attachArcRotateCameraControls } from "../camera/attachArcRotateCameraControls";
 import { attachUniversalCameraControls } from "../camera/attachUniversalCameraControls";
@@ -46,7 +46,7 @@ export const builder = async (
     toneMappingEnabled = true,
     addDefaultLights = false,
     clearColor = "grey",
-    scene = new Scene(createEngine()),
+    scene = new Scene(createWebGlEngine()),
   } = props;
   const paths = Array.isArray(path) ? path : [path];
   await Promise.all(

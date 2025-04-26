@@ -1,6 +1,7 @@
 export declare const Meshes: {
     lookAt: (from: import("@mjt-engine/math").Point2, to: import("@mjt-engine/math").Point2) => number;
     getBox: (scene: import("@babylonjs/core").Scene, name: string, options?: import("./updateMesh").MeshOptions & import("./getBox").BoxOptions) => import("@babylonjs/core").Mesh;
+    describeMesh: (mesh: import("@babylonjs/core").AbstractMesh, search?: RegExp, depth?: number) => void;
     getPlane: (scene: import("@babylonjs/core").Scene, name: string, options?: import("./updateMesh").MeshOptions & Partial<{
         width: number;
         height: number;

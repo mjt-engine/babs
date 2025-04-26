@@ -1,6 +1,6 @@
 import { Engine } from "@babylonjs/core";
 import type { EngineOptions } from "@babylonjs/core/Engines/thinEngine";
-import { createCanvas } from "./createCanvas";
+import { createCanvas } from "../bab/createCanvas";
 
 export type CreateEngineOptions = EngineOptions & {
   antialias?: boolean;
@@ -8,7 +8,7 @@ export type CreateEngineOptions = EngineOptions & {
   height?: number;
   canvas?: HTMLCanvasElement | OffscreenCanvas;
 };
-export const createEngine = (
+export const createWebGlEngine = (
   optionsOrCanvas?: CreateEngineOptions | HTMLCanvasElement | OffscreenCanvas
 ) => {
   const options: CreateEngineOptions = !(

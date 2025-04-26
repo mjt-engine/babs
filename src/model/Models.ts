@@ -1,4 +1,4 @@
-import { renderOnce } from "../bab/renderOnce";
+import { renderOnce } from "../scene/renderOnce";
 import { builder } from "./builder";
 import { fixDazFigure } from "./fix/fixDazFigure";
 import { loadAssetContainer } from "./loadAssetContainer";

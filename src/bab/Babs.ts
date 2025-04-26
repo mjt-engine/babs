@@ -1,23 +1,17 @@
 import { attachArcRotateCameraControls } from "../camera/attachArcRotateCameraControls";
-import { describeMesh } from "../mesh/describeMesh";
+import { createWebGlEngine } from "../engine/createWebglEngine";
 import { c3 } from "./c3";
 import { c4 } from "./c4";
 import { createCanvas } from "./createCanvas";
-import { createEngine } from "./createEngine";
-import { createWebGpuEngine } from "./createWebGpuEngine";
 import { helloWorld } from "./helloWorld";
-import { renderOnce } from "./renderOnce";
 import { v3 } from "./v3";
 
 export const Babs = {
-  createEngine,
-  createWebGpuEngine,
+  createEngine: createWebGlEngine,
   createCanvas,
-  renderOnce,
   v3,
   c3,
   c4,
-  describeMesh,
   helloWorld,
   attachEditorControls: attachArcRotateCameraControls,
 };
