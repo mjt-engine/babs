@@ -682,7 +682,7 @@ const Tt = (t, r) => {
   c4: O,
   helloWorld: Ne,
   attachEditorControls: bt
-}, _e = ({
+}, _e = async ({
   canvas: t,
   ...r
 }) => {
@@ -690,7 +690,7 @@ const Tt = (t, r) => {
     powerPreference: "high-performance",
     ...r
   });
-  return e.hideLoadingUI(), e;
+  return e.hideLoadingUI(), await e.initAsync(), e;
 }, ke = () => yt.IsSupportedAsync, _r = {
   createWebGlEngine: $,
   createWebGpuEngine: _e,

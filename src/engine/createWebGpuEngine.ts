@@ -1,6 +1,6 @@
 import { WebGPUEngine, WebGPUEngineOptions } from "@babylonjs/core";
 
-export const createWebGpuEngine = ({
+export const createWebGpuEngine = async ({
   canvas,
   ...rest
 }: { canvas: HTMLCanvasElement | OffscreenCanvas } & WebGPUEngineOptions) => {
@@ -9,7 +9,6 @@ export const createWebGpuEngine = ({
     ...rest,
   });
   engine.hideLoadingUI();
+  await engine.initAsync();
   return engine;
 };
-
-
