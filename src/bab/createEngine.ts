@@ -1,6 +1,6 @@
+import { Engine } from "@babylonjs/core";
 import type { EngineOptions } from "@babylonjs/core/Engines/thinEngine";
 import { createCanvas } from "./createCanvas";
-import { Engine } from "@babylonjs/core";
 
 export type CreateEngineOptions = EngineOptions & {
   antialias?: boolean;

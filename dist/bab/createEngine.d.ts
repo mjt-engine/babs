@@ -1,5 +1,5 @@
-import type { EngineOptions } from "@babylonjs/core/Engines/thinEngine";
 import { Engine } from "@babylonjs/core";
+import type { EngineOptions } from "@babylonjs/core/Engines/thinEngine";
 export type CreateEngineOptions = EngineOptions & {
     antialias?: boolean;
     width?: number;

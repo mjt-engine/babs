@@ -1,6 +1,9 @@
 import { v3 } from "./v3";
 export declare const Babs: {
     createEngine: (optionsOrCanvas?: import("./createEngine").CreateEngineOptions | HTMLCanvasElement | OffscreenCanvas) => import("@babylonjs/core").Engine;
+    createWebGpuEngine: ({ canvas, ...rest }: {
+        canvas: HTMLCanvasElement | OffscreenCanvas;
+    } & import("@babylonjs/core").WebGPUEngineOptions) => import("@babylonjs/core").WebGPUEngine;
     createCanvas: ({ width, height, }: {
         width: number;
         height: number;
