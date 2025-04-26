@@ -1227,9 +1227,9 @@ class M {
   static AddTagsTo(r, e) {
     if (!e || typeof e != "string")
       return;
-    e.split(" ").forEach(function(o) {
+    const n = e.split(" ");
+    for (const o of n)
       M._AddTagTo(r, o);
-    });
   }
   /**
    * @internal

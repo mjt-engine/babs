@@ -14,24 +14,25 @@
     "build-docs": "pnpm run build && pnpm run docs",
     "changelog": "./scripts/changes.sh > CHANGELOG.md",
     "changelog-version": "pnpm run changelog && ./scripts/version.sh",
-    "publish": "pnpm run build-docs && pnpm run changelog-version"
+    "publish": "pnpm run build-docs && pnpm run changelog-version",
+    "check": "tsc --noEmit -w"
   },
   "keywords": [],
   "author": "Matt Taylor (https://mjt.dev)",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^22.14.1",
     "@types/d3-array": "^3.2.1",
+    "@types/node": "^22.15.2",
     "@types/offscreencanvas": "^2019.7.3",
     "typedoc": "^0.27.9",
     "typescript": "^5.8.3",
-    "vite": "^6.3.2",
+    "vite": "^6.3.3",
     "vitest": "^3.1.2"
   },
   "peerDependencies": {
-    "@babylonjs/core": "^7.5.0",
-    "@babylonjs/inspector": "^7.5.0",
-    "@babylonjs/loaders": "^7.5.0",
+    "@babylonjs/core": "^8.4.0",
+    "@babylonjs/inspector": "^8.4.0",
+    "@babylonjs/loaders": "^8.4.0",
     "d3-array": "^3.1.1"
   },
   "dependencies": {
