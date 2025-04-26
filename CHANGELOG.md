@@ -2,6 +2,7 @@
 
 
 ## 2025-04-26
+- add webgpu engine ([1276b98](https://github.com/mjt-engine/babs/commit/1276b98fb3aa80451eec46d4efba98446c8c6d4f)) by Matt Taylor
 - bumped BJS to 8.4.0 ([a284e08](https://github.com/mjt-engine/babs/commit/a284e08df276e5754a7e99d66ad6d6412c4b08a2)) by Matt Taylor
 
 ## 2025-04-24
