@@ -1,45 +1,11 @@
-import type { IParticleSystem } from "@babylonjs/core";
-import { SolidParticleSystem } from "@babylonjs/core";
-import type { Scene } from "@babylonjs/core";
-import { isDefined } from "@mjt-engine/object";
+import { getParticleSystem } from "./getParticleSystem";
+import {
+  buildSpsFromSchadowScene,
+  getSolidParticleSystem,
+} from "./getSolidParticleSystem";
 
-export type SpsOptions = Partial<{ useModelMaterial: boolean }>;
-
-export const getParticleSystem = <
-  T extends IParticleSystem | SolidParticleSystem
->(
-  scene: Scene,
-  name: string,
-  producer: () => T
-) => {
-  const metadata = scene.metadata ?? {};
-  const spsMaybe = metadata["solidParticleSystems"]?.[name];
-
-  if (isDefined(spsMaybe)) {
-    spsMaybe;
-  }
-
-  return producer();
+export const Particles = {
+  getSolidParticleSystem,
+  getParticleSystem,
+  buildSpsFromSchadowScene,
 };
-
-export const getSolidParticleSystem = (
-  scene: Scene,
-  name: string,
-  options: SpsOptions = {}
-): SolidParticleSystem => {
-  return getParticleSystem(scene, name, () => {
-    const { useModelMaterial = false } = options;
-    const sps = new SolidParticleSystem(name, scene, {
-      useModelMaterial,
-    });
-
-    const metadata = scene.metadata ?? {};
-    scene.metadata = metadata;
-    const spsMap = metadata["solidParticleSystems"] ?? {};
-    metadata["solidParticleSystems"] = spsMap;
-    spsMap[name] = sps;
-    return sps;
-  });
-};
-
-export const Particles = { getSolidParticleSystem };

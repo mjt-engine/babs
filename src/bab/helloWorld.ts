@@ -3,7 +3,7 @@ import { Cameras } from "../camera/Cameras";
 import { createWebGlEngine } from "../engine/createWebglEngine";
 import { Lights } from "../light/Lights";
 import { Meshes } from "../mesh/Meshes";
-import { BabEngine } from "./BabEngine";
+import { BabEngine } from "../type/BabEngine";
 
 export const helloWorld = (engine: BabEngine = createWebGlEngine()) => {
   const scene = new Scene(engine);

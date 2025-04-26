@@ -8,7 +8,7 @@ export declare const Babs: {
     v3: typeof v3;
     c3: (color: string) => import("@babylonjs/core").Color3;
     c4: (color: string) => import("@babylonjs/core").Color4;
-    helloWorld: (engine?: import("./BabEngine").BabEngine) => import("@babylonjs/core").Scene;
+    helloWorld: (engine?: import("..").BabEngine) => import("@babylonjs/core").Scene;
     attachEditorControls: (camera: import("@babylonjs/core").ArcRotateCamera, options?: Partial<{
         keySensitivity: number;
         mouseSensitivity: number;

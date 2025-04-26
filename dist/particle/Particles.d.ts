@@ -1,11 +1,9 @@
-import type { IParticleSystem } from "@babylonjs/core";
-import { SolidParticleSystem } from "@babylonjs/core";
-import type { Scene } from "@babylonjs/core";
-export type SpsOptions = Partial<{
-    useModelMaterial: boolean;
-}>;
-export declare const getParticleSystem: <T extends IParticleSystem | SolidParticleSystem>(scene: Scene, name: string, producer: () => T) => T;
-export declare const getSolidParticleSystem: (scene: Scene, name: string, options?: SpsOptions) => SolidParticleSystem;
 export declare const Particles: {
-    getSolidParticleSystem: (scene: Scene, name: string, options?: SpsOptions) => SolidParticleSystem;
+    getSolidParticleSystem: (scene: import("@babylonjs/core").Scene, name: string, options: ConstructorParameters<typeof import("@babylonjs/core").SolidParticleSystem>[2]) => import("@babylonjs/core").SolidParticleSystem;
+    getParticleSystem: <T extends import("..").BabParticleSystem>(scene: import("@babylonjs/core").Scene, name: string, producer: () => T) => T;
+    buildSpsFromSchadowScene: ({ sps, shadowScene, liveScene, }: {
+        sps: import("@babylonjs/core").SolidParticleSystem;
+        shadowScene: import("@babylonjs/core").Scene;
+        liveScene: import("@babylonjs/core").Scene;
+    }) => void;
 };
