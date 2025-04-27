@@ -2,6 +2,8 @@
 
 
 ## 2025-04-26
+- createTextureAtlas and better Sprites ([eebf3b5](https://github.com/mjt-engine/babs/commit/eebf3b57cbd46a8f61e8fb482c5478365a89af3b)) by Matt Taylor
+- cleanup of particle system, prior to major redo of interfaces ([3ecf4a5](https://github.com/mjt-engine/babs/commit/3ecf4a59dba3433be1006525294dcaf155f8f077)) by Matt Taylor
 - properly init webgpu engine ([5581805](https://github.com/mjt-engine/babs/commit/5581805a4f5261f9308ac58c22916be51ea57813)) by Matt Taylor
 - engine->webglengine and add checking of webgpu support ([4090efc](https://github.com/mjt-engine/babs/commit/4090efcc2ab66b96316271096a04c59ce0261baf)) by Matt Taylor
 - pnpm messes with package.json and removed empty peers...grrr.... ([eab08af](https://github.com/mjt-engine/babs/commit/eab08afdf0c11da8abc309a1479894712adb9414)) by Matt Taylor
