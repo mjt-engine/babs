@@ -5,7 +5,7 @@ export const createWebGpuEngine = async ({
   ...rest
 }: { canvas: HTMLCanvasElement | OffscreenCanvas } & WebGPUEngineOptions) => {
   const engine = new WebGPUEngine(canvas, {
-    powerPreference: "high-performance",
+    // powerPreference: "high-performance",
     ...rest,
   });
   engine.hideLoadingUI();

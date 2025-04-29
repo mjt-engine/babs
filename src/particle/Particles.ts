@@ -1,11 +1,9 @@
 import { getParticleSystem } from "./getParticleSystem";
-import {
-  buildSpsFromSchadowScene,
-  getSolidParticleSystem,
-} from "./getSolidParticleSystem";
-
+import { getSolidParticleSystem } from "./getSolidParticleSystem";
+import { Sps } from "./Sps";
+export type { Sps } from "./Sps";
 export const Particles = {
   getSolidParticleSystem,
   getParticleSystem,
-  buildSpsFromSchadowScene,
+  Sps,
 };

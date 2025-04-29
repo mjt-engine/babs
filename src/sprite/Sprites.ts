@@ -1,5 +1,10 @@
 import { createTextureAtlas } from "./createTextureAtlas";
 import { getSprite } from "./getSprite";
-import { getSpriteManager } from "./getSpriteManager";
+import { getSpriteManager, getSpritePackedManager } from "./getSpriteManager";
 
-export const Sprites = { getSpriteManager, getSprite, createTextureAtlas };
+export const Sprites = {
+  getSpriteManager,
+  getSprite,
+  createTextureAtlas,
+  getSpritePackedManager,
+};

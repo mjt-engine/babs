@@ -6,13 +6,28 @@ export declare const Sprites: {
             width: number;
             height: number;
         } | number;
-        imgUrl: string;
+        atlasUrl: string;
+        atlasBlob?: Blob;
         epsilon?: number;
         samplingMode?: number;
         fromPacked?: boolean;
         spriteJSON?: any | null;
         options?: import("@babylonjs/core").SpriteManagerOptions;
-    }>) => import("@babylonjs/core").ISpriteManager | import("@babylonjs/core").SpriteManager;
+    }>) => import("..").BabSpriteManager;
     getSprite: (scene: import("@babylonjs/core").Scene, name: string, spriteManagerName: string) => import("@babylonjs/core").Sprite;
     createTextureAtlas: typeof createTextureAtlas;
+    getSpritePackedManager: (scene: import("@babylonjs/core").Scene, name: string, options?: Partial<{
+        capacity: number;
+        cellSize: {
+            width: number;
+            height: number;
+        } | number;
+        atlasUrl: string;
+        atlasBlob?: Blob;
+        epsilon?: number;
+        samplingMode?: number;
+        fromPacked?: boolean;
+        spriteJSON?: any | null;
+        options?: import("@babylonjs/core").SpriteManagerOptions;
+    }>) => import("..").BabSpriteManager;
 };

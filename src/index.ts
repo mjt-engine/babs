@@ -20,8 +20,11 @@ export * from "./voxel/Voxels";
 export * from "./type/BabEngine";
 export * from "./type/BabScene";
 export * from "./type/BabMesh";
+export * from "./type/BabSpriteManager";
 export * from "./type/BabParticleSystem";
 export type { BaseTexture as BabBaseTexture } from "@babylonjs/core";
 export type { DynamicTexture as BabDynamicTexture } from "@babylonjs/core";
 export type { TransformNode as BabTransformNode } from "@babylonjs/core";
 export type { SolidParticle as BabSolidParticle } from "@babylonjs/core";
+
+export * from "./debug/Debugs";

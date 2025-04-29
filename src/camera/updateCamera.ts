@@ -70,7 +70,7 @@ export const updateCamera = (camera: Camera, options: AllCameraOptions) => {
       camera.alpha = value;
     });
     iff(beta, (value) => {
-      camera.alpha = value;
+      camera.beta = value;
     });
     iff(radius, (value) => {
       camera.radius = value;

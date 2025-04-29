@@ -1,8 +1,3 @@
-interface PackOptions {
-  atlasSize: number; // like 1024, 2048, etc.
-  padding?: number;  // optional padding around each sprite
-}
-
 interface Frame {
   frame: { x: number; y: number; w: number; h: number };
 }
@@ -11,19 +6,42 @@ interface AtlasJSON {
   frames: Record<string, Frame>;
 }
 
-export async function createTextureAtlas(
-  baseUrl: string,           // base URL for images (can be relative or absolute)
-  imageNames: string[],       // list of image names (no extension needed)
-  options: PackOptions
-): Promise<{ atlasBlob: Blob; jsonBlob: Blob }> {
-  const { atlasSize, padding = 0 } = options;
+interface BabylonSpriteMapFrame {
+  filename: string;
+  frame: { x: number; y: number; w: number; h: number };
+  rotated: boolean;
+  trimmed: boolean;
+  spriteSourceSize: { x: number; y: number; w: number; h: number };
+  sourceSize: { w: number; h: number };
+}
 
+interface BabylonSpriteMapJSON {
+  frames: BabylonSpriteMapFrame[];
+}
+
+export async function createTextureAtlas({
+  baseUrl,
+  imageNames,
+  atlasSize,
+  padding = 0,
+}: {
+  atlasSize: number;
+  baseUrl: string;
+  imageNames: string[];
+  padding?: number;
+}): Promise<{
+  canvas: HTMLCanvasElement;
+  atlasBlob: Blob;
+  spritePackageManagerJson: AtlasJSON;
+  babylonSpriteMapJson: BabylonSpriteMapJSON;
+}> {
   const canvas = document.createElement("canvas");
   canvas.width = atlasSize;
   canvas.height = atlasSize;
   const ctx = canvas.getContext("2d")!;
 
-  const frames: Record<string, Frame> = {};
+  const simpleFrames: Record<string, Frame> = {};
+  const babylonFrames: BabylonSpriteMapFrame[] = [];
 
   let x = 0;
   let y = 0;
@@ -36,22 +54,19 @@ export async function createTextureAtlas(
     const spriteWidth = img.width + padding * 2;
     const spriteHeight = img.height + padding * 2;
 
-    // If not enough room in this row, move to next row
     if (x + spriteWidth > atlasSize) {
       x = 0;
       y += rowHeight;
       rowHeight = 0;
     }
 
-    // If overflow the canvas
     if (y + spriteHeight > atlasSize) {
       throw new Error(`Not enough space in atlas for image: ${filename}`);
     }
 
-    // Draw with padding
     ctx.drawImage(img, x + padding, y + padding);
 
-    frames[filename] = {
+    simpleFrames[filename] = {
       frame: {
         x: x + padding,
         y: y + padding,
@@ -60,22 +75,34 @@ export async function createTextureAtlas(
       },
     };
 
+    babylonFrames.push({
+      filename,
+      frame: {
+        x: x + padding,
+        y: y + padding,
+        w: img.width,
+        h: img.height,
+      },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: img.width, h: img.height },
+      sourceSize: { w: img.width, h: img.height },
+    });
+
     x += spriteWidth;
     rowHeight = Math.max(rowHeight, spriteHeight);
   }
 
-  // Export canvas as Blob
   const atlasBlob = await new Promise<Blob>((resolve) =>
     canvas.toBlob((blob) => resolve(blob!), "image/png")
   );
 
-  // Create JSON blob
-  const jsonBlob = new Blob(
-    [JSON.stringify({ frames }, null, 2)],
-    { type: "application/json" }
-  );
-
-  return { atlasBlob, jsonBlob };
+  return {
+    canvas,
+    atlasBlob,
+    spritePackageManagerJson: { frames: simpleFrames },
+    babylonSpriteMapJson: { frames: babylonFrames },
+  };
 }
 
 async function loadImage(src: string): Promise<HTMLImageElement> {
