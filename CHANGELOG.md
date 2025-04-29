@@ -1,6 +1,9 @@
 # Changelog
 
 
+## 2025-04-29
+- added Sps Debug, sprite manager ([aa6a2ad](https://github.com/mjt-engine/babs/commit/aa6a2adedb5dbfb2a7b8947992a1d1f194bfe119)) by Matt Taylor
+
 ## 2025-04-26
 - createTextureAtlas and better Sprites ([eebf3b5](https://github.com/mjt-engine/babs/commit/eebf3b57cbd46a8f61e8fb482c5478365a89af3b)) by Matt Taylor
 - cleanup of particle system, prior to major redo of interfaces ([3ecf4a5](https://github.com/mjt-engine/babs/commit/3ecf4a59dba3433be1006525294dcaf155f8f077)) by Matt Taylor
