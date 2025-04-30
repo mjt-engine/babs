@@ -21,6 +21,7 @@ export type Sps = {
   addMesh: (mesh: BabMesh, count?: number) => void;
   removeMesh: (mesh: BabMesh) => void;
   syncParticlestoMeshes: () => void;
+  hasMesh: (meshName: string) => boolean;
   updateParticle: (
     name: string,
     fn: (particle: BabSolidParticle, index: number) => void
@@ -43,7 +44,6 @@ export const Sps = (
 
   const renewSps = () => {
     sps?.mesh?.dispose();
-    console.log(`renewing sps instance`, options);
     sps = new SolidParticleSystem(name, scene, {
       ...rest,
     });
@@ -53,6 +53,9 @@ export const Sps = (
 
   const mod: Sps = {
     scene,
+    hasMesh: (meshName: string) => {
+      return meshNameToParticleIndexes.has(meshName);
+    },
     getInstance: () => {
       return sps;
     },
@@ -69,7 +72,9 @@ export const Sps = (
 
     removeMesh: (mesh: BabMesh) => {
       meshToCounts.delete(mesh);
-
+      meshToParticleIndexes.delete(mesh);
+      meshNameToParticleIndexes.delete(mesh.name);
+      meshNameToMesh.delete(mesh.name);
       mod.rebuild();
     },
     addMesh: (mesh: BabMesh, n = 1) => {

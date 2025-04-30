@@ -9,6 +9,7 @@ export type Sps = {
     addMesh: (mesh: BabMesh, count?: number) => void;
     removeMesh: (mesh: BabMesh) => void;
     syncParticlestoMeshes: () => void;
+    hasMesh: (meshName: string) => boolean;
     updateParticle: (name: string, fn: (particle: BabSolidParticle, index: number) => void) => void;
 };
 export declare const Sps: (scene: BabScene, name: string, options?: Partial<{
