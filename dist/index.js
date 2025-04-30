@@ -209,12 +209,12 @@ const Te = (e, r) => {
 }, ht = (e, r, {
   unitsTall: t = 1,
   unitsWide: n = 1,
-  height: o = 100,
+  cameraLevel: o = -100,
   disposeActive: a = !1
 } = {}) => {
   a && e?.activeCamera?.dispose();
   const s = new q(r, m(0, 0, o), e);
-  return s.target = m(0, 0, 0), s.orthoTop = -t / 2, s.orthoBottom = t / 2, s.orthoLeft = -n / 2, s.orthoRight = n / 2, s.mode = _.ORTHOGRAPHIC_CAMERA, s;
+  return s.target = m(0, 0, 0), s.rotation = m(0, 0, Math.PI), s.orthoTop = -t / 2, s.orthoBottom = t / 2, s.orthoLeft = n / 2, s.orthoRight = -n / 2, s.mode = _.ORTHOGRAPHIC_CAMERA, s;
 }, re = (e, r, t) => {
   const n = e.getCameraByName(r);
   return y(n) ? n : t();
@@ -555,7 +555,7 @@ const Te = (e, r) => {
   const o = await J(e, t, n);
   return $.assertValue(o, () => (console.log({ scene: e, name: r, rootName: t, producer: n }), "Unable to create mesh instance. Missing root mesh.")), o.createInstance(r);
 }), Bt = (e, r, t = {}) => P(e, r, () => {
-  const { width: n = 1, height: o = 1, tag: a, doubleSided: s = !0 } = t, i = v.CreatePlane(
+  const { width: n = 1, height: o = 1, tag: a, doubleSided: s } = t, i = v.CreatePlane(
     r,
     {
       width: n,

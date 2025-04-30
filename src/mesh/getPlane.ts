@@ -18,7 +18,7 @@ export const getPlane = (
     }> = {}
 ) => {
   return getMesh(scene, name, () => {
-    const { width = 1, height = 1, tag, doubleSided = true } = options;
+    const { width = 1, height = 1, tag, doubleSided  } = options;
     const mesh = MeshBuilder.CreatePlane(
       name,
       {
