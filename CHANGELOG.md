@@ -2,6 +2,7 @@
 
 
 ## 2025-04-30
+- fixed to plane and top-down camera, fix the left/right backwards on ortho ([bc14759](https://github.com/mjt-engine/babs/commit/bc147593de667d7a942479e86615a933bd5eaea7)) by Matt Taylor
 - hack planes so that they are double-sided by default to fix broken wrong facing side that likely will not be fixed inside of BJS ([281e13b](https://github.com/mjt-engine/babs/commit/281e13b44ec1557bf613e6b551e7317ce8c7f1f7)) by Matt Taylor
 - cleanup SPS, add BabCamera type ([c652461](https://github.com/mjt-engine/babs/commit/c6524614353a13293c5d2c5bdf09bed270e5aea4)) by Matt Taylor
 
