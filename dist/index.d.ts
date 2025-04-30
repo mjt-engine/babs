@@ -21,6 +21,7 @@ export * from "./type/BabScene";
 export * from "./type/BabMesh";
 export * from "./type/BabSpriteManager";
 export * from "./type/BabParticleSystem";
+export * from "./type/BabCamera";
 export type { BaseTexture as BabBaseTexture } from "@babylonjs/core";
 export type { DynamicTexture as BabDynamicTexture } from "@babylonjs/core";
 export type { TransformNode as BabTransformNode } from "@babylonjs/core";

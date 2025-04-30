@@ -1,6 +1,9 @@
 # Changelog
 
 
+## 2025-04-30
+- cleanup SPS, add BabCamera type ([c652461](https://github.com/mjt-engine/babs/commit/c6524614353a13293c5d2c5bdf09bed270e5aea4)) by Matt Taylor
+
 ## 2025-04-29
 - added Sps Debug, sprite manager ([aa6a2ad](https://github.com/mjt-engine/babs/commit/aa6a2adedb5dbfb2a7b8947992a1d1f194bfe119)) by Matt Taylor
 
