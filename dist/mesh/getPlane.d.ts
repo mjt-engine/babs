@@ -6,4 +6,5 @@ export declare const getPlane: (scene: Scene, name: string, options?: MeshOption
     height: number;
     tag: string | string[];
     billboard: boolean;
+    doubleSided: boolean;
 }>) => Mesh;

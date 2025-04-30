@@ -7,6 +7,7 @@ export declare const Meshes: {
         height: number;
         tag: string | string[];
         billboard: boolean;
+        doubleSided: boolean;
     }>) => import("@babylonjs/core").Mesh;
     getBoxInstance: (scene: import("@babylonjs/core").Scene, name: string, options: import("./updateMesh").MeshOptions & Partial<{
         width: number;

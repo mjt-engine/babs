@@ -14,15 +14,17 @@ export const getPlane = (
       height: number;
       tag: string | string[];
       billboard: boolean;
+      doubleSided: boolean;
     }> = {}
 ) => {
   return getMesh(scene, name, () => {
-    const { width = 1, height = 1, tag } = options;
+    const { width = 1, height = 1, tag, doubleSided = true } = options;
     const mesh = MeshBuilder.CreatePlane(
       name,
       {
         width,
         height,
+        sideOrientation: doubleSided ? Mesh.DOUBLESIDE : undefined,
       },
       scene
     );
