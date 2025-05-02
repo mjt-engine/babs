@@ -3,17 +3,17 @@ import {
   Scene as BabScene,
   SolidParticle as BabSolidParticle,
   SolidParticleSystem as BabSolidParticleSystem,
-  Color3,
   Color4,
   SolidParticleSystem,
   StandardMaterial,
 } from "@babylonjs/core";
 import { Asserts } from "@mjt-engine/assert";
-import { getSolidParticleSystem } from "./getSolidParticleSystem";
 import { Materials } from "../material/Materials";
+import { getSolidParticleSystem } from "./getSolidParticleSystem";
 
 export type Sps = {
   scene: BabScene;
+  getSystem: () => BabSolidParticleSystem;
   dispose: () => void;
   getInstance: () => BabSolidParticleSystem;
   rebuild: () => void;
@@ -22,7 +22,7 @@ export type Sps = {
   removeMesh: (mesh: BabMesh) => void;
   syncParticlestoMeshes: () => void;
   hasMesh: (meshName: string) => boolean;
-  updateParticle: (
+  updateParticlesByName: (
     name: string,
     fn: (particle: BabSolidParticle, index: number) => void
   ) => void;
@@ -31,8 +31,10 @@ export type Sps = {
     fn: (particle: BabSolidParticle, index: number) => void
   ) => void;
   updateNextParticle: (
+    name: string,
     fn: (particle: BabSolidParticle, index: number) => void
   ) => void;
+  getNames: () => Iterable<string>;
 };
 
 export const Sps = (
@@ -41,18 +43,18 @@ export const Sps = (
   options: Partial<{ material: string; onMeshBuild: (mesh: BabMesh) => void }> &
     Parameters<typeof getSolidParticleSystem>[2] = {}
 ): Sps => {
-  let nextId = 0;
+  const nextIndexMap = new Map<string, number>();
   const meshToCounts = new Map<BabMesh, number>();
   const meshToParticleIndexes = new Map<BabMesh, number[]>();
   const meshNameToParticleIndexes = new Map<string, number[]>();
   const meshNameToMesh = new Map<string, BabMesh>();
   const { material, onMeshBuild, ...rest } = options;
 
-  let sps: BabSolidParticleSystem;
+  let system: BabSolidParticleSystem;
 
   const renewSps = () => {
-    sps?.mesh?.dispose();
-    sps = new SolidParticleSystem(name, scene, {
+    system?.mesh?.dispose();
+    system = new SolidParticleSystem(name, scene, {
       ...rest,
     });
   };
@@ -61,21 +63,33 @@ export const Sps = (
 
   const mod: Sps = {
     scene,
+    getSystem: () => {
+      return system;
+    },
+    getNames: () => {
+      return meshNameToParticleIndexes.keys();
+    },
     hasMesh: (meshName: string) => {
       return meshNameToParticleIndexes.has(meshName);
     },
     getInstance: () => {
-      return sps;
+      return system;
     },
-    updateNextParticle: (fn) => {
-      mod.updateParticleByIndex(nextId++, fn);
+    updateNextParticle: (name, fn) => {
+      const indexesForName = Asserts.assertValue(
+        meshNameToParticleIndexes.get(name)
+      );
+      const nextIndexForName = Asserts.assertValue(nextIndexMap.get(name));
+      const nextIndex = indexesForName[nextIndexForName];
+      mod.updateParticleByIndex(nextIndex, fn);
+      nextIndexMap.set(name, nextIndexForName + 1);
     },
     updateParticleByIndex: (index, fn) => {
-      const particle = sps.particles[index];
+      const particle = system.particles[index];
       Asserts.assertValue(particle, `particle not found for ${index}`);
       fn(particle, index);
     },
-    updateParticle: (name, fn) => {
+    updateParticlesByName: (name, fn) => {
       const indexes = meshNameToParticleIndexes.get(name);
       if (indexes) {
         indexes.forEach((index) => {
@@ -91,25 +105,25 @@ export const Sps = (
       mod.rebuild();
     },
     addMesh: (mesh: BabMesh, n = 1) => {
-      try {
-        if (meshToCounts.has(mesh)) {
-          return;
-        }
-        meshToCounts.set(mesh, n);
-        meshNameToMesh.set(mesh.name, mesh);
-        mod.rebuild();
-      } catch (e) {
-        console.error(e);
+      if (meshToCounts.has(mesh)) {
+        throw new Error(
+          `Mesh ${mesh.name} already exists in the Sps. Use removeMesh to remove it first.`
+        );
       }
+      nextIndexMap.set(mesh.name, 0);
+      meshToCounts.set(mesh, n);
+      meshNameToMesh.set(mesh.name, mesh);
+      mod.rebuild();
+      mesh.setEnabled(false);
     },
     rebuild: () => {
       renewSps();
       meshToParticleIndexes.clear();
       try {
         meshToCounts.forEach((count, mesh) => {
-          sps.addShape(mesh, count);
+          system.addShape(mesh, count);
           for (let i = 0; i < count; i++) {
-            const index = sps.particles.length - 1 - i;
+            const index = system.particles.length - 1 - i;
 
             meshToParticleIndexes.set(mesh, [
               ...(meshToParticleIndexes.get(mesh) || []),
@@ -121,12 +135,11 @@ export const Sps = (
             ]);
           }
         });
-        const mesh = sps.buildMesh();
+        const mesh = system.buildMesh();
         if (material) {
           mesh.material = Materials.getMaterial(scene, material);
         }
         onMeshBuild?.(mesh);
-        mod.syncParticlestoMeshes();
       } catch (e) {
         console.error(e);
       }
@@ -135,7 +148,7 @@ export const Sps = (
       meshToParticleIndexes.forEach((indexes, mesh) => {
         for (let i = 0; i < indexes.length; i++) {
           const index = indexes[i];
-          const particle = Asserts.assertValue(sps.particles[index]);
+          const particle = Asserts.assertValue(system.particles[index]);
           particle.position.copyFrom(mesh.position);
           particle.rotation.copyFrom(mesh.rotation);
           particle.scaling.copyFrom(mesh.scaling);
@@ -151,12 +164,15 @@ export const Sps = (
       meshToParticleIndexes.clear();
       meshNameToParticleIndexes.clear();
       meshNameToMesh.clear();
-      sps?.mesh?.dispose();
-      sps.dispose();
+      nextIndexMap.clear();
+      system?.mesh?.dispose();
+      system.dispose();
     },
     update: () => {
-      sps.setParticles();
-      nextId = 0;
+      system.setParticles();
+      nextIndexMap.forEach((_, meshName) => {
+        nextIndexMap.set(meshName, 0);
+      });
     },
   };
   return mod;

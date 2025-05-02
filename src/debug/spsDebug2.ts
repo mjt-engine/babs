@@ -66,7 +66,7 @@ export const spsDebug2 = ({
     },
   });
   sps.addMesh(box1, 10_000); // 20 spheres
-  sps.updateParticle("box1", (particle, i) => {
+  sps.updateParticlesByName("box1", (particle, i) => {
     particle.position.x = BABYLON.Scalar.RandomRange(-20, 20);
     particle.position.y = BABYLON.Scalar.RandomRange(-20, 20);
     particle.position.z = BABYLON.Scalar.RandomRange(-20, 20);
@@ -95,7 +95,7 @@ export const spsDebug2 = ({
 
     const n = Noises.noiseStream(0);
     // const n = () => 0.5;
-    sps.updateParticle("box1", (p, i) => {
+    sps.updateParticlesByName("box1", (p, i) => {
       p.color = new BABYLON.Color4(n(), n(), n(), 0.5);
       if (Math.random() > 0.5) {
         p.rotation.x = n() * s;
