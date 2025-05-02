@@ -356,7 +356,7 @@ const Te = (e, r) => {
   }), w(g, (u) => {
     r.ambientColor = S(u);
   }), w(f, (u) => {
-    r.specularColor = S(u);
+    r.emissiveColor = S(u);
   }), w(n, (u) => {
     r.alpha = u;
   });
