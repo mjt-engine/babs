@@ -2,6 +2,7 @@
 
 
 ## 2025-05-02
+- updateNextParticle assumes name ([bf1b4ab](https://github.com/mjt-engine/babs/commit/bf1b4ab49e39d829d7d9dfa041b651649f1c4b73)) by Matt Taylor
 - fixed emmissive color not updating on material create bug ([d92258f](https://github.com/mjt-engine/babs/commit/d92258fddf283cf76ccc6e5fed8c53a2f7dd9190)) by Matt Taylor
 - added SPS next-particle ([1059794](https://github.com/mjt-engine/babs/commit/105979421a48288b86c1762c3d411f220b37581c)) by Matt Taylor
 

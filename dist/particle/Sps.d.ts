@@ -2,6 +2,7 @@ import { Mesh as BabMesh, Scene as BabScene, SolidParticle as BabSolidParticle, 
 import { getSolidParticleSystem } from "./getSolidParticleSystem";
 export type Sps = {
     scene: BabScene;
+    getSystem: () => BabSolidParticleSystem;
     dispose: () => void;
     getInstance: () => BabSolidParticleSystem;
     rebuild: () => void;
@@ -10,9 +11,10 @@ export type Sps = {
     removeMesh: (mesh: BabMesh) => void;
     syncParticlestoMeshes: () => void;
     hasMesh: (meshName: string) => boolean;
-    updateParticle: (name: string, fn: (particle: BabSolidParticle, index: number) => void) => void;
+    updateParticlesByName: (name: string, fn: (particle: BabSolidParticle, index: number) => void) => void;
     updateParticleByIndex: (index: number, fn: (particle: BabSolidParticle, index: number) => void) => void;
-    updateNextParticle: (fn: (particle: BabSolidParticle, index: number) => void) => void;
+    updateNextParticle: (name: string, fn: (particle: BabSolidParticle, index: number) => void) => void;
+    getNames: () => Iterable<string>;
 };
 export declare const Sps: (scene: BabScene, name: string, options?: Partial<{
     material: string;
