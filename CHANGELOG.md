@@ -2,6 +2,7 @@
 
 
 ## 2025-05-01
+- cleanup vite.config.ts ([f2e983e](https://github.com/mjt-engine/babs/commit/f2e983eead47371a146cbd594279d73ad2177d6d)) by Matt Taylor
 - bump deps ([b659c10](https://github.com/mjt-engine/babs/commit/b659c1044334247b0d39832265564b85a9be8307)) by Matt Taylor
 
 ## 2025-04-30
