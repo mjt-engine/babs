@@ -52,7 +52,7 @@ export const updateStandardMaterial = (
     material.ambientColor = c3(value);
   });
   iff(emissiveColor, (value) => {
-    material.specularColor = c3(value);
+    material.emissiveColor = c3(value);
   });
 
   iff(alpha, (value) => {
