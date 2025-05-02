@@ -37,7 +37,7 @@ importers:
         version: https://codeload.github.com/mjt-engine/magica-voxels/tar.gz/11a83c901b0d400a5f67b25920ed843cc0e8954d
       '@mjt-engine/math':
         specifier: github:mjt-engine/math
-        version: https://codeload.github.com/mjt-engine/math/tar.gz/e628daf47b5aafffe2bff6790223b6fed2c61a1b
+        version: https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303
       '@mjt-engine/noise':
         specifier: github:mjt-engine/noise
         version: https://codeload.github.com/mjt-engine/noise/tar.gz/0de41bdd52303967386374b081fc036372149dc5
@@ -330,9 +330,9 @@ packages:
     resolution: {tarball: https://codeload.github.com/mjt-engine/magica-voxels/tar.gz/11a83c901b0d400a5f67b25920ed843cc0e8954d}
     version: 2025.3.28-1929
 
-  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/e628daf47b5aafffe2bff6790223b6fed2c61a1b':
-    resolution: {tarball: https://codeload.github.com/mjt-engine/math/tar.gz/e628daf47b5aafffe2bff6790223b6fed2c61a1b}
-    version: 2025.5.1-2122
+  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303':
+    resolution: {tarball: https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303}
+    version: 2025.5.1-2154
 
   '@mjt-engine/noise@https://codeload.github.com/mjt-engine/noise/tar.gz/0de41bdd52303967386374b081fc036372149dc5':
     resolution: {tarball: https://codeload.github.com/mjt-engine/noise/tar.gz/0de41bdd52303967386374b081fc036372149dc5}
@@ -1142,7 +1142,7 @@ snapshots:
       '@types/node': 17.0.45
       buffer: 5.7.1
 
-  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/e628daf47b5aafffe2bff6790223b6fed2c61a1b':
+  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303':
     dependencies:
       '@flatten-js/core': 1.6.2
       '@mjt-engine/object': https://codeload.github.com/mjt-engine/object/tar.gz/cf5530e63f97f9ecf37d8b32674818b5c0c614fd

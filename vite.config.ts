@@ -23,6 +23,7 @@ function emitDtsPlugin() {
 
 export default defineConfig({
   build: {
+    target: "esnext",
     sourcemap: true,
     lib: {
       entry: "src/index.ts",
@@ -38,7 +39,6 @@ export default defineConfig({
         // ...Object.keys(peerDependencies || {}),
       ],
     },
-    target: "esnext",
   },
   plugins: [emitDtsPlugin()],
 });
