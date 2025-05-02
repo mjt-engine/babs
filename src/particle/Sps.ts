@@ -26,6 +26,13 @@ export type Sps = {
     name: string,
     fn: (particle: BabSolidParticle, index: number) => void
   ) => void;
+  updateParticleByIndex: (
+    index: number,
+    fn: (particle: BabSolidParticle, index: number) => void
+  ) => void;
+  updateNextParticle: (
+    fn: (particle: BabSolidParticle, index: number) => void
+  ) => void;
 };
 
 export const Sps = (
@@ -34,6 +41,7 @@ export const Sps = (
   options: Partial<{ material: string; onMeshBuild: (mesh: BabMesh) => void }> &
     Parameters<typeof getSolidParticleSystem>[2] = {}
 ): Sps => {
+  let nextId = 0;
   const meshToCounts = new Map<BabMesh, number>();
   const meshToParticleIndexes = new Map<BabMesh, number[]>();
   const meshNameToParticleIndexes = new Map<string, number[]>();
@@ -59,17 +67,22 @@ export const Sps = (
     getInstance: () => {
       return sps;
     },
+    updateNextParticle: (fn) => {
+      mod.updateParticleByIndex(nextId++, fn);
+    },
+    updateParticleByIndex: (index, fn) => {
+      const particle = sps.particles[index];
+      Asserts.assertValue(particle, `particle not found for ${index}`);
+      fn(particle, index);
+    },
     updateParticle: (name, fn) => {
       const indexes = meshNameToParticleIndexes.get(name);
       if (indexes) {
         indexes.forEach((index) => {
-          const particle = sps.particles[index];
-          Asserts.assertValue(particle, `particle not found for ${index}`);
-          fn(particle, index);
+          mod.updateParticleByIndex(index, fn);
         });
       }
     },
-
     removeMesh: (mesh: BabMesh) => {
       meshToCounts.delete(mesh);
       meshToParticleIndexes.delete(mesh);
@@ -143,6 +156,7 @@ export const Sps = (
     },
     update: () => {
       sps.setParticles();
+      nextId = 0;
     },
   };
   return mod;

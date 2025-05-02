@@ -11,6 +11,8 @@ export type Sps = {
     syncParticlestoMeshes: () => void;
     hasMesh: (meshName: string) => boolean;
     updateParticle: (name: string, fn: (particle: BabSolidParticle, index: number) => void) => void;
+    updateParticleByIndex: (index: number, fn: (particle: BabSolidParticle, index: number) => void) => void;
+    updateNextParticle: (fn: (particle: BabSolidParticle, index: number) => void) => void;
 };
 export declare const Sps: (scene: BabScene, name: string, options?: Partial<{
     material: string;
