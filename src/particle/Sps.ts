@@ -53,7 +53,7 @@ export const Sps = (
   let system: BabSolidParticleSystem;
 
   const renewSps = () => {
-    system?.dispose();
+    system?.mesh.dispose(false);
     system = new SolidParticleSystem(name, scene, {
       ...rest,
     });
