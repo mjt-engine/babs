@@ -2,6 +2,7 @@
 
 
 ## 2025-05-04
+- bump BJS to 8.6.1 ([09b3505](https://github.com/mjt-engine/babs/commit/09b3505e54aaeefb8f840bd68012249bcf0e8d4f)) by Matt Taylor
 - mark particles dead by default, alive when updated ([9cdaa48](https://github.com/mjt-engine/babs/commit/9cdaa48dde63b5361fac6f982afd6a3ec3101d6c)) by Matt Taylor
 
 ## 2025-05-02
