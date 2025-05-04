@@ -34,6 +34,7 @@ export type Sps = {
     name: string,
     fn: (particle: BabSolidParticle, index: number) => void
   ) => void;
+  clearParticles: () => void;
   getNames: () => Iterable<string>;
 };
 
@@ -63,6 +64,15 @@ export const Sps = (
 
   const mod: Sps = {
     scene,
+    clearParticles: () => {
+      system.particles.forEach((p, i) => {
+        p.color = TRANSPARENT_COLOR;
+      });
+      system.setParticles();
+      system.particles.forEach((p, i) => {
+        p.alive = false;
+      });
+    },
     getSystem: () => {
       return system;
     },
@@ -115,6 +125,7 @@ export const Sps = (
       meshToCounts.set(mesh, n);
       meshNameToMesh.set(mesh.name, mesh);
       mod.rebuild();
+      mod.clearParticles();
       mesh.setEnabled(false);
     },
     rebuild: () => {
