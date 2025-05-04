@@ -1079,7 +1079,7 @@ const se = (e) => {
   const n = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Map(), { material: l, onMeshBuild: c, ...p } = t;
   let f;
   const d = () => {
-    f?.mesh.dispose(!1), f = new ee(r, e, {
+    f?.mesh?.dispose(!1), f = new ee(r, e, {
       ...p
     });
   };

@@ -2,6 +2,7 @@
 
 
 ## 2025-05-04
+- fix undefined mesh NPE ([03a0790](https://github.com/mjt-engine/babs/commit/03a0790b4d9bcf43c63506202bd2361f085c67f8)) by Matt Taylor
 - dispose of mesh on SPS with recursive ([ffa5a19](https://github.com/mjt-engine/babs/commit/ffa5a19cf815e09e8354311ec9c6f519624de8cd)) by Matt Taylor
 - displose of SPS on renew instead of just the mesh ([9bb35fd](https://github.com/mjt-engine/babs/commit/9bb35fd6990421a455b755b0d7bef7fe4318a2db)) by Matt Taylor
 - bump BJS to 8.6.1 ([09b3505](https://github.com/mjt-engine/babs/commit/09b3505e54aaeefb8f840bd68012249bcf0e8d4f)) by Matt Taylor
