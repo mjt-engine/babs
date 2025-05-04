@@ -2,6 +2,7 @@
 
 
 ## 2025-05-04
+- displose of SPS on renew instead of just the mesh ([9bb35fd](https://github.com/mjt-engine/babs/commit/9bb35fd6990421a455b755b0d7bef7fe4318a2db)) by Matt Taylor
 - bump BJS to 8.6.1 ([09b3505](https://github.com/mjt-engine/babs/commit/09b3505e54aaeefb8f840bd68012249bcf0e8d4f)) by Matt Taylor
 - mark particles dead by default, alive when updated ([9cdaa48](https://github.com/mjt-engine/babs/commit/9cdaa48dde63b5361fac6f982afd6a3ec3101d6c)) by Matt Taylor
 
