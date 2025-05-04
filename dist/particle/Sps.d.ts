@@ -14,6 +14,7 @@ export type Sps = {
     updateParticlesByName: (name: string, fn: (particle: BabSolidParticle, index: number) => void) => void;
     updateParticleByIndex: (index: number, fn: (particle: BabSolidParticle, index: number) => void) => void;
     updateNextParticle: (name: string, fn: (particle: BabSolidParticle, index: number) => void) => void;
+    clearParticles: () => void;
     getNames: () => Iterable<string>;
 };
 export declare const Sps: (scene: BabScene, name: string, options?: Partial<{
