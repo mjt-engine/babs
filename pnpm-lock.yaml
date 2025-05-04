@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@babylonjs/core':
-        specifier: ^8.5.0
-        version: 8.5.0
+        specifier: ^8.6.1
+        version: 8.6.1
       '@babylonjs/inspector':
-        specifier: ^8.5.0
-        version: 8.5.0(@babylonjs/core@8.5.0)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.5.0)(@babylonjs/gui@8.4.0(@babylonjs/core@8.5.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.4.0(@babylonjs/core@8.5.0))(@babylonjs/loaders@8.5.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.5.0))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
+        specifier: ^8.6.1
+        version: 8.6.1(@babylonjs/core@8.6.1)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/loaders@8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
       '@babylonjs/loaders':
-        specifier: ^8.5.0
-        version: 8.5.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0)
+        specifier: ^8.6.1
+        version: 8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)
       '@mjt-engine/animate':
         specifier: github:mjt-engine/animate
         version: https://codeload.github.com/mjt-engine/animate/tar.gz/3a7302f491c51e81b0188002d1f2c0aa0c8c991a
@@ -37,7 +37,7 @@ importers:
         version: https://codeload.github.com/mjt-engine/magica-voxels/tar.gz/11a83c901b0d400a5f67b25920ed843cc0e8954d
       '@mjt-engine/math':
         specifier: github:mjt-engine/math
-        version: https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303
+        version: https://codeload.github.com/mjt-engine/math/tar.gz/a249367f68634dced61478917a3061d5a3379b61
       '@mjt-engine/noise':
         specifier: github:mjt-engine/noise
         version: https://codeload.github.com/mjt-engine/noise/tar.gz/0de41bdd52303967386374b081fc036372149dc5
@@ -78,8 +78,8 @@ importers:
 
 packages:
 
-  '@babylonjs/core@8.5.0':
-    resolution: {integrity: sha512-20Lmq6v+30tyTwnnmCtRXknZ32a3NpnNHsBUo4mfZrC4Y+0QkBQ1bdj4YraoeSOUdPu/C88C75q5KWlRLVEYsg==}
+  '@babylonjs/core@8.6.1':
+    resolution: {integrity: sha512-7/VhqaDPdtav0vGoGJ7XwGGzhcoeY4M3/C4ROsqHdD8lpsFvG94CDzmIRON+FGSB3mOCB59Vs84SPSpW18Unlg==}
 
   '@babylonjs/gui-editor@8.4.0':
     resolution: {integrity: sha512-5ggVm87zjqgmoqygQRrLQOGKiwAPMjq+hf8eVH3wmPk5MrF4CJzQjYxr2whj3cqvUGTej5e6tKRXPfwGcLfvkA==}
@@ -94,8 +94,8 @@ packages:
     peerDependencies:
       '@babylonjs/core': ^8.0.0
 
-  '@babylonjs/inspector@8.5.0':
-    resolution: {integrity: sha512-yBWNBgRkgaZ3SXHMkutviglymx4DPPOINV2W5AFDIzlI4WCkhdte9R+JWnd0JGCh1NzJijDVluqx7OTXXID5Lw==}
+  '@babylonjs/inspector@8.6.1':
+    resolution: {integrity: sha512-vsnOT5UMxQFHDBBDNt5WenojObC8/ByOsO3JYLrU1Qc+puw2Hc/63xIB6+oMCorBku6lt7Mh/J9PHrtRGSjBDA==}
     peerDependencies:
       '@babylonjs/core': ^8.0.0
       '@babylonjs/gui': ^8.0.0
@@ -106,8 +106,8 @@ packages:
       '@types/react': '>=16.7.3'
       '@types/react-dom': '>=16.0.9'
 
-  '@babylonjs/loaders@8.5.0':
-    resolution: {integrity: sha512-OoSGFOka7Pcn/6Sf8v3/1ZH3OyYeLUfc/cLcnM9az0Yjdk/PzC45wRcMSf/xhhHlKVe7Vvsb3o4y6mSMytFwxA==}
+  '@babylonjs/loaders@8.6.1':
+    resolution: {integrity: sha512-Kv5gYJz5KNLF3txBFDrrxT77qOeHF2msKBI6dVAgRFIuJ60CaC881gWOZl3TkgMDDlUrtyzGMTd8A+coBBAIDg==}
     peerDependencies:
       '@babylonjs/core': ^8.0.0
       babylonjs-gltf2interface: ^8.0.0
@@ -330,9 +330,9 @@ packages:
     resolution: {tarball: https://codeload.github.com/mjt-engine/magica-voxels/tar.gz/11a83c901b0d400a5f67b25920ed843cc0e8954d}
     version: 2025.3.28-1929
 
-  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303':
-    resolution: {tarball: https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303}
-    version: 2025.5.1-2154
+  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/a249367f68634dced61478917a3061d5a3379b61':
+    resolution: {tarball: https://codeload.github.com/mjt-engine/math/tar.gz/a249367f68634dced61478917a3061d5a3379b61}
+    version: 2025.5.2-1412
 
   '@mjt-engine/noise@https://codeload.github.com/mjt-engine/noise/tar.gz/0de41bdd52303967386374b081fc036372149dc5':
     resolution: {tarball: https://codeload.github.com/mjt-engine/noise/tar.gz/0de41bdd52303967386374b081fc036372149dc5}
@@ -966,45 +966,45 @@ packages:
 
 snapshots:
 
-  '@babylonjs/core@8.5.0': {}
+  '@babylonjs/core@8.6.1': {}
 
-  '@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.5.0)(@babylonjs/gui@8.4.0(@babylonjs/core@8.5.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
+  '@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
     dependencies:
-      '@babylonjs/core': 8.5.0
-      '@babylonjs/gui': 8.4.0(@babylonjs/core@8.5.0)
+      '@babylonjs/core': 8.6.1
+      '@babylonjs/gui': 8.4.0(@babylonjs/core@8.6.1)
       '@types/react': 19.1.2
       '@types/react-dom': 19.1.2(@types/react@19.1.2)
 
-  '@babylonjs/gui@8.4.0(@babylonjs/core@8.5.0)':
+  '@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1)':
     dependencies:
-      '@babylonjs/core': 8.5.0
+      '@babylonjs/core': 8.6.1
 
-  '@babylonjs/inspector@8.5.0(@babylonjs/core@8.5.0)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.5.0)(@babylonjs/gui@8.4.0(@babylonjs/core@8.5.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.4.0(@babylonjs/core@8.5.0))(@babylonjs/loaders@8.5.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.5.0))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
+  '@babylonjs/inspector@8.6.1(@babylonjs/core@8.6.1)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/loaders@8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
     dependencies:
-      '@babylonjs/core': 8.5.0
-      '@babylonjs/gui': 8.4.0(@babylonjs/core@8.5.0)
-      '@babylonjs/gui-editor': 8.4.0(@babylonjs/core@8.5.0)(@babylonjs/gui@8.4.0(@babylonjs/core@8.5.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
-      '@babylonjs/loaders': 8.5.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0)
-      '@babylonjs/materials': 8.4.0(@babylonjs/core@8.5.0)
-      '@babylonjs/serializers': 8.4.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0)
+      '@babylonjs/core': 8.6.1
+      '@babylonjs/gui': 8.4.0(@babylonjs/core@8.6.1)
+      '@babylonjs/gui-editor': 8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
+      '@babylonjs/loaders': 8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)
+      '@babylonjs/materials': 8.4.0(@babylonjs/core@8.6.1)
+      '@babylonjs/serializers': 8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)
       '@fortawesome/fontawesome-svg-core': 6.7.2
       '@fortawesome/free-regular-svg-icons': 6.7.2
       '@fortawesome/free-solid-svg-icons': 6.7.2
       '@types/react': 19.1.2
       '@types/react-dom': 19.1.2(@types/react@19.1.2)
 
-  '@babylonjs/loaders@8.5.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0)':
+  '@babylonjs/loaders@8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)':
     dependencies:
-      '@babylonjs/core': 8.5.0
+      '@babylonjs/core': 8.6.1
       babylonjs-gltf2interface: 8.4.0
 
-  '@babylonjs/materials@8.4.0(@babylonjs/core@8.5.0)':
+  '@babylonjs/materials@8.4.0(@babylonjs/core@8.6.1)':
     dependencies:
-      '@babylonjs/core': 8.5.0
+      '@babylonjs/core': 8.6.1
 
-  '@babylonjs/serializers@8.4.0(@babylonjs/core@8.5.0)(babylonjs-gltf2interface@8.4.0)':
+  '@babylonjs/serializers@8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)':
     dependencies:
-      '@babylonjs/core': 8.5.0
+      '@babylonjs/core': 8.6.1
       babylonjs-gltf2interface: 8.4.0
 
   '@esbuild/aix-ppc64@0.25.3':
@@ -1142,7 +1142,7 @@ snapshots:
       '@types/node': 17.0.45
       buffer: 5.7.1
 
-  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/6fae25491caa0d2a91fd91818a3b6dfe65a69303':
+  '@mjt-engine/math@https://codeload.github.com/mjt-engine/math/tar.gz/a249367f68634dced61478917a3061d5a3379b61':
     dependencies:
       '@flatten-js/core': 1.6.2
       '@mjt-engine/object': https://codeload.github.com/mjt-engine/object/tar.gz/cf5530e63f97f9ecf37d8b32674818b5c0c614fd
