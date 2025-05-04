@@ -86,6 +86,7 @@ export const Sps = (
     },
     updateParticleByIndex: (index, fn) => {
       const particle = system.particles[index];
+      particle.alive = true;
       Asserts.assertValue(particle, `particle not found for ${index}`);
       fn(particle, index);
     },
@@ -172,6 +173,9 @@ export const Sps = (
       system.setParticles();
       nextIndexMap.forEach((_, meshName) => {
         nextIndexMap.set(meshName, 0);
+      });
+      system.particles.forEach((particle, index) => {
+        particle.alive = false;
       });
     },
   };
