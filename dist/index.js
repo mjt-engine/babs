@@ -28,8 +28,8 @@ const Te = (e, r) => {
     }
   } = r, s = e.alpha, i = e.beta, l = e.radius;
   y(e.target);
-  const c = (h = 0, d = 0, g = 0) => {
-    Te(e, [h, d, g]), a();
+  const c = (g = 0, u = 0, h = 0) => {
+    Te(e, [g, u, h]), a();
   }, p = $.listenToKey(
     {
       // Y up
@@ -77,26 +77,26 @@ const Te = (e, r) => {
   ), f = {
     lastPosition: void 0
   };
-  o.addEventListener("pointerdown", (h) => {
-    h.buttons === 4 && (f.lastPosition = h);
-  }), o.addEventListener("pointermove", (h) => {
-    if (h.buttons !== 4)
+  o.addEventListener("pointerdown", (g) => {
+    g.buttons === 4 && (f.lastPosition = g);
+  }), o.addEventListener("pointermove", (g) => {
+    if (g.buttons !== 4)
       return;
-    const { lastPosition: d = h } = f;
-    f.lastPosition = h;
-    const g = F.subtract2(d, h), [m, M] = fe(g);
-    if (h.buttons === 4 && h.shiftKey) {
+    const { lastPosition: u = g } = f;
+    f.lastPosition = g;
+    const h = F.subtract2(u, g), [m, M] = fe(h);
+    if (g.buttons === 4 && g.shiftKey) {
       e.beta = e.beta + M * n;
       return;
     }
-    h.buttons === 4 && (c(M * n, -M * n, 0), c(m * n, m * n, 0));
+    g.buttons === 4 && (c(M * n, -M * n, 0), c(m * n, m * n, 0));
   });
-  const u = $.listenToMouse(
+  const d = $.listenToMouse(
     {
-      wheel: (h) => {
-        if (h instanceof WheelEvent) {
-          const d = h.deltaY * n;
-          e.radius += d, a();
+      wheel: (g) => {
+        if (g instanceof WheelEvent) {
+          const u = g.deltaY * n;
+          e.radius += u, a();
         }
       }
     },
@@ -104,7 +104,7 @@ const Te = (e, r) => {
       parent: o
     }
   );
-  return [p, u];
+  return [p, d];
 }, Se = ({
   width: e = 320,
   height: r = 320
@@ -230,38 +230,38 @@ const Te = (e, r) => {
     maxZ: c,
     mode: p,
     orthoTop: f,
-    orthoBottom: u,
-    orthoLeft: h,
-    orthoRight: d
+    orthoBottom: d,
+    orthoLeft: g,
+    orthoRight: u
   } = r;
-  w(s, (g) => {
-    e.position = y(g);
-  }), w(l, (g) => {
-    e.minZ = g;
-  }), w(c, (g) => {
-    e.maxZ = g;
-  }), w(p, (g) => {
-    e.mode = he[g];
-  }), w(p, (g) => {
-    e.mode = he[g];
-  }), w(f, (g) => {
-    e.orthoTop = g;
-  }), w(u, (g) => {
-    e.orthoBottom = g;
-  }), w(h, (g) => {
-    e.orthoLeft = g;
-  }), w(d, (g) => {
-    e.orthoRight = g;
-  }), e instanceof Ye && (w(i, (g) => {
-    e.rotation = y(g);
-  }), w(a, (g) => {
-    e.target = y(g);
-  })), e instanceof j && (w(t, (g) => {
-    e.alpha = g;
-  }), w(n, (g) => {
-    e.beta = g;
-  }), w(o, (g) => {
-    e.radius = g;
+  w(s, (h) => {
+    e.position = y(h);
+  }), w(l, (h) => {
+    e.minZ = h;
+  }), w(c, (h) => {
+    e.maxZ = h;
+  }), w(p, (h) => {
+    e.mode = he[h];
+  }), w(p, (h) => {
+    e.mode = he[h];
+  }), w(f, (h) => {
+    e.orthoTop = h;
+  }), w(d, (h) => {
+    e.orthoBottom = h;
+  }), w(g, (h) => {
+    e.orthoLeft = h;
+  }), w(u, (h) => {
+    e.orthoRight = h;
+  }), e instanceof Ye && (w(i, (h) => {
+    e.rotation = y(h);
+  }), w(a, (h) => {
+    e.target = y(h);
+  })), e instanceof j && (w(t, (h) => {
+    e.alpha = h;
+  }), w(n, (h) => {
+    e.beta = h;
+  }), w(o, (h) => {
+    e.radius = h;
   }));
 }, gt = (e, r, t = {}) => {
   const n = re(e, r, () => {
@@ -335,30 +335,30 @@ const Te = (e, r) => {
     ambientColor: p,
     emissiveColor: f
   } = t;
-  w(o, (u) => {
-    const h = e.getTextureByName(u);
-    r.diffuseTexture = h;
-  }), w(a, (u) => {
-    const h = e.getTextureByName(u);
-    r.emissiveTexture = h;
-  }), w(s, (u) => {
-    const h = e.getTextureByName(u);
-    r.ambientTexture = h;
-  }), w(i, (u) => {
-    const h = e.getTextureByName(u);
-    r.opacityTexture = h;
-  }), w(l, (u) => {
-    r.diffuseColor = S(u);
-    const h = E.from(u).alpha();
-    h < 1 && (r.alpha = h);
-  }), w(c, (u) => {
-    r.specularColor = S(u);
-  }), w(p, (u) => {
-    r.ambientColor = S(u);
-  }), w(f, (u) => {
-    r.emissiveColor = S(u);
-  }), w(n, (u) => {
-    r.alpha = u;
+  w(o, (d) => {
+    const g = e.getTextureByName(d);
+    r.diffuseTexture = g;
+  }), w(a, (d) => {
+    const g = e.getTextureByName(d);
+    r.emissiveTexture = g;
+  }), w(s, (d) => {
+    const g = e.getTextureByName(d);
+    r.ambientTexture = g;
+  }), w(i, (d) => {
+    const g = e.getTextureByName(d);
+    r.opacityTexture = g;
+  }), w(l, (d) => {
+    r.diffuseColor = S(d);
+    const g = E.from(d).alpha();
+    g < 1 && (r.alpha = g);
+  }), w(c, (d) => {
+    r.specularColor = S(d);
+  }), w(p, (d) => {
+    r.ambientColor = S(d);
+  }), w(f, (d) => {
+    r.emissiveColor = S(d);
+  }), w(n, (d) => {
+    r.alpha = d;
   });
 }, ge = (e, r, t) => {
   r instanceof U && xt(e, r, t);
@@ -476,10 +476,10 @@ const Te = (e, r) => {
   const r = e.getBoundingInfo().boundingBox.vectors, t = e.getScene(), n = t.getEngine().getRenderingCanvas();
   if (!n)
     throw new Error("No canvas for scene", { cause: t });
-  const o = e.getWorldMatrix(), a = t.getTransformMatrix(), s = t.activeCamera.viewport, i = r.map((h) => {
-    const d = Y.Project(h, o, a, s);
-    return d.x = d.x * n.clientWidth, d.y = d.y * n.clientHeight, d;
-  }), [l, c] = ue(i, (h) => h.x), [p, f] = ue(i, (h) => h.y);
+  const o = e.getWorldMatrix(), a = t.getTransformMatrix(), s = t.activeCamera.viewport, i = r.map((g) => {
+    const u = Y.Project(g, o, a, s);
+    return u.x = u.x * n.clientWidth, u.y = u.y * n.clientHeight, u;
+  }), [l, c] = ue(i, (g) => g.x), [p, f] = ue(i, (g) => g.y);
   return {
     width: c - l,
     height: f - p,
@@ -537,7 +537,7 @@ const Te = (e, r) => {
     updatable: s = !1,
     useVertexAlpha: i,
     instance: l
-  } = t, c = o.map((u, h) => n[h] ?? a).map((u) => V(u)), p = o.map((u) => y(u)), f = v.CreateLines(r, {
+  } = t, c = o.map((d, g) => n[g] ?? a).map((d) => V(d)), p = o.map((d) => y(d)), f = v.CreateLines(r, {
     points: p,
     colors: c,
     updatable: s,
@@ -571,23 +571,23 @@ const Te = (e, r) => {
 }), _t = (e) => {
   const { XYZI: r, SIZE: t } = e, n = t.z, o = 1 / n / 2, a = 1 / n / 2, s = 1 / n / 2;
   return r.map((i) => {
-    const [l, c, p] = k(i), f = (l - t.x / 2) / n + o, u = (c - t.y / 2) / n + a, h = (p - t.z / 2) / -n - s;
-    return at(st(f, u, h), i.i);
+    const [l, c, p] = k(i), f = (l - t.x / 2) / n + o, d = (c - t.y / 2) / n + a, g = (p - t.z / 2) / -n - s;
+    return at(st(f, d, g), i.i);
   });
 }, Ie = (e, r, t) => {
   const { XYZI: n, RGBA: o, SIZE: a } = r, s = o.map((f) => {
-    const { r: u, g: h, b: d, a: g } = f;
-    return E.builder({ color: [u, h, d, g], model: "rgba" }).toString();
+    const { r: d, g, b: u, a: h } = f;
+    return E.builder({ color: [d, g, u, h], model: "rgba" }).toString();
   }), i = new ee(t, e), l = 1 / a.z, c = v.CreateBox("temp-box", {
     width: l,
     height: l,
     depth: l
   });
-  i.addShape(c, n.length), i.buildMesh(), c.dispose(), _t(r).forEach((f, u) => {
-    const [h, d] = f, g = i.particles[u];
-    g.position = y(h);
-    const m = s[d];
-    g.color = V(m);
+  i.addShape(c, n.length), i.buildMesh(), c.dispose(), _t(r).forEach((f, d) => {
+    const [g, u] = f, h = i.particles[d];
+    h.position = y(g);
+    const m = s[u];
+    h.color = V(m);
   });
   const p = D(e, "vox-material", "standard");
   return p.specularColor = S("black"), i.mesh.material = p, i.setParticles(), i;
@@ -943,26 +943,26 @@ const se = (e) => {
   } = t;
   e.hasAlpha = !0;
   let p = c, f = `${i} ${p}px ${s}`;
-  const u = e.getContext();
-  u.font = f;
-  let h = u.measureText(r);
-  p = c / h.width * c, f = `${i} ${p}px ${s}`, u.font = f;
-  const d = 0;
-  h = u.measureText(r);
-  const g = h.fontBoundingBoxAscent ?? 0, m = c - (c - g) / 2;
-  u.lineWidth = p / 2;
+  const d = e.getContext();
+  d.font = f;
+  let g = d.measureText(r);
+  p = c / g.width * c, f = `${i} ${p}px ${s}`, d.font = f;
+  const u = 0;
+  g = d.measureText(r);
+  const h = g.fontBoundingBoxAscent ?? 0, m = c - (c - h) / 2;
+  d.lineWidth = p / 2;
   const M = {
     x: 0,
     y: m - p,
     width: c,
-    height: g * 2
+    height: h * 2
   };
   if (x(n)) {
-    u.fillStyle = E.from(n).toString();
+    d.fillStyle = E.from(n).toString();
     const { x: T, y: A, width: Z, height: ce } = M;
-    u.fillRect(T, A, Z, ce);
+    d.fillRect(T, A, Z, ce);
   }
-  return o && (u.strokeStyle = l, u.strokeText(r, d, m)), u.fillStyle = a, u.fillText(r, d, m), e.hasAlpha = !0, e.update(), M;
+  return o && (d.strokeStyle = l, d.strokeText(r, u, m)), d.fillStyle = a, d.fillText(r, u, m), e.hasAlpha = !0, e.update(), M;
 }, Oe = {
   linearNearest: L.LINEAR_NEAREST,
   nearestNearest: L.NEAREST_NEAREST,
@@ -1078,50 +1078,50 @@ const se = (e) => {
 })), gr = (e, r, t = {}) => {
   const n = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Map(), { material: l, onMeshBuild: c, ...p } = t;
   let f;
-  const u = () => {
+  const d = () => {
     f?.mesh?.dispose(), f = new ee(r, e, {
       ...p
     });
   };
-  u();
-  const h = {
+  d();
+  const g = {
     scene: e,
     getSystem: () => f,
     getNames: () => s.keys(),
-    hasMesh: (d) => s.has(d),
+    hasMesh: (u) => s.has(u),
     getInstance: () => f,
-    updateNextParticle: (d, g) => {
+    updateNextParticle: (u, h) => {
       const m = _.assertValue(
-        s.get(d)
-      ), M = _.assertValue(n.get(d)), T = m[M];
-      h.updateParticleByIndex(T, g), n.set(d, M + 1);
+        s.get(u)
+      ), M = _.assertValue(n.get(u)), T = m[M];
+      g.updateParticleByIndex(T, h), n.set(u, M + 1);
     },
-    updateParticleByIndex: (d, g) => {
-      const m = f.particles[d];
-      _.assertValue(m, `particle not found for ${d}`), g(m, d);
+    updateParticleByIndex: (u, h) => {
+      const m = f.particles[u];
+      m.alive = !0, _.assertValue(m, `particle not found for ${u}`), h(m, u);
     },
-    updateParticlesByName: (d, g) => {
-      const m = s.get(d);
+    updateParticlesByName: (u, h) => {
+      const m = s.get(u);
       m && m.forEach((M) => {
-        h.updateParticleByIndex(M, g);
+        g.updateParticleByIndex(M, h);
       });
     },
-    removeMesh: (d) => {
-      o.delete(d), a.delete(d), s.delete(d.name), i.delete(d.name), h.rebuild();
+    removeMesh: (u) => {
+      o.delete(u), a.delete(u), s.delete(u.name), i.delete(u.name), g.rebuild();
     },
-    addMesh: (d, g = 1) => {
-      if (o.has(d))
+    addMesh: (u, h = 1) => {
+      if (o.has(u))
         throw new Error(
-          `Mesh ${d.name} already exists in the Sps. Use removeMesh to remove it first.`
+          `Mesh ${u.name} already exists in the Sps. Use removeMesh to remove it first.`
         );
-      n.set(d.name, 0), o.set(d, g), i.set(d.name, d), h.rebuild(), d.setEnabled(!1);
+      n.set(u.name, 0), o.set(u, h), i.set(u.name, u), g.rebuild(), u.setEnabled(!1);
     },
     rebuild: () => {
-      u(), a.clear();
+      d(), a.clear();
       try {
-        o.forEach((g, m) => {
-          f.addShape(m, g);
-          for (let M = 0; M < g; M++) {
+        o.forEach((h, m) => {
+          f.addShape(m, h);
+          for (let M = 0; M < h; M++) {
             const T = f.particles.length - 1 - M;
             a.set(m, [
               ...a.get(m) || [],
@@ -1132,19 +1132,19 @@ const se = (e) => {
             ]);
           }
         });
-        const d = f.buildMesh();
-        l && (d.material = De.getMaterial(e, l)), c?.(d);
-      } catch (d) {
-        console.error(d);
+        const u = f.buildMesh();
+        l && (u.material = De.getMaterial(e, l)), c?.(u);
+      } catch (u) {
+        console.error(u);
       }
     },
     syncParticlestoMeshes: () => {
-      a.forEach((d, g) => {
-        for (let m = 0; m < d.length; m++) {
-          const M = d[m], T = _.assertValue(f.particles[M]);
-          if (T.position.copyFrom(g.position), T.rotation.copyFrom(g.rotation), T.scaling.copyFrom(g.scaling), g.material instanceof U) {
-            const A = g.material.diffuseColor;
-            T.color = new Q(A.r, A.g, A.b, g.material.alpha);
+      a.forEach((u, h) => {
+        for (let m = 0; m < u.length; m++) {
+          const M = u[m], T = _.assertValue(f.particles[M]);
+          if (T.position.copyFrom(h.position), T.rotation.copyFrom(h.rotation), T.scaling.copyFrom(h.scaling), h.material instanceof U) {
+            const A = h.material.diffuseColor;
+            T.color = new Q(A.r, A.g, A.b, h.material.alpha);
           }
         }
       });
@@ -1153,12 +1153,14 @@ const se = (e) => {
       o.clear(), a.clear(), s.clear(), i.clear(), n.clear(), f?.mesh?.dispose(), f.dispose();
     },
     update: () => {
-      f.setParticles(), n.forEach((d, g) => {
-        n.set(g, 0);
+      f.setParticles(), n.forEach((u, h) => {
+        n.set(h, 0);
+      }), f.particles.forEach((u, h) => {
+        u.alive = !1;
       });
     }
   };
-  return h;
+  return g;
 }, fr = {
   getSolidParticleSystem: hr,
   getParticleSystem: $e,
@@ -1207,33 +1209,33 @@ async function Tr({
   o.width = t, o.height = t;
   const a = o.getContext("2d"), s = {}, i = [];
   let l = 0, c = 0, p = 0;
-  for (const u of r) {
-    const h = u.endsWith(".png") ? u : `${u}.png`, d = await Cr(`${e}/${h}`), g = d.width + n * 2, m = d.height + n * 2;
-    if (l + g > t && (l = 0, c += p, p = 0), c + m > t)
-      throw new Error(`Not enough space in atlas for image: ${h}`);
-    a.drawImage(d, l + n, c + n), s[h] = {
+  for (const d of r) {
+    const g = d.endsWith(".png") ? d : `${d}.png`, u = await Cr(`${e}/${g}`), h = u.width + n * 2, m = u.height + n * 2;
+    if (l + h > t && (l = 0, c += p, p = 0), c + m > t)
+      throw new Error(`Not enough space in atlas for image: ${g}`);
+    a.drawImage(u, l + n, c + n), s[g] = {
       frame: {
         x: l + n,
         y: c + n,
-        w: d.width,
-        h: d.height
+        w: u.width,
+        h: u.height
       }
     }, i.push({
-      filename: h,
+      filename: g,
       frame: {
         x: l + n,
         y: c + n,
-        w: d.width,
-        h: d.height
+        w: u.width,
+        h: u.height
       },
       rotated: !1,
       trimmed: !1,
-      spriteSourceSize: { x: 0, y: 0, w: d.width, h: d.height },
-      sourceSize: { w: d.width, h: d.height }
-    }), l += g, p = Math.max(p, m);
+      spriteSourceSize: { x: 0, y: 0, w: u.width, h: u.height },
+      sourceSize: { w: u.width, h: u.height }
+    }), l += h, p = Math.max(p, m);
   }
   const f = await new Promise(
-    (u) => o.toBlob((h) => u(h), "image/png")
+    (d) => o.toBlob((g) => d(g), "image/png")
   );
   return {
     canvas: o,
@@ -1249,7 +1251,7 @@ async function Cr(e) {
   });
 }
 const Sr = (e, r, t = {}) => {
-  const n = e?.spriteManagers?.find((u) => u.name === r);
+  const n = e?.spriteManagers?.find((d) => d.name === r);
   if (x(n))
     return n;
   const {
@@ -1264,12 +1266,12 @@ const Sr = (e, r, t = {}) => {
   let f;
   try {
     s && (f = URL.createObjectURL(s));
-    const u = x(a) ? a : f;
-    if (N(u))
+    const d = x(a) ? a : f;
+    if (N(d))
       throw new Error("altasUrl or atlasBlob is required", { cause: t });
     return new tt(
       r,
-      u,
+      d,
       o,
       e,
       c,
@@ -1281,7 +1283,7 @@ const Sr = (e, r, t = {}) => {
     f && URL.revokeObjectURL(f);
   }
 }, Fe = (e, r, t = {}) => {
-  const n = e?.spriteManagers?.find((d) => d.name === r);
+  const n = e?.spriteManagers?.find((u) => u.name === r);
   if (x(n))
     return n;
   const {
@@ -1293,17 +1295,17 @@ const Sr = (e, r, t = {}) => {
     samplingMode: c,
     fromPacked: p,
     spriteJSON: f,
-    options: u
+    options: d
   } = t;
-  let h;
+  let g;
   try {
-    i && (h = URL.createObjectURL(i));
-    const d = x(s) ? s : h;
-    if (N(d))
+    i && (g = URL.createObjectURL(i));
+    const u = x(s) ? s : g;
+    if (N(u))
       throw new Error("altasUrl or atlasBlob is required", { cause: t });
     return new rt(
       r,
-      d,
+      u,
       o,
       a,
       e,
@@ -1311,10 +1313,10 @@ const Sr = (e, r, t = {}) => {
       c,
       p,
       f,
-      u
+      d
     );
   } finally {
-    h && URL.revokeObjectURL(h);
+    g && URL.revokeObjectURL(g);
   }
 }, Er = (e, r, t) => {
   const n = ct(Fe(e, t)), o = n?.sprites?.find((a) => a.name === r);
@@ -1350,7 +1352,7 @@ const Sr = (e, r, t = {}) => {
       t() < i && l();
       return;
     }
-    const p = c / o, f = e.position, [u, h, d] = k(f), g = (We) => (t() * n * 2 - n) * (p / 4) + We, [m, M] = [g(u), g(h)], T = y([m, M, a]), [A, Z, ce] = k(F.midPoint3(f, T)), Ge = y(A, Z, d - t() * p * 3), Ve = {
+    const p = c / o, f = e.position, [d, g, u] = k(f), h = (We) => (t() * n * 2 - n) * (p / 4) + We, [m, M] = [h(d), h(g)], T = y([m, M, a]), [A, Z, ce] = k(F.midPoint3(f, T)), Ge = y(A, Z, u - t() * p * 3), Ve = {
       path: ot.CreateCatmullRomSpline([f, Ge, T], s).getPoints().reverse(),
       bounces: c - 1
       // rotationAxis: [2 * random() - 1, 2 * random() - 1, 2 * random() - 1],
@@ -1517,26 +1519,26 @@ const vr = (e, r, t) => {
     o.push(t), r[n] = o;
   }), r;
 }, Ar = (e, r, t) => {
-  const { XYZI: n, RGBA: o } = r, a = o.map((u) => {
-    const { r: h, g: d, b: g, a: m } = u;
-    return E.builder({ color: [h, d, g, m], model: "rgba" }).toString();
-  }), s = n.map((u, h) => {
-    const d = a[u.i], [g, m, M] = k(u), T = ve(
+  const { XYZI: n, RGBA: o } = r, a = o.map((d) => {
+    const { r: g, g: u, b: h, a: m } = d;
+    return E.builder({ color: [g, u, h, m], model: "rgba" }).toString();
+  }), s = n.map((d, g) => {
+    const u = a[d.i], [h, m, M] = k(d), T = ve(
       e,
-      `voxel-merged-${d}-${Rr(u)}`,
+      `voxel-merged-${u}-${Rr(d)}`,
       {
-        position: [g, m, M],
+        position: [h, m, M],
         // color,
         // material: `voxel-merged-material-${color}`,
         material: "voxel-material",
-        colors: it.from(6).map(() => d)
+        colors: it.from(6).map(() => u)
       }
     );
     return T.setEnabled(!1), T;
-  }), i = Ir(s), l = Object.values(i).map((u) => Ae(u)), c = new I(`merged-${t}`, e);
-  l.filter(x).forEach((u) => u.parent = c);
+  }), i = Ir(s), l = Object.values(i).map((d) => Ae(d)), c = new I(`merged-${t}`, e);
+  l.filter(x).forEach((d) => d.parent = c);
   const p = D(e, "voxel-material", "standard");
-  l.filter(x).forEach((u) => u.material = p), c.metadata = {
+  l.filter(x).forEach((d) => d.material = p), c.metadata = {
     voxels: s
   }, C.AddTagsTo(c, "merged");
   const f = new I(t, e);
@@ -1579,8 +1581,8 @@ const vr = (e, r, t) => {
     }
   }, i.initParticles(), i.setParticles(), { scene: t, update: () => {
     const p = Math.sin(Date.now() * 5e-3);
-    i.particles.forEach((f, u) => {
-      u > 20 ? (f.rotation.x = p, o.alpha = p, o.diffuseTexture = s) : f.rotation.y = p;
+    i.particles.forEach((f, d) => {
+      d > 20 ? (f.rotation.x = p, o.alpha = p, o.diffuseTexture = s) : f.rotation.y = p;
     }), i.setParticles();
   } };
 }, Lr = ({
@@ -1618,7 +1620,7 @@ const vr = (e, r, t) => {
     c.position.x = b.Scalar.RandomRange(-20, 20), c.position.y = b.Scalar.RandomRange(-20, 20), c.position.z = b.Scalar.RandomRange(-20, 20);
   }), { scene: t, update: () => {
     const c = Math.sin(Date.now() * 5e-3), p = ut.noiseStream(0);
-    i.updateParticlesByName("box1", (f, u) => {
+    i.updateParticlesByName("box1", (f, d) => {
       f.color = new b.Color4(p(), p(), p(), 0.5), Math.random() > 0.5 ? f.rotation.x = p() * c : f.rotation.y = p() * c;
     }), i.update();
   } };
