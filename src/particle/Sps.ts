@@ -53,7 +53,7 @@ export const Sps = (
   let system: BabSolidParticleSystem;
 
   const renewSps = () => {
-    system?.mesh?.dispose();
+    system?.dispose();
     system = new SolidParticleSystem(name, scene, {
       ...rest,
     });
@@ -86,8 +86,8 @@ export const Sps = (
     },
     updateParticleByIndex: (index, fn) => {
       const particle = system.particles[index];
-      particle.alive = true;
       Asserts.assertValue(particle, `particle not found for ${index}`);
+      particle.alive = true;
       fn(particle, index);
     },
     updateParticlesByName: (name, fn) => {
@@ -174,7 +174,7 @@ export const Sps = (
       nextIndexMap.forEach((_, meshName) => {
         nextIndexMap.set(meshName, 0);
       });
-      system.particles.forEach((particle, index) => {
+      system.particles.forEach((particle) => {
         particle.alive = false;
       });
     },
