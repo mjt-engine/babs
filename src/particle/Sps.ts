@@ -176,8 +176,11 @@ export const Sps = (
       });
       system.particles.forEach((particle) => {
         particle.alive = false;
+        particle.color = TRANSPARENT_COLOR;
       });
     },
   };
   return mod;
 };
+
+const TRANSPARENT_COLOR = new Color4(0, 0, 0, 0);
