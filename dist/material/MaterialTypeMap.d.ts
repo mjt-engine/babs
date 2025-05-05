@@ -1,6 +1,5 @@
-import type { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
-import type { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
+import { BabPbrMaterial, BabStandardMaterial } from "../type/BabMaterial";
 export type MaterialTypeMap = {
-    standard: StandardMaterial;
-    pbr: PBRMaterial;
+    standard: BabStandardMaterial;
+    pbr: BabPbrMaterial;
 };
