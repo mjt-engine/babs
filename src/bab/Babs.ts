@@ -1,5 +1,6 @@
 import { attachArcRotateCameraControls } from "../camera/attachArcRotateCameraControls";
 import { createWebGlEngine } from "../engine/createWebglEngine";
+import { helloVrWorld } from "../vr/hellowVrWorld";
 import { c3 } from "./c3";
 import { c4 } from "./c4";
 import { createCanvas } from "./createCanvas";
@@ -13,5 +14,6 @@ export const Babs = {
   c3,
   c4,
   helloWorld,
+  helloVrWorld,
   attachEditorControls: attachArcRotateCameraControls,
 };

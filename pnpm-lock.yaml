@@ -11,9 +11,12 @@ importers:
       '@babylonjs/core':
         specifier: ^8.6.1
         version: 8.6.1
+      '@babylonjs/gui':
+        specifier: ^8.11.0
+        version: 8.11.0(@babylonjs/core@8.6.1)
       '@babylonjs/inspector':
         specifier: ^8.6.1
-        version: 8.6.1(@babylonjs/core@8.6.1)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/loaders@8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
+        version: 8.6.1(@babylonjs/core@8.6.1)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.11.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.11.0(@babylonjs/core@8.6.1))(@babylonjs/loaders@8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
       '@babylonjs/loaders':
         specifier: ^8.6.1
         version: 8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)
@@ -89,8 +92,8 @@ packages:
       '@types/react': '>=16.7.3'
       '@types/react-dom': '>=16.0.9'
 
-  '@babylonjs/gui@8.4.0':
-    resolution: {integrity: sha512-tFG/rpN2Wf9Y7/EXEOqz1EBtFOVkWI9Ui78ezDy0T0fcXFQ8ALp/lfcDpG4+hx2Qa1fOEZPlfCEUxMYWt+Q2Gw==}
+  '@babylonjs/gui@8.11.0':
+    resolution: {integrity: sha512-TIQ6GJ7/nIyJEgBtTxR4JiMsG6IdPuVRbbZAJOAirryTY9MypEa7XsFZdzH4nmg0bjYGvRoLstOsC3rbMQYU3g==}
     peerDependencies:
       '@babylonjs/core': ^8.0.0
 
@@ -968,22 +971,22 @@ snapshots:
 
   '@babylonjs/core@8.6.1': {}
 
-  '@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
+  '@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.11.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
     dependencies:
       '@babylonjs/core': 8.6.1
-      '@babylonjs/gui': 8.4.0(@babylonjs/core@8.6.1)
+      '@babylonjs/gui': 8.11.0(@babylonjs/core@8.6.1)
       '@types/react': 19.1.2
       '@types/react-dom': 19.1.2(@types/react@19.1.2)
 
-  '@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1)':
+  '@babylonjs/gui@8.11.0(@babylonjs/core@8.6.1)':
     dependencies:
       '@babylonjs/core': 8.6.1
 
-  '@babylonjs/inspector@8.6.1(@babylonjs/core@8.6.1)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/loaders@8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
+  '@babylonjs/inspector@8.6.1(@babylonjs/core@8.6.1)(@babylonjs/gui-editor@8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.11.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2))(@babylonjs/gui@8.11.0(@babylonjs/core@8.6.1))(@babylonjs/loaders@8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@babylonjs/materials@8.4.0(@babylonjs/core@8.6.1))(@babylonjs/serializers@8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)':
     dependencies:
       '@babylonjs/core': 8.6.1
-      '@babylonjs/gui': 8.4.0(@babylonjs/core@8.6.1)
-      '@babylonjs/gui-editor': 8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.4.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
+      '@babylonjs/gui': 8.11.0(@babylonjs/core@8.6.1)
+      '@babylonjs/gui-editor': 8.4.0(@babylonjs/core@8.6.1)(@babylonjs/gui@8.11.0(@babylonjs/core@8.6.1))(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)
       '@babylonjs/loaders': 8.6.1(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)
       '@babylonjs/materials': 8.4.0(@babylonjs/core@8.6.1)
       '@babylonjs/serializers': 8.4.0(@babylonjs/core@8.6.1)(babylonjs-gltf2interface@8.4.0)
