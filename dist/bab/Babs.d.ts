@@ -9,7 +9,10 @@ export declare const Babs: {
     c3: (color: string) => import("@babylonjs/core").Color3;
     c4: (color: string) => import("@babylonjs/core").Color4;
     helloWorld: (engine?: import("..").BabEngine) => import("@babylonjs/core").Scene;
-    helloVrWorld: (engine?: import("..").BabEngine) => import("@babylonjs/core").Scene;
+    helloVrWorld: (engine?: import("..").BabEngine) => Promise<{
+        scene: import("@babylonjs/core").Scene;
+        xr: import("@babylonjs/core").WebXRDefaultExperience;
+    }>;
     attachEditorControls: (camera: import("@babylonjs/core").ArcRotateCamera, options?: Partial<{
         keySensitivity: number;
         mouseSensitivity: number;

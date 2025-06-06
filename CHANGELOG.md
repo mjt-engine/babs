@@ -1,6 +1,9 @@
 # Changelog
 
 
+## 2025-06-06
+- addec hellowVrWorld ([0c6eccb](https://github.com/mjt-engine/babs/commit/0c6eccb7574657c0617dcf18405c3eeedefc88f6)) by Matt Taylor
+
 ## 2025-05-05
 - added material types ([6e6e4b9](https://github.com/mjt-engine/babs/commit/6e6e4b944aaa0a2258c3d16e73b4a4c89aee9a02)) by Matt Taylor
 
