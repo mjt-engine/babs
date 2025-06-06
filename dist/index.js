@@ -1,7 +1,7 @@
 import { Inputs as F } from "@mjt-engine/input";
 import { toVec3 as k, Maths as G, toVec2 as pe } from "@mjt-engine/math";
 import * as M from "@babylonjs/core";
-import { Vector3 as Y, Engine as Ye, Color3 as me, Color4 as V, Matrix as ye, Scene as D, UniversalCamera as j, Camera as O, TargetCamera as Ke, ArcRotateCamera as ee, HemisphericLight as we, PointLight as xe, StandardMaterial as H, PBRMaterial as Je, Mesh as A, MeshBuilder as v, SolidParticleSystem as te, InstancedMesh as Qe, Texture as L, WebGPUEngine as Me, SceneLoader as ue, DynamicTexture as re, HtmlElementTexture as qe, GlowLayer as be, HighlightLayer as je, TransformNode as et, Ray as tt, Constants as rt, SpritePackedManager as nt, SpriteManager as at, Sprite as ot, Curve3 as st } from "@babylonjs/core";
+import { Vector3 as Y, Engine as Ye, Color3 as me, Color4 as V, Matrix as ye, Scene as D, UniversalCamera as j, Camera as O, TargetCamera as Ke, ArcRotateCamera as ee, HemisphericLight as we, PointLight as xe, StandardMaterial as H, PBRMaterial as Je, Mesh as A, MeshBuilder as v, SolidParticleSystem as te, InstancedMesh as Qe, Texture as B, WebGPUEngine as Me, SceneLoader as ue, DynamicTexture as re, HtmlElementTexture as qe, GlowLayer as be, HighlightLayer as je, TransformNode as et, Ray as tt, Constants as rt, SpritePackedManager as nt, SpriteManager as at, Sprite as ot, Curve3 as st } from "@babylonjs/core";
 import { Colors as E } from "@mjt-engine/color";
 import { isUndefined as N, isDefined as w, iff as x, tuple2 as it, tuple3 as ct, Arrays as lt } from "@mjt-engine/object";
 import { extent as de } from "d3-array";
@@ -144,7 +144,9 @@ const Ce = (e, r) => {
   const i = await r.createDefaultXRExperienceAsync({
     floorMeshes: [s.ground]
   });
-  return { scene: r, xr: i };
+  return e.runRenderLoop(() => {
+    r.render();
+  }), { scene: r, xr: i };
 }, S = (e) => {
   const r = E.builder({ color: e }).hex();
   return me.FromHexString(r);
@@ -547,14 +549,14 @@ const Ce = (e, r) => {
   return P(
     e,
     r,
-    (a) => Bt(e, r, {
+    (a) => Lt(e, r, {
       ...t,
       instance: a
       // updatable: undefined,
     }),
     n
   );
-}, Bt = (e, r, t) => {
+}, Lt = (e, r, t) => {
   const {
     colors: n = [],
     points: a = [],
@@ -573,7 +575,7 @@ const Ce = (e, r) => {
 }, q = (e, r, t) => {
   const n = e.getMeshByName(r);
   return w(n) ? Promise.resolve(n) : t();
-}, Lt = (e, r, t, n) => P(e, r, () => {
+}, Bt = (e, r, t, n) => P(e, r, () => {
   const a = P(e, t, n);
   return _.assertValue(a, () => (console.log({ scene: e, name: r, rootName: t, producer: n }), "Unable to create mesh instance. Missing root mesh.")), a.createInstance(r);
 }), Nt = async (e, r, t, n) => q(e, r, async () => {
@@ -599,7 +601,7 @@ const Ce = (e, r) => {
     const [l, c, p] = k(i), g = (l - t.x / 2) / n + a, d = (c - t.y / 2) / n + o, f = (p - t.z / 2) / -n - s;
     return it(ct(g, d, f), i.i);
   });
-}, Be = (e, r, t) => {
+}, Le = (e, r, t) => {
   const { XYZI: n, RGBA: a, SIZE: o } = r, s = a.map((g) => {
     const { r: d, g: f, b: u, a: h } = g;
     return E.builder({ color: [d, f, u, h], model: "rgba" }).toString();
@@ -620,12 +622,12 @@ const Ce = (e, r) => {
   const a = e.metadata ?? {}, { voxes: o = {} } = a, s = o[t];
   if (N(s))
     throw console.log({ scene: e, name: r, src: t }), new Error(`No voxData found for ${t} ${r}`);
-  const i = Be(e, s, r), l = i.mesh;
+  const i = Le(e, s, r), l = i.mesh;
   return R(e, l, n), i;
 }, Ht = (e) => e instanceof Qe, Ut = (e, r) => {
   const [t, n] = pe(G.normalize2(G.subtract2(r, e)));
   return Math.atan2(n, t) + Math.PI / 2;
-}, Le = (e, r = {}) => {
+}, Be = (e, r = {}) => {
   const {
     disposeSource: t = !1,
     allow32BitsIndices: n = !0,
@@ -658,7 +660,7 @@ const Ce = (e, r) => {
       (s) => /.Texture$/.test(s[0])
     ).map((s) => {
       const [i, l] = s;
-      l instanceof L && i !== "_environmentBRDFTexture" && console.log(`${n}tex: '${l.name}' (${i})`);
+      l instanceof B && i !== "_environmentBRDFTexture" && console.log(`${n}tex: '${l.name}' (${i})`);
     });
   }
   e.getChildMeshes().map((a) => Ne(a, r, t + 1));
@@ -677,13 +679,13 @@ const Ce = (e, r) => {
   getMesh: P,
   getMeshAsync: q,
   calcTopOfMeshWorldPosition: Ct,
-  mergeMeshes: Le,
+  mergeMeshes: Be,
   getVoxModel: Dt,
   calcClientRectForMesh: Pt,
   updateArcRotateCameraPosition: Ce,
   findClosestPick: Rt,
   destroyMesh: vt,
-  getMeshInstance: Lt,
+  getMeshInstance: Bt,
   getMeshInstanceAsync: Nt,
   isInstancedMesh: Ht,
   pickMeshes: $t,
@@ -884,7 +886,7 @@ const ie = (e) => {
   const n = await qt(t);
   return new Promise((a, o) => {
     try {
-      const s = new L(n, e, !1, !0);
+      const s = new B(n, e, !1, !0);
       s.name = r, s.hasAlpha = !0, s.onLoadObservable.addOnce(() => {
         a(s);
       });
@@ -990,10 +992,10 @@ const ie = (e) => {
   }
   return a && (d.strokeStyle = l, d.strokeText(r, u, m)), d.fillStyle = o, d.fillText(r, u, m), e.hasAlpha = !0, e.update(), b;
 }, He = {
-  linearNearest: L.LINEAR_NEAREST,
-  nearestNearest: L.NEAREST_NEAREST,
-  linearLinear: L.LINEAR_LINEAR,
-  nearestLinear: L.NEAREST_LINEAR
+  linearNearest: B.LINEAR_NEAREST,
+  nearestNearest: B.NEAREST_NEAREST,
+  linearLinear: B.LINEAR_LINEAR,
+  nearestLinear: B.NEAREST_LINEAR
 }, W = (e, r, t) => {
   const n = e.getTextureByName(r);
   return w(n) ? n : t();
@@ -1049,7 +1051,7 @@ const ie = (e) => {
     } = t;
     if (!a)
       throw new Error("src is required", { cause: t });
-    const i = new L(a, e, {
+    const i = new B(a, e, {
       samplingMode: Ue(s)
     });
     return i.name = r, i;
@@ -1393,7 +1395,7 @@ const Pr = (e, r, t = {}) => {
     e.props = { ...Ze, ...We };
   }
 };
-class B {
+class L {
   /**
    * Evaluate a query
    * @param query defines the query to evaluate
@@ -1401,7 +1403,7 @@ class B {
    * @returns true if the query matches
    */
   static Eval(r, t) {
-    return r.match(/\([^()]*\)/g) ? r = r.replace(/\([^()]*\)/g, (n) => (n = n.slice(1, n.length - 1), B._HandleParenthesisContent(n, t))) : r = B._HandleParenthesisContent(r, t), r === "true" ? !0 : r === "false" ? !1 : B.Eval(r, t);
+    return r.match(/\([^()]*\)/g) ? r = r.replace(/\([^()]*\)/g, (n) => (n = n.slice(1, n.length - 1), L._HandleParenthesisContent(n, t))) : r = L._HandleParenthesisContent(r, t), r === "true" ? !0 : r === "false" ? !1 : L.Eval(r, t);
   }
   static _HandleParenthesisContent(r, t) {
     t = t || ((o) => o === "true");
@@ -1409,11 +1411,11 @@ class B {
     const a = r.split("||");
     for (const o in a)
       if (Object.prototype.hasOwnProperty.call(a, o)) {
-        let s = B._SimplifyNegation(a[o].trim());
+        let s = L._SimplifyNegation(a[o].trim());
         const i = s.split("&&");
         if (i.length > 1)
           for (let l = 0; l < i.length; ++l) {
-            const c = B._SimplifyNegation(i[l].trim());
+            const c = L._SimplifyNegation(i[l].trim());
             if (c !== "true" && c !== "false" ? c[0] === "!" ? n = !t(c.substring(1)) : n = t(c) : n = c === "true", !n) {
               s = "false";
               break;
@@ -1521,7 +1523,7 @@ class C {
    * @returns a boolean
    */
   static MatchesQuery(r, t) {
-    return t === void 0 ? !0 : t === "" ? C.HasTags(r) : B.Eval(t, (n) => C.HasTags(r) && r._tags[n]);
+    return t === void 0 ? !0 : t === "" ? C.HasTags(r) : L.Eval(t, (n) => C.HasTags(r) && r._tags[n]);
   }
 }
 const Ar = (e, r, t) => {
@@ -1542,7 +1544,7 @@ const Ar = (e, r, t) => {
     return a.localeCompare(o);
   });
   return JSON.stringify(r);
-}, Br = (e) => {
+}, Lr = (e) => {
   const r = {};
   return e.forEach((t) => {
     const n = t?.material?.name;
@@ -1551,7 +1553,7 @@ const Ar = (e, r, t) => {
     const a = r[n] ?? [];
     a.push(t), r[n] = a;
   }), r;
-}, Lr = (e, r, t) => {
+}, Br = (e, r, t) => {
   const { XYZI: n, RGBA: a } = r, o = a.map((d) => {
     const { r: f, g: u, b: h, a: m } = d;
     return E.builder({ color: [f, u, h, m], model: "rgba" }).toString();
@@ -1568,7 +1570,7 @@ const Ar = (e, r, t) => {
       }
     );
     return T.setEnabled(!1), T;
-  }), i = Br(s), l = Object.values(i).map((d) => Le(d)), c = new A(`merged-${t}`, e);
+  }), i = Lr(s), l = Object.values(i).map((d) => Be(d)), c = new A(`merged-${t}`, e);
   l.filter(w).forEach((d) => d.parent = c);
   const p = $(e, "voxel-material", "standard");
   l.filter(w).forEach((d) => d.material = p), c.metadata = {
@@ -1580,8 +1582,8 @@ const Ar = (e, r, t) => {
   }, c.parent = g, g;
 }, an = {
   animateExplosion: Rr,
-  voxDataToSps: Be,
-  voxDataToMergedModel: Lr,
+  voxDataToSps: Le,
+  voxDataToMergedModel: Br,
   voxDataToComplexModel: Ar
 }, Nr = ({
   engine: e,

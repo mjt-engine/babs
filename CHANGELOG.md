@@ -2,6 +2,7 @@
 
 
 ## 2025-06-06
+- run render loop by default on vr hello world ([ed41b9b](https://github.com/mjt-engine/babs/commit/ed41b9bb6fe40e72273b8fd5b96afeb48e40598b)) by Matt Taylor
 - make xr compat by default ([c031410](https://github.com/mjt-engine/babs/commit/c031410e3e475f1711b470b069fe670929e915d6)) by Matt Taylor
 - addec hellowVrWorld ([0c6eccb](https://github.com/mjt-engine/babs/commit/0c6eccb7574657c0617dcf18405c3eeedefc88f6)) by Matt Taylor
 
