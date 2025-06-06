@@ -25,11 +25,12 @@ export const createWebGlEngine = (
           width: optionsOrCanvas?.width ?? 320,
           height: optionsOrCanvas?.height ?? 320,
         });
-  const { antialias } = options;
+  const { antialias, xrCompatible = true } = options;
 
   // const prop
   const engine = new Engine(canvas, antialias, {
     powerPreference: "high-performance",
+    xrCompatible,
     ...options,
   });
   // engine.loadingScreen = undefined!;
