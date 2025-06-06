@@ -1,5 +1,4 @@
 import * as BABYLON from "@babylonjs/core";
-import * as GUI from "@babylonjs/gui";
 import { createWebGlEngine } from "../engine/createWebglEngine";
 import { BabEngine } from "../type/BabEngine";
 
@@ -29,6 +28,10 @@ export const helloVrWorld = async (engine: BabEngine = createWebGlEngine()) => {
 
   const xr = await scene.createDefaultXRExperienceAsync({
     floorMeshes: [env.ground],
+  });
+  // run the main render loop
+  engine.runRenderLoop(() => {
+    scene.render();
   });
 
   return { scene, xr };
