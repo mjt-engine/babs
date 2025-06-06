@@ -115,11 +115,12 @@ const Ce = (e, r) => {
   const r = e instanceof HTMLCanvasElement || e instanceof OffscreenCanvas ? {} : e ?? {}, t = e instanceof HTMLCanvasElement || e instanceof OffscreenCanvas ? e : Ee({
     width: e?.width ?? 320,
     height: e?.height ?? 320
-  }), { antialias: n } = r, a = new Ye(t, n, {
+  }), { antialias: n, xrCompatible: a = !0 } = r, o = new Ye(t, n, {
     powerPreference: "high-performance",
+    xrCompatible: a,
     ...r
   });
-  return a.hideLoadingUI(), a;
+  return o.hideLoadingUI(), o;
 }, gt = async (e = U()) => {
   var r = new M.Scene(e), t = new M.FreeCamera(
     "camera1",
