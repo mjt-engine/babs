@@ -1,11 +1,12 @@
+import { Scene as BabScene } from "@babylonjs/core";
 import {
-  Scene as BabScene
-} from "@babylonjs/core";
-import { BabWebXRDefaultExperienceOptions } from "./WxrsTypes";
+  BabWebXrDefaultExperience,
+  BabWebXRDefaultExperienceOptions,
+} from "./WxrsTypes";
 
 export const createWebXrExperience = async (
   scene: BabScene,
   options: BabWebXRDefaultExperienceOptions = {}
-) => {
+): Promise<BabWebXrDefaultExperience> => {
   return scene.createDefaultXRExperienceAsync(options);
 };
