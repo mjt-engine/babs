@@ -1,5 +1,5 @@
 import { Scene as BabScene } from "@babylonjs/core";
-import { BabEnvironmentHelper } from "./Wxrs";
+import { BabEnvironmentHelper } from "./WxrsTypes";
 
 export const createDefaultEnvironment = (
   scene: BabScene

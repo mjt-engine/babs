@@ -18,6 +18,7 @@ export * from "./sprite/Sprites";
 export * from "./voxel/Voxels";
 export * from "./wxr/Wxrs";
 
+export * from "./wxr/WxrsTypes";
 export * from "./type/BabEngine";
 export * from "./type/BabScene";
 export * from "./type/BabMesh";

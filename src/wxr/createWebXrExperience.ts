@@ -1,7 +1,7 @@
 import {
   Scene as BabScene
 } from "@babylonjs/core";
-import { BabWebXRDefaultExperienceOptions } from "./Wxrs";
+import { BabWebXRDefaultExperienceOptions } from "./WxrsTypes";
 
 export const createWebXrExperience = async (
   scene: BabScene,
