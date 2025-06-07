@@ -2,6 +2,8 @@
 
 
 ## 2025-06-07
+- added BabWebXrDefaultExpreience type ([eda5368](https://github.com/mjt-engine/babs/commit/eda5368c032bc6c114e1674c3e5d8a9d27cc8a27)) by Matt Taylor
+- cleaned up hellowXrWorld code ([fd18f9b](https://github.com/mjt-engine/babs/commit/fd18f9bf18d0909d81a663ae75d29499f5dc6f96)) by Matt Taylor
 - removed wtf test function ([214281e](https://github.com/mjt-engine/babs/commit/214281e961ba3a339aa6d624685ab7f8be1c6bdd)) by Matt Taylor
 - why is hellowXrWorld undefined, wtf ([b2f8c76](https://github.com/mjt-engine/babs/commit/b2f8c769742f158b86b037036a384d67eff104a7)) by Matt Taylor
 - why is hellowXrWorld undefined, wtf ([d11cc9d](https://github.com/mjt-engine/babs/commit/d11cc9d7adbb042c3f897abcb9aa2996e94c7a5e)) by Matt Taylor

@@ -5,5 +5,5 @@ export declare const Wxrs: {
         xr: Promise<import("@babylonjs/core").WebXRDefaultExperience>;
     }>;
     createDefaultEnvironment: (scene: import("@babylonjs/core").Scene) => import("./WxrsTypes").BabEnvironmentHelper;
-    createWebXrExperience: (scene: import("@babylonjs/core").Scene, options?: import("./WxrsTypes").BabWebXRDefaultExperienceOptions) => Promise<import("@babylonjs/core").WebXRDefaultExperience>;
+    createWebXrExperience: (scene: import("@babylonjs/core").Scene, options?: import("./WxrsTypes").BabWebXRDefaultExperienceOptions) => Promise<import("./WxrsTypes").BabWebXrDefaultExperience>;
 };
