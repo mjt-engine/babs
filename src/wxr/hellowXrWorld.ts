@@ -4,7 +4,8 @@ import { Lights } from "../light/Lights";
 import { Meshes } from "../mesh/Meshes";
 import { Scenes } from "../scene/Scenes";
 import { BabEngine } from "../type/BabEngine";
-import { Wxrs } from "./Wxrs";
+import { createDefaultEnvironment } from "./createDefaultHelper";
+import { createWebXrExperience } from "./createWebXrExperience";
 
 export const helloXrWorld = async (engine: BabEngine = createWebGlEngine()) => {
   const scene = Scenes.createScene(engine);
@@ -39,13 +40,13 @@ export const helloXrWorld = async (engine: BabEngine = createWebGlEngine()) => {
   });
   // sphere.position.y = 1;
 
-  const env = Wxrs.createDefaultEnvironment(scene);
+  const env = createDefaultEnvironment(scene);
   // const env = scene.createDefaultEnvironment();
   if (!env?.ground) {
     throw new Error("Failed to create default environment");
   }
 
-  const xr = Wxrs.createWebXrExperience(scene, {
+  const xr = createWebXrExperience(scene, {
     floorMeshes: [env.ground],
   });
 
