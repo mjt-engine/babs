@@ -1,5 +1,5 @@
 import type { Vec3 } from "@mjt-engine/math";
-import { Camera } from "@babylonjs/core";
+import { Camera, WebXRSessionManager } from "@babylonjs/core";
 export declare const CAMERA_MODES: {
     orthographic: number;
     perspective: number;
@@ -24,12 +24,18 @@ export type ArcRotateCameraOptions = Partial<CameraOptions & {
 export type UniversalCameraOptions = Partial<CameraOptions & {
     rotation: Vec3;
 }>;
+export type FreeCameraOptions = Partial<CameraOptions>;
+export type BabXrSession = XRSession;
+export type BabWebXRSessionManager = WebXRSessionManager;
+export type WebXrCameraOptions = Partial<CameraOptions>;
 export type AllCameraOptions = ArcRotateCameraOptions & UniversalCameraOptions;
 export declare const Cameras: {
     getArcRotateCamera: (scene: import("@babylonjs/core").Scene, name: string, options?: ArcRotateCameraOptions) => import("@babylonjs/core").ArcRotateCamera;
     getCamera: <T extends Camera>(scene: import("@babylonjs/core").Scene, name: string, producer: () => T) => T;
     updateCamera: (camera: Camera, options: AllCameraOptions) => void;
     getUniversalCamera: (scene: import("@babylonjs/core").Scene, name: string, options?: UniversalCameraOptions) => import("@babylonjs/core").UniversalCamera;
+    getFreeCamera: (scene: import("@babylonjs/core").Scene, name: string, options?: FreeCameraOptions) => import("@babylonjs/core").FreeCamera;
+    getWebXrCamera: (scene: import("@babylonjs/core").Scene, name: string, xrSessionManager: BabWebXRSessionManager, options?: WebXrCameraOptions) => import("@babylonjs/core").WebXRCamera;
     attachArcRotateCameraControls: (camera: import("@babylonjs/core").ArcRotateCamera, options?: Partial<{
         keySensitivity: number;
         mouseSensitivity: number;

@@ -11,7 +11,7 @@ export declare const Babs: {
     helloWorld: (engine?: import("..").BabEngine) => import("@babylonjs/core").Scene;
     helloVrWorld: (engine?: import("..").BabEngine) => Promise<{
         scene: import("@babylonjs/core").Scene;
-        xr: import("@babylonjs/core").WebXRDefaultExperience;
+        xr: Promise<import("@babylonjs/core").WebXRDefaultExperience>;
     }>;
     attachEditorControls: (camera: import("@babylonjs/core").ArcRotateCamera, options?: Partial<{
         keySensitivity: number;

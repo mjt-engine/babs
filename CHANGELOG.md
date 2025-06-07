@@ -1,6 +1,9 @@
 # Changelog
 
 
+## 2025-06-07
+- added Wxr and updated helloXrWorld to use wrapped code ([7ac709a](https://github.com/mjt-engine/babs/commit/7ac709aa3a4ab6b50a6257f875717ffbb71c5e94)) by Matt Taylor
+
 ## 2025-06-06
 - run render loop by default on vr hello world ([ed41b9b](https://github.com/mjt-engine/babs/commit/ed41b9bb6fe40e72273b8fd5b96afeb48e40598b)) by Matt Taylor
 - make xr compat by default ([c031410](https://github.com/mjt-engine/babs/commit/c031410e3e475f1711b470b069fe670929e915d6)) by Matt Taylor
