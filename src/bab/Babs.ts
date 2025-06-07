@@ -14,6 +14,6 @@ export const Babs = {
   c3,
   c4,
   helloWorld,
-  helloVrWorld: helloXrWorld,
+  helloXrWorld,
   attachEditorControls: attachArcRotateCameraControls,
 };
