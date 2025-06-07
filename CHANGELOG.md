@@ -2,6 +2,7 @@
 
 
 ## 2025-06-07
+- removed wtf test function ([214281e](https://github.com/mjt-engine/babs/commit/214281e961ba3a339aa6d624685ab7f8be1c6bdd)) by Matt Taylor
 - why is hellowXrWorld undefined, wtf ([b2f8c76](https://github.com/mjt-engine/babs/commit/b2f8c769742f158b86b037036a384d67eff104a7)) by Matt Taylor
 - why is hellowXrWorld undefined, wtf ([d11cc9d](https://github.com/mjt-engine/babs/commit/d11cc9d7adbb042c3f897abcb9aa2996e94c7a5e)) by Matt Taylor
 - get types out of the Wxrs.ts file ([d00b020](https://github.com/mjt-engine/babs/commit/d00b020704fad77115cac91d1885216eec268817)) by Matt Taylor

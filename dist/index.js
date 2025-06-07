@@ -1,35 +1,35 @@
 import { Inputs as W } from "@mjt-engine/input";
-import { toVec3 as k, Maths as V, toVec2 as Me } from "@mjt-engine/math";
+import { toVec3 as k, Maths as V, toVec2 as xe } from "@mjt-engine/math";
 import * as b from "@babylonjs/core";
-import { Vector3 as j, Engine as qe, Matrix as be, Scene as F, UniversalCamera as oe, Camera as O, TargetCamera as je, ArcRotateCamera as ae, FreeCamera as et, WebXRCamera as tt, HemisphericLight as Ce, PointLight as Te, Color4 as z, Color3 as Se, StandardMaterial as D, PBRMaterial as rt, Mesh as A, MeshBuilder as v, SolidParticleSystem as se, InstancedMesh as nt, Texture as B, WebGPUEngine as Ee, SceneLoader as pe, DynamicTexture as ie, HtmlElementTexture as ot, GlowLayer as Pe, HighlightLayer as at, TransformNode as st, Ray as it, Constants as ct, SpritePackedManager as lt, SpriteManager as ut, Sprite as dt, Curve3 as ht } from "@babylonjs/core";
-import { isUndefined as N, isDefined as w, iff as x, tuple2 as gt, tuple3 as ft, Arrays as pt } from "@mjt-engine/object";
+import { Vector3 as J, Engine as Qe, Matrix as we, Scene as D, UniversalCamera as te, Camera as O, TargetCamera as qe, ArcRotateCamera as re, FreeCamera as je, WebXRCamera as et, HemisphericLight as Me, PointLight as be, Color4 as z, Color3 as Te, StandardMaterial as F, PBRMaterial as tt, Mesh as A, MeshBuilder as v, SolidParticleSystem as ne, InstancedMesh as rt, Texture as B, WebGPUEngine as Ce, SceneLoader as ge, DynamicTexture as ae, HtmlElementTexture as nt, GlowLayer as Se, HighlightLayer as at, TransformNode as ot, Ray as st, Constants as it, SpritePackedManager as ct, SpriteManager as lt, Sprite as ut, Curve3 as dt } from "@babylonjs/core";
+import { isUndefined as N, isDefined as x, iff as w, tuple2 as ht, tuple3 as gt, Arrays as ft } from "@mjt-engine/object";
 import { Colors as E } from "@mjt-engine/color";
-import { extent as me } from "d3-array";
-import { Asserts as _, assertValue as mt } from "@mjt-engine/assert";
+import { extent as fe } from "d3-array";
+import { Asserts as _, assertValue as pt } from "@mjt-engine/assert";
 import "@babylonjs/inspector";
-import { Randoms as ve } from "@mjt-engine/random";
-import { Images as yt } from "@mjt-engine/image";
-import { Noises as wt } from "@mjt-engine/noise";
+import { Randoms as Ee } from "@mjt-engine/random";
+import { Images as mt } from "@mjt-engine/image";
+import { Noises as yt } from "@mjt-engine/noise";
 function y(e = 0, r = 0, t = 0) {
   if (typeof e == "number")
-    return new j(e, r, t);
-  const [n = 0, o = 0, a = 0] = k(e);
-  return new j(n, o, a);
+    return new J(e, r, t);
+  const [n = 0, a = 0, o = 0] = k(e);
+  return new J(n, a, o);
 }
-const Re = (e, r) => {
-  const t = e.alpha, n = e.beta, o = e.radius;
-  e.target = e.target.add(y(r)), e.radius = o, e.alpha = t, e.beta = n;
-}, Ae = (e, r = {}) => {
+const Pe = (e, r) => {
+  const t = e.alpha, n = e.beta, a = e.radius;
+  e.target = e.target.add(y(r)), e.radius = a, e.alpha = t, e.beta = n;
+}, ve = (e, r = {}) => {
   const {
     keySensitivity: t = 0.5,
     mouseSensitivity: n = 0.05,
-    parent: o = document.body,
-    action: a = () => {
+    parent: a = document.body,
+    action: o = () => {
     }
   } = r, s = e.alpha, i = e.beta, l = e.radius;
   y(e.target);
   const c = (f = 0, u = 0, h = 0) => {
-    Re(e, [f, u, h]), a();
+    Pe(e, [f, u, h]), o();
   }, p = W.listenToKey(
     {
       // Y up
@@ -55,36 +55,36 @@ const Re = (e, r) => {
         c(t / 2, t / 2, 0);
       },
       v: () => {
-        e.beta = e.beta + t / 8, a();
+        e.beta = e.beta + t / 8, o();
       },
       z: () => {
-        e.beta = e.beta - t / 8, a();
+        e.beta = e.beta - t / 8, o();
       },
       c: () => {
-        e.alpha = s, e.beta = i, e.radius = l, a();
+        e.alpha = s, e.beta = i, e.radius = l, o();
       },
       "shift+d": () => {
-        e.alpha = e.alpha + t / 8, a();
+        e.alpha = e.alpha + t / 8, o();
       },
       "shift+a": () => {
-        e.alpha = e.alpha - t / 8, a();
+        e.alpha = e.alpha - t / 8, o();
       }
     },
     {
       autoUp: !1,
-      parent: o
+      parent: a
     }
   ), g = {
     lastPosition: void 0
   };
-  o.addEventListener("pointerdown", (f) => {
+  a.addEventListener("pointerdown", (f) => {
     f.buttons === 4 && (g.lastPosition = f);
-  }), o.addEventListener("pointermove", (f) => {
+  }), a.addEventListener("pointermove", (f) => {
     if (f.buttons !== 4)
       return;
     const { lastPosition: u = f } = g;
     g.lastPosition = f;
-    const h = V.subtract2(u, f), [m, M] = Me(h);
+    const h = V.subtract2(u, f), [m, M] = xe(h);
     if (f.buttons === 4 && f.shiftKey) {
       e.beta = e.beta + M * n;
       return;
@@ -96,43 +96,43 @@ const Re = (e, r) => {
       wheel: (f) => {
         if (f instanceof WheelEvent) {
           const u = f.deltaY * n;
-          e.radius += u, a();
+          e.radius += u, o();
         }
       }
     },
     {
-      parent: o
+      parent: a
     }
   );
   return [p, d];
-}, Ie = ({
+}, Re = ({
   width: e = 320,
   height: r = 320
 }) => {
   const t = document.createElement("canvas");
   return t.width = e, t.height = r, t;
 }, H = (e) => {
-  const r = e instanceof HTMLCanvasElement || e instanceof OffscreenCanvas ? {} : e ?? {}, t = e instanceof HTMLCanvasElement || e instanceof OffscreenCanvas ? e : Ie({
+  const r = e instanceof HTMLCanvasElement || e instanceof OffscreenCanvas ? {} : e ?? {}, t = e instanceof HTMLCanvasElement || e instanceof OffscreenCanvas ? e : Re({
     width: e?.width ?? 320,
     height: e?.height ?? 320
-  }), { antialias: n, xrCompatible: o = !0 } = r, a = new qe(t, n, {
+  }), { antialias: n, xrCompatible: a = !0 } = r, o = new Qe(t, n, {
     powerPreference: "high-performance",
-    xrCompatible: o,
+    xrCompatible: a,
     ...r
   });
-  return a.hideLoadingUI(), a;
-}, ye = (e, r, t, n = {}) => {
-  const { camera: o = e.activeCamera, predicate: a = () => !0 } = n, s = e.createPickingRay(r, t, be.Identity(), o);
-  return e.pickWithRay(s, a)?.pickedMesh;
-}, ee = (e, r) => {
-  if (e instanceof F)
-    return e.meshes.forEach((t) => ee(t, r));
-  r(e), e.getChildMeshes().forEach((t) => ee(t, r));
+  return o.hideLoadingUI(), o;
+}, pe = (e, r, t, n = {}) => {
+  const { camera: a = e.activeCamera, predicate: o = () => !0 } = n, s = e.createPickingRay(r, t, we.Identity(), a);
+  return e.pickWithRay(s, o)?.pickedMesh;
+}, Q = (e, r) => {
+  if (e instanceof D)
+    return e.meshes.forEach((t) => Q(t, r));
+  r(e), e.getChildMeshes().forEach((t) => Q(t, r));
 }, xt = (e, r = {}) => {
   const {
     keySensitivity: t = 0.05,
     mouseSensitivity: n = 0.05,
-    parent: o = document.body
+    parent: a = document.body
   } = r;
   W.listenToKey(
     {
@@ -163,62 +163,62 @@ const Re = (e, r) => {
     },
     {
       propagate: !1,
-      parent: o
+      parent: a
     }
   ), W.listenToMouse(
     {
-      wheel: (a) => {
-        if (a instanceof WheelEvent) {
-          if (a.shiftKey) {
-            const i = a.deltaX * n;
+      wheel: (o) => {
+        if (o instanceof WheelEvent) {
+          if (o.shiftKey) {
+            const i = o.deltaX * n;
             e.position.addInPlace(y(0, -i, 0));
             return;
           }
-          const s = a.deltaY * n;
+          const s = o.deltaY * n;
           e.position.addInPlace(y(0, 0, s));
         }
       },
-      click: (a) => {
-        if (a.buttons === 0) {
-          const s = a, i = e.getScene(), l = ye(i, s.layerX, s.layerY);
-          w(l) && (console.log({ mesh: l }), ee(i, (c) => {
+      click: (o) => {
+        if (o.buttons === 0) {
+          const s = o, i = e.getScene(), l = pe(i, s.layerX, s.layerY);
+          x(l) && (console.log({ mesh: l }), Q(i, (c) => {
             N(c.material) || c.material && (c.material.wireframe = !1);
           }), l.material && (l.material.wireframe = !0));
         }
       },
-      auxclick: (a) => {
-        if (a.button !== 1)
+      auxclick: (o) => {
+        if (o.button !== 1)
           return;
-        const s = e.getScene(), i = ye(s, a.clientX, a.clientY);
+        const s = e.getScene(), i = pe(s, o.clientX, o.clientY);
         N(i);
       },
-      contextmenu: (a) => {
+      contextmenu: (o) => {
         console.log("should context");
       }
     },
     {
       propagate: !1,
-      parent: o
+      parent: a
     }
   );
-}, Mt = (e, r, {
+}, wt = (e, r, {
   unitsTall: t = 1,
   unitsWide: n = 1,
-  cameraLevel: o = -100,
-  disposeActive: a = !1
+  cameraLevel: a = -100,
+  disposeActive: o = !1
 } = {}) => {
-  a && e?.activeCamera?.dispose();
-  const s = new oe(r, y(0, 0, o), e);
+  o && e?.activeCamera?.dispose();
+  const s = new te(r, y(0, 0, a), e);
   return s.target = y(0, 0, 0), s.rotation = y(0, 0, Math.PI), s.orthoTop = -t / 2, s.orthoBottom = t / 2, s.orthoLeft = n / 2, s.orthoRight = -n / 2, s.mode = O.ORTHOGRAPHIC_CAMERA, s;
 }, U = (e, r, t) => {
   const n = e.getCameraByName(r);
-  return w(n) ? n : t();
+  return x(n) ? n : t();
 }, $ = (e, r) => {
   const {
     alpha: t,
     beta: n,
-    radius: o,
-    target: a,
+    radius: a,
+    target: o,
     position: s,
     rotation: i,
     minZ: l,
@@ -229,117 +229,117 @@ const Re = (e, r) => {
     orthoLeft: f,
     orthoRight: u
   } = r;
-  x(s, (h) => {
+  w(s, (h) => {
     e.position = y(h);
-  }), x(l, (h) => {
+  }), w(l, (h) => {
     e.minZ = h;
-  }), x(c, (h) => {
+  }), w(c, (h) => {
     e.maxZ = h;
-  }), x(p, (h) => {
-    e.mode = we[h];
-  }), x(p, (h) => {
-    e.mode = we[h];
-  }), x(g, (h) => {
+  }), w(p, (h) => {
+    e.mode = me[h];
+  }), w(p, (h) => {
+    e.mode = me[h];
+  }), w(g, (h) => {
     e.orthoTop = h;
-  }), x(d, (h) => {
+  }), w(d, (h) => {
     e.orthoBottom = h;
-  }), x(f, (h) => {
+  }), w(f, (h) => {
     e.orthoLeft = h;
-  }), x(u, (h) => {
+  }), w(u, (h) => {
     e.orthoRight = h;
-  }), e instanceof je && (x(i, (h) => {
+  }), e instanceof qe && (w(i, (h) => {
     e.rotation = y(h);
-  }), x(a, (h) => {
+  }), w(o, (h) => {
     e.target = y(h);
-  })), e instanceof ae && (x(t, (h) => {
+  })), e instanceof re && (w(t, (h) => {
     e.alpha = h;
-  }), x(n, (h) => {
+  }), w(n, (h) => {
     e.beta = h;
-  }), x(o, (h) => {
+  }), w(a, (h) => {
     e.radius = h;
   }));
-}, bt = (e, r, t = {}) => {
+}, Mt = (e, r, t = {}) => {
   const n = U(e, r, () => {
-    const { alpha: o = 0, beta: a = 0, radius: s = 2, target: i } = t;
-    return new ae(r, o, a, s, y(i), e);
+    const { alpha: a = 0, beta: o = 0, radius: s = 2, target: i } = t;
+    return new re(r, a, o, s, y(i), e);
   });
   return $(n, t), n;
-}, Ct = (e, r, t = {}) => {
+}, bt = (e, r, t = {}) => {
   const n = U(e, r, () => {
-    const { position: o } = t;
-    return new oe(r, y(o), e);
+    const { position: a } = t;
+    return new te(r, y(a), e);
   });
   return $(n, t), n;
 }, Tt = (e, r) => {
   e?.activeCamera?.dispose();
-  const t = e.getEngine().getRenderingCanvas(), n = -Math.PI / 2, o = Math.PI / 2.5, a = new ae(r, n, o, 15, y(0, 0, 0), e);
-  a.attachControl(t, !0), a.mode = O.PERSPECTIVE_CAMERA;
-}, St = (e, r, t = {}) => {
+  const t = e.getEngine().getRenderingCanvas(), n = -Math.PI / 2, a = Math.PI / 2.5, o = new re(r, n, a, 15, y(0, 0, 0), e);
+  o.attachControl(t, !0), o.mode = O.PERSPECTIVE_CAMERA;
+}, Ct = (e, r, t = {}) => {
   const n = U(e, r, () => {
-    const { position: o = [0, 0, 0] } = t;
-    return new et(r, jt.v3(o), e);
+    const { position: a = [0, 0, 0] } = t;
+    return new je(r, jt.v3(a), e);
   });
   return $(n, t), n;
-}, Et = (e, r, t, n = {}) => {
-  const o = U(e, r, () => new tt(r, e, t));
-  return $(o, n), o;
-}, we = {
+}, St = (e, r, t, n = {}) => {
+  const a = U(e, r, () => new et(r, e, t));
+  return $(a, n), a;
+}, me = {
   orthographic: O.ORTHOGRAPHIC_CAMERA,
   perspective: O.PERSPECTIVE_CAMERA
-}, X = {
-  getArcRotateCamera: bt,
+}, oe = {
+  getArcRotateCamera: Mt,
   getCamera: U,
   updateCamera: $,
-  getUniversalCamera: Ct,
-  getFreeCamera: St,
-  getWebXrCamera: Et,
-  attachArcRotateCameraControls: Ae,
+  getUniversalCamera: bt,
+  getFreeCamera: Ct,
+  getWebXrCamera: St,
+  attachArcRotateCameraControls: ve,
   attachUniversalCameraControls: xt,
-  createTopDownCamera: Mt,
+  createTopDownCamera: wt,
   createDebugCamera: Tt
-}, ce = (e, r, t) => {
+}, se = (e, r, t) => {
   const n = e.getLightByName(r);
-  return w(n) ? n : t();
-}, le = (e, r) => {
-  const { intensity: t, direction: n, position: o } = r;
-  x(t, (a) => {
-    e.intensity = a;
-  }), e instanceof Ce && x(n, (a) => {
-    e.direction = y(a);
-  }), e instanceof Te && x(o, (a) => {
-    e.position = y(a);
+  return x(n) ? n : t();
+}, ie = (e, r) => {
+  const { intensity: t, direction: n, position: a } = r;
+  w(t, (o) => {
+    e.intensity = o;
+  }), e instanceof Me && w(n, (o) => {
+    e.direction = y(o);
+  }), e instanceof be && w(a, (o) => {
+    e.position = y(o);
   });
+}, Et = (e, r, t = {}) => {
+  const n = se(e, r, () => {
+    const { direction: a } = t;
+    return new Me(r, y(a), e);
+  });
+  return ie(n, t), n;
 }, Pt = (e, r, t = {}) => {
-  const n = ce(e, r, () => {
-    const { direction: o } = t;
-    return new Ce(r, y(o), e);
+  const n = se(e, r, () => {
+    const { position: a } = t;
+    return new be(r, y(a), e);
   });
-  return le(n, t), n;
-}, vt = (e, r, t = {}) => {
-  const n = ce(e, r, () => {
-    const { position: o } = t;
-    return new Te(r, y(o), e);
-  });
-  return le(n, t), n;
-}, Z = {
-  getLight: ce,
-  getHemisphericLight: Pt,
-  getPointLight: vt,
-  updateLight: le
-}, Y = (e) => {
+  return ie(n, t), n;
+}, ce = {
+  getLight: se,
+  getHemisphericLight: Et,
+  getPointLight: Pt,
+  updateLight: ie
+}, X = (e) => {
   const r = E.builder({ color: e }), t = z.FromHexString(r.hex());
   return t.a = r.alpha(), t;
 }, P = (e, r, t, n = !1) => {
-  const o = e.getMeshByName(r);
-  return w(o) && !n ? o : w(o) && n ? t(o) : t();
+  const a = e.getMeshByName(r);
+  return x(a) && !n ? a : x(a) && n ? t(a) : t();
 }, S = (e) => {
   const r = E.builder({ color: e }).hex();
-  return Se.FromHexString(r);
-}, Le = (e, r, t) => {
+  return Te.FromHexString(r);
+}, Ae = (e, r, t) => {
   const {
     alpha: n,
-    diffuseTexture: o,
-    emissiveTexture: a,
+    diffuseTexture: a,
+    emissiveTexture: o,
     ambientTexture: s,
     opacityTexture: i,
     diffuseColor: l,
@@ -347,121 +347,121 @@ const Re = (e, r) => {
     ambientColor: p,
     emissiveColor: g
   } = t;
-  x(o, (d) => {
+  w(a, (d) => {
     const f = e.getTextureByName(d);
     r.diffuseTexture = f;
-  }), x(a, (d) => {
+  }), w(o, (d) => {
     const f = e.getTextureByName(d);
     r.emissiveTexture = f;
-  }), x(s, (d) => {
+  }), w(s, (d) => {
     const f = e.getTextureByName(d);
     r.ambientTexture = f;
-  }), x(i, (d) => {
+  }), w(i, (d) => {
     const f = e.getTextureByName(d);
     r.opacityTexture = f;
-  }), x(l, (d) => {
+  }), w(l, (d) => {
     r.diffuseColor = S(d);
     const f = E.from(d).alpha();
     f < 1 && (r.alpha = f);
-  }), x(c, (d) => {
+  }), w(c, (d) => {
     r.specularColor = S(d);
-  }), x(p, (d) => {
+  }), w(p, (d) => {
     r.ambientColor = S(d);
-  }), x(g, (d) => {
+  }), w(g, (d) => {
     r.emissiveColor = S(d);
-  }), x(n, (d) => {
+  }), w(n, (d) => {
     r.alpha = d;
   });
-}, te = (e, r, t) => {
-  r instanceof D && Le(e, r, t);
+}, q = (e, r, t) => {
+  r instanceof F && Ae(e, r, t);
 }, G = (e, r, t = "standard") => {
   const n = e.getMaterialByName(r);
-  if (w(n))
+  if (x(n))
     return n;
-  const o = typeof t == "string" ? t : t?.type ?? "standard";
-  switch (o) {
+  const a = typeof t == "string" ? t : t?.type ?? "standard";
+  switch (a) {
     case "standard": {
-      const a = new D(r, e);
-      return te(e, a, t), a;
+      const o = new F(r, e);
+      return q(e, o, t), o;
     }
     case "pbr": {
-      const a = new rt(r, e);
-      return te(e, a, t), a;
+      const o = new tt(r, e);
+      return q(e, o, t), o;
     }
     default:
-      throw new Error(`Unknown material type: '${o}'`);
+      throw new Error(`Unknown material type: '${a}'`);
   }
 }, R = (e, r, t) => {
-  const { position: n, color: o, material: a, receiveShadows: s } = t;
-  r instanceof A && w(a) && (r.material = G(e, a, "standard")), r instanceof A && w(s) && (r.receiveShadows = s), x(n, (i) => {
+  const { position: n, color: a, material: o, receiveShadows: s } = t;
+  r instanceof A && x(o) && (r.material = G(e, o, "standard")), r instanceof A && x(s) && (r.receiveShadows = s), w(n, (i) => {
     r.position = y(i);
-  }), x(o, (i) => {
+  }), w(a, (i) => {
     const l = r.material;
-    if (l instanceof D) {
+    if (l instanceof F) {
       l.diffuseColor = S(i);
       const c = E.from(i).alpha();
       c < 1 && (l.alpha = c), l.specularColor = S("black"), l.ambientColor = S(i), l.emissiveColor = S(i);
     }
   });
-}, Be = (e, r, t = {}) => P(e, r, () => {
-  const { width: n = 1, height: o = 1, depth: a = 1, colors: s } = t, i = v.CreateBox(
+}, Ie = (e, r, t = {}) => P(e, r, () => {
+  const { width: n = 1, height: a = 1, depth: o = 1, colors: s } = t, i = v.CreateBox(
     r,
     {
       width: n,
-      height: o,
-      depth: a,
-      faceColors: w(s) ? s.map(Y) : void 0
+      height: a,
+      depth: o,
+      faceColors: x(s) ? s.map(X) : void 0
     },
     e
   );
   return R(e, i, t), i;
-}), Ne = (e, r, t) => {
+}), Le = (e, r, t) => {
   const {
     width: n = 1,
-    height: o = 1,
-    depth: a = 1,
+    height: a = 1,
+    depth: o = 1,
     material: s,
     receiveShadows: i = !1
   } = t, l = `box-instance-root-${JSON.stringify([
     n,
-    o,
     a,
+    o,
     s,
     i
   ])}`;
   let c = e.getMeshByName(l);
   if (N(c)) {
-    if (c = v.CreateBox(l, { width: n, height: o, depth: a }, e), c.receiveShadows = i, c.isVisible = !1, !s)
+    if (c = v.CreateBox(l, { width: n, height: a, depth: o }, e), c.receiveShadows = i, c.isVisible = !1, !s)
       throw new Error("No material", { cause: t });
     c.material = G(e, s, "standard");
   }
   const p = c.createInstance(r);
   return R(e, p, t), p;
-}, Rt = (e, r, t) => {
+}, vt = (e, r, t) => {
   const { radius: n = 0.5 } = t;
   return P(e, r, () => {
-    const o = v.CreateSphere(
+    const a = v.CreateSphere(
       r,
       { diameter: n * 2 },
       e
     );
-    return R(e, o, t), o;
+    return R(e, a, t), a;
   });
-}, At = (e, r, t, n = {}) => {
+}, Rt = (e, r, t, n = {}) => {
   const {
-    predicate: o = (l) => l.isPickable,
-    camera: a = e.activeCamera
-  } = n, s = e.createPickingRay(r, t, be.Identity(), a);
-  return e.pickWithRay(s, o)?.pickedMesh;
-}, It = (e) => {
+    predicate: a = (l) => l.isPickable,
+    camera: o = e.activeCamera
+  } = n, s = e.createPickingRay(r, t, we.Identity(), o);
+  return e.pickWithRay(s, a)?.pickedMesh;
+}, At = (e) => {
   e.computeWorldMatrix(!0), e.refreshBoundingInfo({});
-  const [r, t, n] = k(e.getAbsolutePosition()), o = e.getBoundingInfo().boundingSphere.radius;
-  return [r, t, n - o];
-}, re = (e, r) => {
-  if (e instanceof F)
-    return e.meshes.forEach((t) => re(t, r));
-  r(e), e.getChildMeshes().forEach((t) => re(t, r));
-}, Lt = {
+  const [r, t, n] = k(e.getAbsolutePosition()), a = e.getBoundingInfo().boundingSphere.radius;
+  return [r, t, n - a];
+}, j = (e, r) => {
+  if (e instanceof D)
+    return e.meshes.forEach((t) => j(t, r));
+  r(e), e.getChildMeshes().forEach((t) => j(t, r));
+}, It = {
   tetrahedron: 0,
   octahedron: 1,
   dodecahedron: 2,
@@ -477,21 +477,21 @@ const Re = (e, r) => {
   elongatedSquareDipyramid: 12,
   elongatedPentagonalDipyramid: 13,
   elongatedPentagonalCupola: 14
-}, Bt = (e, r, t = {}) => P(e, r, () => {
-  const { size: n = 1, type: o = "tetrahedron" } = t, a = v.CreatePolyhedron(
+}, Lt = (e, r, t = {}) => P(e, r, () => {
+  const { size: n = 1, type: a = "tetrahedron" } = t, o = v.CreatePolyhedron(
     r,
-    { type: Lt[o], size: n },
+    { type: It[a], size: n },
     e
   );
-  return R(e, a, t), a;
-}), Nt = (e) => {
+  return R(e, o, t), o;
+}), Bt = (e) => {
   const r = e.getBoundingInfo().boundingBox.vectors, t = e.getScene(), n = t.getEngine().getRenderingCanvas();
   if (!n)
     throw new Error("No canvas for scene", { cause: t });
-  const o = e.getWorldMatrix(), a = t.getTransformMatrix(), s = t.activeCamera.viewport, i = r.map((f) => {
-    const u = j.Project(f, o, a, s);
+  const a = e.getWorldMatrix(), o = t.getTransformMatrix(), s = t.activeCamera.viewport, i = r.map((f) => {
+    const u = J.Project(f, a, o, s);
     return u.x = u.x * n.clientWidth, u.y = u.y * n.clientHeight, u;
-  }), [l, c] = me(i, (f) => f.x), [p, g] = me(i, (f) => f.y);
+  }), [l, c] = fe(i, (f) => f.x), [p, g] = fe(i, (f) => f.y);
   return {
     width: c - l,
     height: g - p,
@@ -500,43 +500,43 @@ const Re = (e, r) => {
     right: c,
     bottom: g
   };
-}, _t = (e, r, t = {}) => {
+}, Nt = (e, r, t = {}) => {
   const {
     recurse: n = !0,
-    disposeMaterials: o = !1,
-    disposeTextures: a = !1
+    disposeMaterials: a = !1,
+    disposeTextures: o = !1
   } = t, s = e.getMeshByName(r);
   if (s) {
-    if (s.dispose(!n, !1), o) {
+    if (s.dispose(!n, !1), a) {
       const i = s.material;
       if (!i)
         return;
-      i.name = `DISPOSED-${i.name}`, i?.dispose(!0, a), e.removeMaterial(i);
+      i.name = `DISPOSED-${i.name}`, i?.dispose(!0, o), e.removeMaterial(i);
     }
     e.removeMesh(s);
   }
-}, kt = (e) => {
+}, _t = (e) => {
   if (!N(e))
     return e.sort((r, t) => r.distance - t.distance), e[0];
-}, Ot = (e, r, t = {}) => P(e, r, () => {
-  const { arc: n = 1, height: o = 1, radius: a = 0.5, tag: s } = t, i = v.CreateCylinder(
+}, kt = (e, r, t = {}) => P(e, r, () => {
+  const { arc: n = 1, height: a = 1, radius: o = 0.5, tag: s } = t, i = v.CreateCylinder(
     r,
     {
-      height: o,
+      height: a,
       arc: n,
-      diameter: a * 2
+      diameter: o * 2
     },
     e
   );
   return R(e, i, t), i;
-}), Ft = (e, r, t) => {
+}), Ot = (e, r, t) => {
   const { updatable: n = !1 } = t;
   return P(
     e,
     r,
-    (o) => Dt(e, r, {
+    (a) => Dt(e, r, {
       ...t,
-      instance: o
+      instance: a
       // updatable: undefined,
     }),
     n
@@ -544,12 +544,12 @@ const Re = (e, r) => {
 }, Dt = (e, r, t) => {
   const {
     colors: n = [],
-    points: o = [],
-    color: a = "white",
+    points: a = [],
+    color: o = "white",
     updatable: s = !1,
     useVertexAlpha: i,
     instance: l
-  } = t, c = o.map((d, f) => n[f] ?? a).map((d) => Y(d)), p = o.map((d) => y(d)), g = v.CreateLines(r, {
+  } = t, c = a.map((d, f) => n[f] ?? o).map((d) => X(d)), p = a.map((d) => y(d)), g = v.CreateLines(r, {
     points: p,
     colors: c,
     updatable: s,
@@ -557,205 +557,205 @@ const Re = (e, r) => {
     instance: l
   });
   return R(e, g, t), g;
-}, ne = (e, r, t) => {
+}, ee = (e, r, t) => {
   const n = e.getMeshByName(r);
-  return w(n) ? Promise.resolve(n) : t();
-}, Ht = (e, r, t, n) => P(e, r, () => {
-  const o = P(e, t, n);
-  return _.assertValue(o, () => (console.log({ scene: e, name: r, rootName: t, producer: n }), "Unable to create mesh instance. Missing root mesh.")), o.createInstance(r);
-}), Ut = async (e, r, t, n) => ne(e, r, async () => {
-  const o = await ne(e, t, n);
-  return _.assertValue(o, () => (console.log({ scene: e, name: r, rootName: t, producer: n }), "Unable to create mesh instance. Missing root mesh.")), o.createInstance(r);
-}), $t = (e, r, t = {}) => P(e, r, () => {
-  const { width: n = 1, height: o = 1, tag: a, doubleSided: s } = t, i = v.CreatePlane(
+  return x(n) ? Promise.resolve(n) : t();
+}, Ft = (e, r, t, n) => P(e, r, () => {
+  const a = P(e, t, n);
+  return _.assertValue(a, () => (console.log({ scene: e, name: r, rootName: t, producer: n }), "Unable to create mesh instance. Missing root mesh.")), a.createInstance(r);
+}), Ht = async (e, r, t, n) => ee(e, r, async () => {
+  const a = await ee(e, t, n);
+  return _.assertValue(a, () => (console.log({ scene: e, name: r, rootName: t, producer: n }), "Unable to create mesh instance. Missing root mesh.")), a.createInstance(r);
+}), Ut = (e, r, t = {}) => P(e, r, () => {
+  const { width: n = 1, height: a = 1, tag: o, doubleSided: s } = t, i = v.CreatePlane(
     r,
     {
       width: n,
-      height: o,
+      height: a,
       sideOrientation: s ? A.DOUBLESIDE : void 0
     },
     e
   ), { billboard: l } = t;
   return l && (i.billboardMode = A.BILLBOARDMODE_ALL), R(e, i, t), i;
-}), Gt = (e, r, t = {}) => P(e, r, () => {
-  const { radius: n = 0.5 } = t, o = v.CreateTorusKnot(r, { radius: n }, e);
-  return R(e, o, t), o;
-}), Wt = (e) => {
-  const { XYZI: r, SIZE: t } = e, n = t.z, o = 1 / n / 2, a = 1 / n / 2, s = 1 / n / 2;
+}), $t = (e, r, t = {}) => P(e, r, () => {
+  const { radius: n = 0.5 } = t, a = v.CreateTorusKnot(r, { radius: n }, e);
+  return R(e, a, t), a;
+}), Gt = (e) => {
+  const { XYZI: r, SIZE: t } = e, n = t.z, a = 1 / n / 2, o = 1 / n / 2, s = 1 / n / 2;
   return r.map((i) => {
-    const [l, c, p] = k(i), g = (l - t.x / 2) / n + o, d = (c - t.y / 2) / n + a, f = (p - t.z / 2) / -n - s;
-    return gt(ft(g, d, f), i.i);
+    const [l, c, p] = k(i), g = (l - t.x / 2) / n + a, d = (c - t.y / 2) / n + o, f = (p - t.z / 2) / -n - s;
+    return ht(gt(g, d, f), i.i);
   });
-}, _e = (e, r, t) => {
-  const { XYZI: n, RGBA: o, SIZE: a } = r, s = o.map((g) => {
+}, Be = (e, r, t) => {
+  const { XYZI: n, RGBA: a, SIZE: o } = r, s = a.map((g) => {
     const { r: d, g: f, b: u, a: h } = g;
     return E.builder({ color: [d, f, u, h], model: "rgba" }).toString();
-  }), i = new se(t, e), l = 1 / a.z, c = v.CreateBox("temp-box", {
+  }), i = new ne(t, e), l = 1 / o.z, c = v.CreateBox("temp-box", {
     width: l,
     height: l,
     depth: l
   });
-  i.addShape(c, n.length), i.buildMesh(), c.dispose(), Wt(r).forEach((g, d) => {
+  i.addShape(c, n.length), i.buildMesh(), c.dispose(), Gt(r).forEach((g, d) => {
     const [f, u] = g, h = i.particles[d];
     h.position = y(f);
     const m = s[u];
-    h.color = Y(m);
+    h.color = X(m);
   });
   const p = G(e, "vox-material", "standard");
   return p.specularColor = S("black"), i.mesh.material = p, i.setParticles(), i;
-}, Vt = (e, r, t, n = {}) => {
-  const o = e.metadata ?? {}, { voxes: a = {} } = o, s = a[t];
+}, Wt = (e, r, t, n = {}) => {
+  const a = e.metadata ?? {}, { voxes: o = {} } = a, s = o[t];
   if (N(s))
     throw console.log({ scene: e, name: r, src: t }), new Error(`No voxData found for ${t} ${r}`);
-  const i = _e(e, s, r), l = i.mesh;
+  const i = Be(e, s, r), l = i.mesh;
   return R(e, l, n), i;
-}, zt = (e) => e instanceof nt, Xt = (e, r) => {
-  const [t, n] = Me(V.normalize2(V.subtract2(r, e)));
+}, Vt = (e) => e instanceof rt, zt = (e, r) => {
+  const [t, n] = xe(V.normalize2(V.subtract2(r, e)));
   return Math.atan2(n, t) + Math.PI / 2;
-}, ke = (e, r = {}) => {
+}, Ne = (e, r = {}) => {
   const {
     disposeSource: t = !1,
     allow32BitsIndices: n = !0,
-    meshSubclass: o = void 0,
-    subdivideWithSubMeshes: a = !1,
+    meshSubclass: a = void 0,
+    subdivideWithSubMeshes: o = !1,
     multiMultiMaterials: s = !1
   } = r;
   return A.MergeMeshes(
     e,
     t,
     n,
-    o,
     a,
+    o,
     s
   );
-}, Zt = (e, r, t, n = {}) => {
+}, Xt = (e, r, t, n = {}) => {
   const {
-    predicate: o = (s) => s.isPickable,
-    camera: a = e.activeCamera
+    predicate: a = (s) => s.isPickable,
+    camera: o = e.activeCamera
   } = n;
-  if (!a)
+  if (!o)
     throw new Error("Camera required");
-  return e.multiPick(r, t, o, a);
-}, Oe = (e, r = /.*/, t = 0) => {
+  return e.multiPick(r, t, a, o);
+}, _e = (e, r = /.*/, t = 0) => {
   const n = "".padStart(t * 2);
   if (r.test(e.name)) {
     console.log(`${n}mesh: '${e.name}'`);
-    const o = e.material;
-    w(o) && Object.entries(o).filter(
+    const a = e.material;
+    x(a) && Object.entries(a).filter(
       (s) => /.Texture$/.test(s[0])
     ).map((s) => {
       const [i, l] = s;
       l instanceof B && i !== "_environmentBRDFTexture" && console.log(`${n}tex: '${l.name}' (${i})`);
     });
   }
-  e.getChildMeshes().map((o) => Oe(o, r, t + 1));
-}, K = {
-  lookAt: Xt,
-  getBox: Be,
-  describeMesh: Oe,
-  getPlane: $t,
-  getBoxInstance: Ne,
-  getSphere: Rt,
-  getCylinder: Ot,
-  getTorusKnot: Gt,
-  getLine: Ft,
-  walkMeshes: re,
-  pickMesh: At,
+  e.getChildMeshes().map((a) => _e(a, r, t + 1));
+}, le = {
+  lookAt: zt,
+  getBox: Ie,
+  describeMesh: _e,
+  getPlane: Ut,
+  getBoxInstance: Le,
+  getSphere: vt,
+  getCylinder: kt,
+  getTorusKnot: $t,
+  getLine: Ot,
+  walkMeshes: j,
+  pickMesh: Rt,
   getMesh: P,
-  getMeshAsync: ne,
-  calcTopOfMeshWorldPosition: It,
-  mergeMeshes: ke,
-  getVoxModel: Vt,
-  calcClientRectForMesh: Nt,
-  updateArcRotateCameraPosition: Re,
-  findClosestPick: kt,
-  destroyMesh: _t,
-  getMeshInstance: Ht,
-  getMeshInstanceAsync: Ut,
-  isInstancedMesh: zt,
-  pickMeshes: Zt,
-  getPolyhedron: Bt,
+  getMeshAsync: ee,
+  calcTopOfMeshWorldPosition: At,
+  mergeMeshes: Ne,
+  getVoxModel: Wt,
+  calcClientRectForMesh: Bt,
+  updateArcRotateCameraPosition: Pe,
+  findClosestPick: _t,
+  destroyMesh: Nt,
+  getMeshInstance: Ft,
+  getMeshInstanceAsync: Ht,
+  isInstancedMesh: Vt,
+  pickMeshes: Xt,
+  getPolyhedron: Lt,
   updateMesh: R
-}, Yt = (e) => new F(e), Kt = (e) => (r) => {
+}, Zt = (e) => new D(e), Yt = (e) => (r) => {
 };
-async function Jt(e, r = e.name) {
+async function Kt(e, r = e.name) {
   return await e();
 }
 const ue = (e) => {
-  const r = Kt();
+  const r = Yt();
   return new Promise((t, n) => {
     try {
       e.onAfterRenderCameraObservable.addOnce(() => {
         r(), t();
       }), e.render(!0);
-    } catch (o) {
-      n(o);
+    } catch (a) {
+      n(a);
     }
   });
-}, Qt = (e) => {
+}, Jt = (e) => {
   e.debugLayer.isVisible() ? e.debugLayer.hide() : e.debugLayer.show();
-}, Fe = {
-  createScene: Yt,
-  toggleInspector: Qt,
+}, Qt = {
+  createScene: Zt,
+  toggleInspector: Jt,
   renderOnce: ue
-}, de = (e) => {
+}, ke = (e) => {
   const r = e.createDefaultEnvironment();
   if (!r)
     throw new Error("Failed to create default environment");
   return r;
-}, he = async (e, r = {}) => e.createDefaultXRExperienceAsync(r), De = async (e = H()) => {
-  const r = Fe.createScene(e), t = X.getFreeCamera(r, "camera1", {
+}, Oe = async (e, r = {}) => e.createDefaultXRExperienceAsync(r), De = async (e = H()) => {
+  const r = Qt.createScene(e), t = oe.getFreeCamera(r, "camera1", {
     position: [0, 5, -10],
     target: [0, 0, 0]
   }), n = e.getRenderingCanvas();
-  t.attachControl(n, !0), Z.getHemisphericLight(r, "light1", {
+  t.attachControl(n, !0), ce.getHemisphericLight(r, "light1", {
     direction: [0, 1, 0],
     intensity: 0.7
-  }), K.getSphere(r, "sphere", {
+  }), le.getSphere(r, "sphere", {
     radius: 1,
     position: [0, 1, 0]
   });
-  const o = de(r);
-  if (!o?.ground)
+  const a = ke(r);
+  if (!a?.ground)
     throw new Error("Failed to create default environment");
-  const a = he(r, {
-    floorMeshes: [o.ground]
+  const o = Oe(r, {
+    floorMeshes: [a.ground]
   });
   return e.runRenderLoop(() => {
     r.render();
-  }), { scene: r, xr: a };
+  }), { scene: r, xr: o };
 }, qt = (e = H()) => {
-  const r = new F(e), t = e.getRenderingCanvas();
-  X.getArcRotateCamera(r, "Camera", {}).attachControl(t, !0), Z.getHemisphericLight(r, "light1", {
+  const r = new D(e), t = e.getRenderingCanvas();
+  oe.getArcRotateCamera(r, "Camera", {}).attachControl(t, !0), ce.getHemisphericLight(r, "light1", {
     direction: [1, 1, 1]
-  }), K.getSphere(r, "sphere", {
+  }), le.getSphere(r, "sphere", {
     radius: 0.5
   });
-  const o = { debug: !1 };
-  return t.onkeyup = (a) => {
-    a.ctrlKey && a.keyCode === 73 && (o.debug = !o.debug, o.debug ? r.debugLayer.hide() : (console.log("SHOW!"), r.debugLayer.show()));
+  const a = { debug: !1 };
+  return t.onkeyup = (o) => {
+    o.ctrlKey && o.keyCode === 73 && (a.debug = !a.debug, a.debug ? r.debugLayer.hide() : (console.log("SHOW!"), r.debugLayer.show()));
   }, e.runRenderLoop(() => {
     r.render();
   }), r;
 }, jt = {
   createEngine: H,
-  createCanvas: Ie,
+  createCanvas: Re,
   v3: y,
   c3: S,
-  c4: Y,
+  c4: X,
   helloWorld: qt,
   helloXrWorld: De,
-  attachEditorControls: Ae
+  attachEditorControls: ve
 }, er = async ({
   canvas: e,
   ...r
 }) => {
-  const t = new Ee(e, {
+  const t = new Ce(e, {
     // powerPreference: "high-performance",
     ...r
   });
   return t.hideLoadingUI(), await t.initAsync(), t;
-}, tr = () => Ee.IsSupportedAsync, on = {
+}, tr = () => Ce.IsSupportedAsync, nn = {
   createWebGlEngine: H,
   createWebGpuEngine: er,
   isWebGpuCapable: tr
@@ -767,7 +767,7 @@ const ue = (e) => {
       if (!t)
         throw new Error("Mesh has no material", { cause: r });
       const n = t.getActiveTextures()[0];
-      n.hasAlpha = !0, n.getAlphaFromRGB = !0, t.transparencyMode = 1, t.opacityTexture = n, r.visibility = 0.5, t.albedoColor = new Se(0, 0, 0);
+      n.hasAlpha = !0, n.getAlphaFromRGB = !0, t.transparencyMode = 1, t.opacityTexture = n, r.visibility = 0.5, t.albedoColor = new Te(0, 0, 0);
     }
   });
 }, nr = [
@@ -784,7 +784,7 @@ const ue = (e) => {
   // "Mouth",
   // "Ears",
   // "Torso",
-], or = [
+], ar = [
   "Irises",
   "Pupils",
   "Sclera"
@@ -796,17 +796,17 @@ const ue = (e) => {
   // "Mouth",
   // "Ears",
   // "Torso",
-], He = (e) => {
+], Fe = (e) => {
   const r = e?.material?.getActiveTextures() ?? [];
-  if (w(
+  if (x(
     r.find((t) => {
       const n = t?.name;
-      return w(nr.find((o) => n.includes(o)));
+      return x(nr.find((a) => n.includes(a)));
     })
-  ) && (e.visibility = 0), w(
+  ) && (e.visibility = 0), x(
     r.find((t) => {
       const n = t?.name;
-      return w(or.find((o) => n.includes(o)));
+      return x(ar.find((a) => n.includes(a)));
     })
   )) {
     const t = e.material;
@@ -832,19 +832,19 @@ const ue = (e) => {
     const t = e.material;
     t.roughness = 0.5, t.clearCoat.isEnabled = !0, t.clearCoat.intensity = 0.5, t.subSurface.isTranslucencyEnabled = !0, t.subSurface.translucencyIntensity = 0.5, t.subSurface.translucencyIntensityTexture = t.albedoTexture, e.visibility = 0.2;
   }
-  e.getChildMeshes().map(He);
-}, ar = (e) => {
+  e.getChildMeshes().map(Fe);
+}, or = (e) => {
   console.log("fixing bump maps", e.meshes), e.meshes.forEach((r) => {
     const t = r.material;
     t && (t.bumpTexture = null);
   });
 }, sr = (e) => {
-  rr(e), e.meshes.map(He), ar(e);
+  rr(e), e.meshes.map(Fe), or(e);
 }, ir = (e) => {
   const { path: r, scene: t, name: n = r instanceof File ? r.name : r } = e;
-  return t.getEngine().hideLoadingUI(), new Promise((a, s) => {
+  return t.getEngine().hideLoadingUI(), new Promise((o, s) => {
     try {
-      pe.ShowLoadingScreen = !1, pe.Append(
+      ge.ShowLoadingScreen = !1, ge.Append(
         "",
         r,
         t,
@@ -854,7 +854,7 @@ const ue = (e) => {
             throw new Error("No root mesh found", { cause: i });
           l.name = n, i.cameras.length > 0 && (i.activeCamera = i.cameras[0]), i.animationGroups.forEach((c) => {
             c.stop();
-          }), sr(i), a(l);
+          }), sr(i), o(l);
         },
         (i) => {
         },
@@ -872,7 +872,7 @@ const ue = (e) => {
   // fixDazFigure,
   // loadAssetContainer,
   // builder,
-}, Ue = (e, r = e.width, t = e.height) => {
+}, He = (e, r = e.width, t = e.height) => {
   const n = document.createElement("canvas");
   return n.width = r, n.height = t, n.getContext("2d").drawImage(
     e,
@@ -889,81 +889,81 @@ const ue = (e) => {
   if (typeof e == "string")
     return e;
   const r = document.createElement("canvas");
-  return r.width = e.width, r.height = e.height, r.getContext("2d").drawImage(e, 0, 0), await yt.toSrcString(r);
-}, $e = async (e, r, t) => {
+  return r.width = e.width, r.height = e.height, r.getContext("2d").drawImage(e, 0, 0), await mt.toSrcString(r);
+}, Ue = async (e, r, t) => {
   if (t instanceof HTMLCanvasElement)
-    return new Promise((o, a) => {
+    return new Promise((a, o) => {
       try {
-        const s = new ie(r, t, e);
-        s.update(), s.hasAlpha = !0, o(s);
+        const s = new ae(r, t, e);
+        s.update(), s.hasAlpha = !0, a(s);
       } catch (s) {
-        a(s);
+        o(s);
       }
     });
   const n = await cr(t);
-  return new Promise((o, a) => {
+  return new Promise((a, o) => {
     try {
       const s = new B(n, e, !1, !0);
       s.name = r, s.hasAlpha = !0, s.onLoadObservable.addOnce(() => {
-        o(s);
+        a(s);
       });
     } catch (s) {
-      a(s);
+      o(s);
     }
   });
 }, lr = async (e, r) => {
-  const t = ve.randomUuid(), { size: n, image: o, color: a } = e, s = v.CreatePlane(
+  const t = Ee.randomUuid(), { size: n, image: a, color: o } = e, s = v.CreatePlane(
     `plane-${t}`,
     {
       width: n,
       height: n
     },
     r
-  ), i = new D(`material-${t}`, r);
-  if (w(o)) {
-    const l = await $e(r, `layer-${t}`, o);
+  ), i = new F(`material-${t}`, r);
+  if (x(a)) {
+    const l = await Ue(r, `layer-${t}`, a);
     e._texture = l, e._mesh = s, e._material = i, l.hasAlpha = !0, i.opacityTexture = l, i.emissiveTexture = l;
   }
-  return w(a) && (i.emissiveColor = S(a)), s.material = i, s;
+  return x(o) && (i.emissiveColor = S(o)), s.material = i, s;
 }, ur = async (e, r) => {
-  const t = new F(r);
+  const t = new D(r);
   return await Promise.all(
-    e.map(async (n, o) => {
-      const a = await lr(n, t);
-      return a.position.set(0, 0, -o), a;
+    e.map(async (n, a) => {
+      const o = await lr(n, t);
+      return o.position.set(0, 0, -a), o;
     })
   ), t;
 }, dr = ({ size: e } = { size: 4096 }) => {
   const r = H({ width: e, height: e }), t = r.getRenderingCanvas(), n = {
     layers: []
-  }, o = {
-    addLayer: (a) => (n.layers.push({ size: e, ...a }), o),
-    render: async () => Jt(async () => {
-      const a = await ur(n.layers, r), s = new oe("camera1", y(0, 0, -1e3), a);
-      if (s.setTarget(y()), s.rotation = y(0, 0, Math.PI), s.mode = O.ORTHOGRAPHIC_CAMERA, s.minZ = 0, s.maxZ = 1e5, await ue(a), o.clear(), !t)
+  }, a = {
+    addLayer: (o) => (n.layers.push({ size: e, ...o }), a),
+    render: async () => Kt(async () => {
+      const o = await ur(n.layers, r), s = new te("camera1", y(0, 0, -1e3), o);
+      if (s.setTarget(y()), s.rotation = y(0, 0, Math.PI), s.mode = O.ORTHOGRAPHIC_CAMERA, s.minZ = 0, s.maxZ = 1e5, await ue(o), a.clear(), !t)
         throw new Error("No canvas found", { cause: r });
-      return Ue(t);
+      return He(t);
     }, "Texture render"),
-    clear: () => (n.layers.forEach((a) => {
-      a?._cached || (a?._texture?.dispose(), a?._mesh?.dispose(), a?._material?.dispose());
-    }), n.layers.length = 0, o)
+    clear: () => (n.layers.forEach((o) => {
+      o?._cached || (o?._texture?.dispose(), o?._mesh?.dispose(), o?._material?.dispose());
+    }), n.layers.length = 0, a)
   };
-  return o;
-}, ge = (e, r) => {
+  return a;
+}, de = (e, r) => {
   const t = e.getSize(), n = e.getContext();
   r(n, t), e.update();
 }, hr = (e) => {
-  ge(e, (r, t) => {
-    const { width: n, height: o } = t;
-    r.clearRect(0, 0, n, o);
+  de(e, (r, t) => {
+    const { width: n, height: a } = t;
+    r.clearRect(0, 0, n, a);
   });
 }, gr = (e, r = "DEBUG IMAGE") => {
-  const t = Ve.copyToCanvas(e, 1024, 1024);
+  const t = We.copyToCanvas(e, 1024, 1024);
   t.style.border = "1px solid grey";
   const n = document.createElement("div");
-  return n.textContent = r, document.body.appendChild(n), document.body.appendChild(t), new Promise((o, a) => {
+  return n.textContent = r, document.body.appendChild(n), document.body.appendChild(t), new Promise((a, o) => {
     const s = () => {
-      t.remove(), n.remove(), o(void 0);
+      t.remove(), n.remove(), a(void 0);
     };
     t.onclick = s, n.onclick = s;
   });
@@ -972,15 +972,15 @@ const ue = (e) => {
   t && (t.dispose(), e.removeTexture(t));
 }, pr = (e, r = {}) => {
   const { color: t = "black" } = r;
-  ge(e, (n, o) => {
-    const { width: a, height: s } = o;
-    n.fillStyle = E.from(t).toString(), n.fillRect(0, 0, a, s);
+  de(e, (n, a) => {
+    const { width: o, height: s } = a;
+    n.fillStyle = E.from(t).toString(), n.fillRect(0, 0, o, s);
   });
 }, mr = (e, r, t = {}) => {
   const {
     backgroundColor: n,
-    outline: o = !0,
-    color: a = "black",
+    outline: a = !0,
+    color: o = "black",
     fontFamily: s = "monospace",
     fontStyle: i = "bold",
     outlineColor: l = E.builder({ color: "white" }).alpha(0.1).toString(),
@@ -1002,129 +1002,129 @@ const ue = (e) => {
     width: c,
     height: h * 2
   };
-  if (w(n)) {
+  if (x(n)) {
     d.fillStyle = E.from(n).toString();
-    const { x: C, y: I, width: q, height: fe } = M;
-    d.fillRect(C, I, q, fe);
+    const { x: T, y: I, width: K, height: he } = M;
+    d.fillRect(T, I, K, he);
   }
-  return o && (d.strokeStyle = l, d.strokeText(r, u, m)), d.fillStyle = a, d.fillText(r, u, m), e.hasAlpha = !0, e.update(), M;
-}, Ge = {
+  return a && (d.strokeStyle = l, d.strokeText(r, u, m)), d.fillStyle = o, d.fillText(r, u, m), e.hasAlpha = !0, e.update(), M;
+}, $e = {
   linearNearest: B.LINEAR_NEAREST,
   nearestNearest: B.NEAREST_NEAREST,
   linearLinear: B.LINEAR_LINEAR,
   nearestLinear: B.NEAREST_LINEAR
-}, J = (e, r, t) => {
+}, Z = (e, r, t) => {
   const n = e.getTextureByName(r);
-  return w(n) ? n : t();
-}, Q = (e, r) => {
+  return x(n) ? n : t();
+}, Y = (e, r) => {
   const { hasAlpha: t } = r;
-  x(t, (n) => {
+  w(t, (n) => {
     e.hasAlpha = n;
-  }), e instanceof ie && e.update();
+  }), e instanceof ae && e.update();
 }, yr = (e, r, t = {}) => {
-  const n = J(e, r, () => {
+  const n = Z(e, r, () => {
     const {
-      generateMipMaps: o = !0,
-      samplingMode: a = "linearNearest",
+      generateMipMaps: a = !0,
+      samplingMode: o = "linearNearest",
       width: s = 1024,
       height: i = 1024,
       init: l
-    } = t, c = new ie(
+    } = t, c = new ae(
       r,
       {
         width: s,
         height: i
       },
       e,
-      o,
-      Ge[a]
+      a,
+      $e[o]
     );
     return l && (l(c.getContext()), c.update()), c;
   });
-  return Q(n, t), n;
-}, We = (e) => Ge[e], wr = (e, r, t) => J(e, r, () => {
+  return Y(n, t), n;
+}, Ge = (e) => $e[e], xr = (e, r, t) => Z(e, r, () => {
   const {
     element: n,
-    generateMipMaps: o = !0,
-    samplingMode: a = "linearNearest"
+    generateMipMaps: a = !0,
+    samplingMode: o = "linearNearest"
   } = t;
   if (!n)
     throw new Error("HTML element is required to create texture", {
       cause: t
     });
-  const s = new ot(r, n, {
-    generateMipMaps: o,
-    samplingMode: We(a),
+  const s = new nt(r, n, {
+    generateMipMaps: a,
+    samplingMode: Ge(o),
     engine: e.getEngine(),
     scene: e
   });
-  return Q(s, t), s;
-}), xr = (e, r, t) => {
-  const n = J(e, r, () => {
+  return Y(s, t), s;
+}), wr = (e, r, t) => {
+  const n = Z(e, r, () => {
     const {
-      src: o,
-      generateMipMaps: a = !0,
+      src: a,
+      generateMipMaps: o = !0,
       samplingMode: s = "linearNearest"
     } = t;
-    if (!o)
+    if (!a)
       throw new Error("src is required", { cause: t });
-    const i = new B(o, e, {
-      samplingMode: We(s)
+    const i = new B(a, e, {
+      samplingMode: Ge(s)
     });
     return i.name = r, i;
   });
-  return Q(n, t), n;
-}, Ve = {
+  return Y(n, t), n;
+}, We = {
   builder: dr,
-  copyToCanvas: Ue,
+  copyToCanvas: He,
   debugImage: gr,
-  getTexture: J,
-  getHtmlElementTexture: wr,
+  getTexture: Z,
+  getHtmlElementTexture: xr,
   getDynamicTexture: yr,
-  getPathTexture: xr,
-  updateTexture: Q,
-  imageToTexture: $e,
+  getPathTexture: wr,
+  updateTexture: Y,
+  imageToTexture: Ue,
   drawTextOnTexture: mr,
-  drawOnTexture: ge,
+  drawOnTexture: de,
   drawBackgroundOnTexture: pr,
   clearTexture: hr,
   destroyTexture: fr
 }, Mr = (e, r, t) => {
   const n = e?.effectLayers?.length ? e.getGlowLayerByName(r) : void 0;
-  return w(n) ? n : new Pe(r, e, t);
+  return x(n) ? n : new Se(r, e, t);
 }, br = (e, r, t) => {
   const n = e.getHighlightLayerByName(r);
-  return w(n) ? n : new at(r, e, t);
-}, sn = {
+  return x(n) ? n : new at(r, e, t);
+}, on = {
   getGlowLayer: Mr,
   getHighlightLayer: br
-}, ze = {
+}, Ve = {
   getMaterial: G,
-  updateMaterial: te,
-  updateStandardMaterial: Le
-}, Cr = (e, r) => {
+  updateMaterial: q,
+  updateStandardMaterial: Ae
+}, Tr = (e, r) => {
   const t = e.getTransformNodeByName(r);
-  return w(t) ? t : new st(r, e);
-}, cn = {
-  getTransformNode: Cr
-}, Tr = (e) => {
+  return x(t) ? t : new ot(r, e);
+}, sn = {
+  getTransformNode: Tr
+}, Cr = (e) => {
   const r = e.metadata ?? {}, t = r.solidParticleSystems ?? {};
-  return w(t) || (e.metadata = {
+  return x(t) || (e.metadata = {
     ...r,
     solidParticleSystems: {}
   }), t;
-}, Xe = (e, r, t) => {
-  const n = Tr(e), o = n[r];
-  w(o);
-  const a = t();
-  return n[r] = a, a;
-}, Sr = (e, r, t) => Xe(e, r, () => new se(r, e, {
+}, ze = (e, r, t) => {
+  const n = Cr(e), a = n[r];
+  x(a);
+  const o = t();
+  return n[r] = o, o;
+}, Sr = (e, r, t) => ze(e, r, () => new ne(r, e, {
   ...t
 })), Er = (e, r, t = {}) => {
-  const n = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Map(), { material: l, onMeshBuild: c, ...p } = t;
+  const n = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Map(), { material: l, onMeshBuild: c, ...p } = t;
   let g;
   const d = () => {
-    g?.mesh?.dispose(!1), g = new se(r, e, {
+    g?.mesh?.dispose(!1), g = new ne(r, e, {
       ...p
     });
   };
@@ -1133,7 +1133,7 @@ const ue = (e) => {
     scene: e,
     clearParticles: () => {
       g.particles.forEach((u, h) => {
-        u.color = xe;
+        u.color = ye;
       }), g.setParticles(), g.particles.forEach((u, h) => {
         u.alive = !1;
       });
@@ -1145,8 +1145,8 @@ const ue = (e) => {
     updateNextParticle: (u, h) => {
       const m = _.assertValue(
         s.get(u)
-      ), M = _.assertValue(n.get(u)), C = m[M];
-      f.updateParticleByIndex(C, h), n.set(u, M + 1);
+      ), M = _.assertValue(n.get(u)), T = m[M];
+      f.updateParticleByIndex(T, h), n.set(u, M + 1);
     },
     updateParticleByIndex: (u, h) => {
       const m = g.particles[u];
@@ -1159,72 +1159,72 @@ const ue = (e) => {
       });
     },
     removeMesh: (u) => {
-      o.delete(u), a.delete(u), s.delete(u.name), i.delete(u.name), f.rebuild();
+      a.delete(u), o.delete(u), s.delete(u.name), i.delete(u.name), f.rebuild();
     },
     addMesh: (u, h = 1) => {
-      if (o.has(u))
+      if (a.has(u))
         throw new Error(
           `Mesh ${u.name} already exists in the Sps. Use removeMesh to remove it first.`
         );
-      n.set(u.name, 0), o.set(u, h), i.set(u.name, u), f.rebuild(), f.clearParticles(), u.setEnabled(!1);
+      n.set(u.name, 0), a.set(u, h), i.set(u.name, u), f.rebuild(), f.clearParticles(), u.setEnabled(!1);
     },
     rebuild: () => {
-      d(), a.clear();
+      d(), o.clear();
       try {
-        o.forEach((h, m) => {
+        a.forEach((h, m) => {
           g.addShape(m, h);
           for (let M = 0; M < h; M++) {
-            const C = g.particles.length - 1 - M;
-            a.set(m, [
-              ...a.get(m) || [],
-              C
+            const T = g.particles.length - 1 - M;
+            o.set(m, [
+              ...o.get(m) || [],
+              T
             ]), s.set(m.name, [
-              ...a.get(m) || [],
-              C
+              ...o.get(m) || [],
+              T
             ]);
           }
         });
         const u = g.buildMesh();
-        l && (u.material = ze.getMaterial(e, l)), c?.(u);
+        l && (u.material = Ve.getMaterial(e, l)), c?.(u);
       } catch (u) {
         console.error(u);
       }
     },
     syncParticlestoMeshes: () => {
-      a.forEach((u, h) => {
+      o.forEach((u, h) => {
         for (let m = 0; m < u.length; m++) {
-          const M = u[m], C = _.assertValue(g.particles[M]);
-          if (C.position.copyFrom(h.position), C.rotation.copyFrom(h.rotation), C.scaling.copyFrom(h.scaling), h.material instanceof D) {
+          const M = u[m], T = _.assertValue(g.particles[M]);
+          if (T.position.copyFrom(h.position), T.rotation.copyFrom(h.rotation), T.scaling.copyFrom(h.scaling), h.material instanceof F) {
             const I = h.material.diffuseColor;
-            C.color = new z(I.r, I.g, I.b, h.material.alpha);
+            T.color = new z(I.r, I.g, I.b, h.material.alpha);
           }
         }
       });
     },
     dispose: () => {
-      o.clear(), a.clear(), s.clear(), i.clear(), n.clear(), g?.mesh?.dispose(), g.dispose();
+      a.clear(), o.clear(), s.clear(), i.clear(), n.clear(), g?.mesh?.dispose(), g.dispose();
     },
     update: () => {
       g.setParticles(), n.forEach((u, h) => {
         n.set(h, 0);
       }), g.particles.forEach((u) => {
-        u.alive = !1, u.color = xe;
+        u.alive = !1, u.color = ye;
       });
     }
   };
   return f;
-}, xe = new z(0, 0, 0, 0), Pr = {
+}, ye = new z(0, 0, 0, 0), Pr = {
   getSolidParticleSystem: Sr,
-  getParticleSystem: Xe,
+  getParticleSystem: ze,
   Sps: Er
-}, vr = (e, r, t) => new it(y(e), y(r), t), Rr = (e, r, t = {}) => {
+}, vr = (e, r, t) => new st(y(e), y(r), t), Rr = (e, r, t = {}) => {
   const {
     trianglePredicate: n,
-    fastCheck: o,
-    predicate: a = (s) => s.isPickable
+    fastCheck: a,
+    predicate: o = (s) => s.isPickable
   } = t;
-  return e.pickWithRay(r, a, o, n);
-}, ln = {
+  return e.pickWithRay(r, o, a, n);
+}, cn = {
   createRay: vr,
   pickWithRay: Rr
 }, Ar = (e) => {
@@ -1236,14 +1236,14 @@ const ue = (e) => {
   n.metadata.shadowGenerator.addShadowCaster(e);
 }), () => {
   Ar(e);
-}), un = {
+}), ln = {
   addShadowToMesh: Ir
 }, Lr = (e, r, t = {}) => {
-  const n = new Pe(r, e, t);
+  const n = new Se(r, e, t);
   return n.neutralColor = new z(0, 0, 0, 0), n;
-}, dn = {
+}, un = {
   addGlowLayer: Lr,
-  Constants: ct
+  Constants: it
 };
 async function Br({
   baseUrl: e,
@@ -1251,15 +1251,15 @@ async function Br({
   atlasSize: t,
   padding: n = 0
 }) {
-  const o = document.createElement("canvas");
-  o.width = t, o.height = t;
-  const a = o.getContext("2d"), s = {}, i = [];
+  const a = document.createElement("canvas");
+  a.width = t, a.height = t;
+  const o = a.getContext("2d"), s = {}, i = [];
   let l = 0, c = 0, p = 0;
   for (const d of r) {
     const f = d.endsWith(".png") ? d : `${d}.png`, u = await Nr(`${e}/${f}`), h = u.width + n * 2, m = u.height + n * 2;
     if (l + h > t && (l = 0, c += p, p = 0), c + m > t)
       throw new Error(`Not enough space in atlas for image: ${f}`);
-    a.drawImage(u, l + n, c + n), s[f] = {
+    o.drawImage(u, l + n, c + n), s[f] = {
       frame: {
         x: l + n,
         y: c + n,
@@ -1281,10 +1281,10 @@ async function Br({
     }), l += h, p = Math.max(p, m);
   }
   const g = await new Promise(
-    (d) => o.toBlob((f) => d(f), "image/png")
+    (d) => a.toBlob((f) => d(f), "image/png")
   );
   return {
-    canvas: o,
+    canvas: a,
     atlasBlob: g,
     spritePackageManagerJson: { frames: s },
     babylonSpriteMapJson: { frames: i }
@@ -1293,16 +1293,16 @@ async function Br({
 async function Nr(e) {
   return new Promise((r, t) => {
     const n = new Image();
-    n.src = e, n.onload = () => r(n), n.onerror = (o) => t(new Error(`Failed to load image: ${e}`));
+    n.src = e, n.onload = () => r(n), n.onerror = (a) => t(new Error(`Failed to load image: ${e}`));
   });
 }
 const _r = (e, r, t = {}) => {
   const n = e?.spriteManagers?.find((d) => d.name === r);
-  if (w(n))
+  if (x(n))
     return n;
   const {
-    capacity: o = 1,
-    atlasUrl: a,
+    capacity: a = 1,
+    atlasUrl: o,
     atlasBlob: s,
     epsilon: i,
     samplingMode: l,
@@ -1312,13 +1312,13 @@ const _r = (e, r, t = {}) => {
   let g;
   try {
     s && (g = URL.createObjectURL(s));
-    const d = w(a) ? a : g;
+    const d = x(o) ? o : g;
     if (N(d))
       throw new Error("altasUrl or atlasBlob is required", { cause: t });
-    return new lt(
+    return new ct(
       r,
       d,
-      o,
+      a,
       e,
       c,
       i,
@@ -1328,13 +1328,13 @@ const _r = (e, r, t = {}) => {
   } finally {
     g && URL.revokeObjectURL(g);
   }
-}, Ze = (e, r, t = {}) => {
+}, Xe = (e, r, t = {}) => {
   const n = e?.spriteManagers?.find((u) => u.name === r);
-  if (w(n))
+  if (x(n))
     return n;
   const {
-    capacity: o = 1,
-    cellSize: a = 64,
+    capacity: a = 1,
+    cellSize: o = 64,
     atlasUrl: s,
     atlasBlob: i,
     epsilon: l,
@@ -1346,14 +1346,14 @@ const _r = (e, r, t = {}) => {
   let f;
   try {
     i && (f = URL.createObjectURL(i));
-    const u = w(s) ? s : f;
+    const u = x(s) ? s : f;
     if (N(u))
       throw new Error("altasUrl or atlasBlob is required", { cause: t });
-    return new ut(
+    return new lt(
       r,
       u,
-      o,
       a,
+      o,
       e,
       l,
       c,
@@ -1365,26 +1365,26 @@ const _r = (e, r, t = {}) => {
     f && URL.revokeObjectURL(f);
   }
 }, kr = (e, r, t) => {
-  const n = mt(Ze(e, t)), o = n?.sprites?.find((a) => a.name === r);
-  return w(o) ? o : new dt(r, n);
-}, hn = {
-  getSpriteManager: Ze,
+  const n = pt(Xe(e, t)), a = n?.sprites?.find((o) => o.name === r);
+  return x(a) ? a : new ut(r, n);
+}, dn = {
+  getSpriteManager: Xe,
   getSprite: kr,
   createTextureAtlas: Br,
   getSpritePackedManager: _r
 }, Or = (e, r = {}) => {
   const {
-    random: t = ve.globalRandom,
+    random: t = Ee.globalRandom,
     radius: n = 1,
-    maxBounce: o = 0,
-    groundZ: a = 0,
+    maxBounce: a = 0,
+    groundZ: o = 0,
     speed: s = 20,
     decay: i = 0.01,
     dispose: l = () => e.isVisible = !1
   } = r;
   {
     const c = e.props?.path;
-    if (w(c) && c.length > 0) {
+    if (x(c) && c.length > 0) {
       const p = c.pop();
       if (!p)
         throw new Error("No next value from path", { cause: c });
@@ -1393,17 +1393,17 @@ const _r = (e, r, t = {}) => {
     }
   }
   {
-    const { bounces: c = o } = e.props ?? {};
+    const { bounces: c = a } = e.props ?? {};
     if (c <= 0) {
       t() < i && l();
       return;
     }
-    const p = c / o, g = e.position, [d, f, u] = k(g), h = (Qe) => (t() * n * 2 - n) * (p / 4) + Qe, [m, M] = [h(d), h(f)], C = y([m, M, a]), [I, q, fe] = k(V.midPoint3(g, C)), Ye = y(I, q, u - t() * p * 3), Ke = {
-      path: ht.CreateCatmullRomSpline([g, Ye, C], s).getPoints().reverse(),
+    const p = c / a, g = e.position, [d, f, u] = k(g), h = (Je) => (t() * n * 2 - n) * (p / 4) + Je, [m, M] = [h(d), h(f)], T = y([m, M, o]), [I, K, he] = k(V.midPoint3(g, T)), Ze = y(I, K, u - t() * p * 3), Ye = {
+      path: dt.CreateCatmullRomSpline([g, Ze, T], s).getPoints().reverse(),
       bounces: c - 1
       // rotationAxis: [2 * random() - 1, 2 * random() - 1, 2 * random() - 1],
-    }, Je = e.props ?? {};
-    e.props = { ...Je, ...Ke };
+    }, Ke = e.props ?? {};
+    e.props = { ...Ke, ...Ye };
   }
 };
 class L {
@@ -1417,12 +1417,12 @@ class L {
     return r.match(/\([^()]*\)/g) ? r = r.replace(/\([^()]*\)/g, (n) => (n = n.slice(1, n.length - 1), L._HandleParenthesisContent(n, t))) : r = L._HandleParenthesisContent(r, t), r === "true" ? !0 : r === "false" ? !1 : L.Eval(r, t);
   }
   static _HandleParenthesisContent(r, t) {
-    t = t || ((a) => a === "true");
+    t = t || ((o) => o === "true");
     let n;
-    const o = r.split("||");
-    for (const a in o)
-      if (Object.prototype.hasOwnProperty.call(o, a)) {
-        let s = L._SimplifyNegation(o[a].trim());
+    const a = r.split("||");
+    for (const o in a)
+      if (Object.prototype.hasOwnProperty.call(a, o)) {
+        let s = L._SimplifyNegation(a[o].trim());
         const i = s.split("&&");
         if (i.length > 1)
           for (let l = 0; l < i.length; ++l) {
@@ -1444,13 +1444,13 @@ class L {
     return r = r.replace(/^[\s!]+/, (t) => (t = t.replace(/[\s]/g, () => ""), t.length % 2 ? "!" : "")), r = r.trim(), r === "!true" ? r = "false" : r === "!false" && (r = "true"), r;
   }
 }
-class T {
+class C {
   /**
    * Adds support for tags on the given object
    * @param obj defines the object to use
    */
   static EnableFor(r) {
-    r._tags = r._tags || {}, r.hasTags = () => T.HasTags(r), r.addTags = (t) => T.AddTagsTo(r, t), r.removeTags = (t) => T.RemoveTagsFrom(r, t), r.matchesTagsQuery = (t) => T.MatchesQuery(r, t);
+    r._tags = r._tags || {}, r.hasTags = () => C.HasTags(r), r.addTags = (t) => C.AddTagsTo(r, t), r.removeTags = (t) => C.RemoveTagsFrom(r, t), r.matchesTagsQuery = (t) => C.MatchesQuery(r, t);
   }
   /**
    * Removes tags support
@@ -1484,8 +1484,8 @@ class T {
       return null;
     if (t) {
       const n = [];
-      for (const o in r._tags)
-        Object.prototype.hasOwnProperty.call(r._tags, o) && r._tags[o] === !0 && n.push(o);
+      for (const a in r._tags)
+        Object.prototype.hasOwnProperty.call(r._tags, a) && r._tags[a] === !0 && n.push(a);
       return n.join(" ");
     } else
       return r._tags;
@@ -1500,14 +1500,14 @@ class T {
     if (!t || typeof t != "string")
       return;
     const n = t.split(" ");
-    for (const o of n)
-      T._AddTagTo(r, o);
+    for (const a of n)
+      C._AddTagTo(r, a);
   }
   /**
    * @internal
    */
   static _AddTagTo(r, t) {
-    t = t.trim(), !(t === "" || t === "true" || t === "false") && (t.match(/[\s]/) || t.match(/^([!]|([|]|[&]){2})/) || (T.EnableFor(r), r._tags[t] = !0));
+    t = t.trim(), !(t === "" || t === "true" || t === "false") && (t.match(/[\s]/) || t.match(/^([!]|([|]|[&]){2})/) || (C.EnableFor(r), r._tags[t] = !0));
   }
   /**
    * Removes specific tags from a specific object
@@ -1515,11 +1515,11 @@ class T {
    * @param tagsString defines the tags to remove
    */
   static RemoveTagsFrom(r, t) {
-    if (!T.HasTags(r))
+    if (!C.HasTags(r))
       return;
     const n = t.split(" ");
-    for (const o in n)
-      T._RemoveTagFrom(r, n[o]);
+    for (const a in n)
+      C._RemoveTagFrom(r, n[a]);
   }
   /**
    * @internal
@@ -1534,25 +1534,25 @@ class T {
    * @returns a boolean
    */
   static MatchesQuery(r, t) {
-    return t === void 0 ? !0 : t === "" ? T.HasTags(r) : L.Eval(t, (n) => T.HasTags(r) && r._tags[n]);
+    return t === void 0 ? !0 : t === "" ? C.HasTags(r) : L.Eval(t, (n) => C.HasTags(r) && r._tags[n]);
   }
 }
-const Fr = (e, r, t) => {
-  const { XYZI: n, RGBA: o } = r, a = o.map((i) => {
+const Dr = (e, r, t) => {
+  const { XYZI: n, RGBA: a } = r, o = a.map((i) => {
     const { r: l, g: c, b: p, a: g } = i;
     return E.builder({ color: [l, c, p, g], model: "rgba" }).toString();
   }), s = new A(t, e);
   return n.map((i, l) => {
-    const c = a[i.i], p = Ne(e, `voxel-${c}`, {
+    const c = o[i.i], p = Le(e, `voxel-${c}`, {
       color: c,
       material: `voxel-material-${c}`
     });
     return p.position = y(i), p.parent = s, p;
-  }), T.AddTagsTo(s, "complex"), s;
-}, Dr = (e) => {
+  }), C.AddTagsTo(s, "complex"), s;
+}, Fr = (e) => {
   const r = Object.entries(e).sort((t, n) => {
-    const [o] = t, [a] = n;
-    return o.localeCompare(a);
+    const [a] = t, [o] = n;
+    return a.localeCompare(o);
   });
   return JSON.stringify(r);
 }, Hr = (e) => {
@@ -1561,69 +1561,47 @@ const Fr = (e, r, t) => {
     const n = t?.material?.name;
     if (!n)
       throw new Error("Mesh material is missing name", { cause: t });
-    const o = r[n] ?? [];
-    o.push(t), r[n] = o;
+    const a = r[n] ?? [];
+    a.push(t), r[n] = a;
   }), r;
 }, Ur = (e, r, t) => {
-  const { XYZI: n, RGBA: o } = r, a = o.map((d) => {
+  const { XYZI: n, RGBA: a } = r, o = a.map((d) => {
     const { r: f, g: u, b: h, a: m } = d;
     return E.builder({ color: [f, u, h, m], model: "rgba" }).toString();
   }), s = n.map((d, f) => {
-    const u = a[d.i], [h, m, M] = k(d), C = Be(
+    const u = o[d.i], [h, m, M] = k(d), T = Ie(
       e,
-      `voxel-merged-${u}-${Dr(d)}`,
+      `voxel-merged-${u}-${Fr(d)}`,
       {
         position: [h, m, M],
         // color,
         // material: `voxel-merged-material-${color}`,
         material: "voxel-material",
-        colors: pt.from(6).map(() => u)
+        colors: ft.from(6).map(() => u)
       }
     );
-    return C.setEnabled(!1), C;
-  }), i = Hr(s), l = Object.values(i).map((d) => ke(d)), c = new A(`merged-${t}`, e);
-  l.filter(w).forEach((d) => d.parent = c);
+    return T.setEnabled(!1), T;
+  }), i = Hr(s), l = Object.values(i).map((d) => Ne(d)), c = new A(`merged-${t}`, e);
+  l.filter(x).forEach((d) => d.parent = c);
   const p = G(e, "voxel-material", "standard");
-  l.filter(w).forEach((d) => d.material = p), c.metadata = {
+  l.filter(x).forEach((d) => d.material = p), c.metadata = {
     voxels: s
-  }, T.AddTagsTo(c, "merged");
+  }, C.AddTagsTo(c, "merged");
   const g = new A(t, e);
   return g.metadata = {
     voxels: s
   }, c.parent = g, g;
-}, gn = {
+}, hn = {
   animateExplosion: Or,
-  voxDataToSps: _e,
+  voxDataToSps: Be,
   voxDataToMergedModel: Ur,
-  voxDataToComplexModel: Fr
-}, $r = (e) => new b.WebXRSessionManager(e), Gr = (e) => {
-  const r = Fe.createScene(e), t = X.getFreeCamera(r, "camera1", {
-    position: [0, 5, -10],
-    target: [0, 0, 0]
-  }), n = e.getRenderingCanvas();
-  t.attachControl(n, !0), Z.getHemisphericLight(r, "light1", {
-    direction: [0, 1, 0],
-    intensity: 0.7
-  }), K.getSphere(r, "sphere", {
-    radius: 1,
-    position: [0, 1, 0]
-  });
-  const o = de(r);
-  if (!o?.ground)
-    throw new Error("Failed to create default environment");
-  const a = he(r, {
-    floorMeshes: [o.ground]
-  });
-  return e.runRenderLoop(() => {
-    r.render();
-  }), { scene: r, xr: a };
-}, fn = {
+  voxDataToComplexModel: Dr
+}, $r = (e) => new b.WebXRSessionManager(e), gn = {
   createWebXrSessionManager: $r,
   helloXrWorld: De,
-  createDefaultEnvironment: de,
-  createWebXrExperience: he,
-  wtf: Gr
-}, Wr = ({
+  createDefaultEnvironment: ke,
+  createWebXrExperience: Oe
+}, Gr = ({
   engine: e,
   canvas: r
 }) => {
@@ -1640,14 +1618,14 @@ const Fr = (e, r, t) => {
     new b.Vector3(0, 1, -1),
     t
   );
-  const o = new b.StandardMaterial("mat");
-  o.diffuseTexture = new b.Texture("textures/earth.jpg");
-  const a = new b.StandardMaterial("mat"), s = new b.Texture("textures/fire.jpg");
-  a.diffuseTexture = s;
+  const a = new b.StandardMaterial("mat");
+  a.diffuseTexture = new b.Texture("textures/earth.jpg");
+  const o = new b.StandardMaterial("mat"), s = new b.Texture("textures/fire.jpg");
+  o.diffuseTexture = s;
   const i = new b.SolidParticleSystem("SPS", t, {
     useModelMaterial: !0
   }), l = b.MeshBuilder.CreateBox("FOO");
-  return l.material = o, i.addShape(l, 1e4), i.buildMesh(), i.initParticles = () => {
+  return l.material = a, i.addShape(l, 1e4), i.buildMesh(), i.initParticles = () => {
     for (let p = 0; p < i.nbParticles; p++) {
       const g = i.particles[p];
       g.position.x = b.Scalar.RandomRange(-20, 20), g.position.y = b.Scalar.RandomRange(-20, 20), g.position.z = b.Scalar.RandomRange(-20, 20);
@@ -1655,34 +1633,34 @@ const Fr = (e, r, t) => {
   }, i.initParticles(), i.setParticles(), { scene: t, update: () => {
     const p = Math.sin(Date.now() * 5e-3);
     i.particles.forEach((g, d) => {
-      d > 20 ? (g.rotation.x = p, o.alpha = p, o.diffuseTexture = s) : g.rotation.y = p;
+      d > 20 ? (g.rotation.x = p, a.alpha = p, a.diffuseTexture = s) : g.rotation.y = p;
     }), i.setParticles();
   } };
-}, Vr = ({
+}, Wr = ({
   engine: e,
   canvas: r
 }) => {
   const t = new b.Scene(e);
-  console.log(t), X.getArcRotateCamera(t, "ArcRotateCamera", {
+  console.log(t), oe.getArcRotateCamera(t, "ArcRotateCamera", {
     alpha: -Math.PI / 2,
     beta: Math.PI / 2.2,
     radius: 50,
     target: [0, 0, 0]
-  }).attachControl(r, !0), Z.getHemisphericLight(t, "light", {
+  }).attachControl(r, !0), ce.getHemisphericLight(t, "light", {
     direction: [0, 1, -1]
   });
-  const o = Ve.getPathTexture(t, "tex", {
+  const a = We.getPathTexture(t, "tex", {
     src: "/images/test.jpg"
-  }), a = ze.getMaterial(t, "mat", {
-    opacityTexture: o.name
+  }), o = Ve.getMaterial(t, "mat", {
+    opacityTexture: a.name
     // diffuseColor: Colors.from("red").alpha(0.99).toString(),
     // alpha: 0.99,
-  }), s = K.getBox(
+  }), s = le.getBox(
     t,
     "box1"
     //  { material: mat.name }
   ), i = Pr.Sps(t, "sps", {
-    material: a.name,
+    material: o.name,
     updatable: !0,
     // enableDepthSort: true,
     onMeshBuild: (c) => {
@@ -1692,36 +1670,36 @@ const Fr = (e, r, t) => {
   return i.addMesh(s, 1e4), i.updateParticlesByName("box1", (c, p) => {
     c.position.x = b.Scalar.RandomRange(-20, 20), c.position.y = b.Scalar.RandomRange(-20, 20), c.position.z = b.Scalar.RandomRange(-20, 20);
   }), { scene: t, update: () => {
-    const c = Math.sin(Date.now() * 5e-3), p = wt.noiseStream(0);
+    const c = Math.sin(Date.now() * 5e-3), p = yt.noiseStream(0);
     i.updateParticlesByName("box1", (g, d) => {
       g.color = new b.Color4(p(), p(), p(), 0.5), Math.random() > 0.5 ? g.rotation.x = p() * c : g.rotation.y = p() * c;
     }), i.update();
   } };
-}, pn = {
-  spsDebug: Wr,
-  spsDebug2: Vr
+}, fn = {
+  spsDebug: Gr,
+  spsDebug2: Wr
 };
 export {
   jt as Babs,
-  we as CAMERA_MODES,
-  X as Cameras,
-  pn as Debugs,
-  on as Engines,
-  sn as Layers,
-  Z as Lights,
-  ze as Materials,
-  K as Meshes,
+  me as CAMERA_MODES,
+  oe as Cameras,
+  fn as Debugs,
+  nn as Engines,
+  on as Layers,
+  ce as Lights,
+  Ve as Materials,
+  le as Meshes,
   an as Models,
-  cn as Nodes,
+  sn as Nodes,
   Pr as Particles,
-  ln as Rays,
-  Fe as Scenes,
-  un as Shadows,
-  dn as Specials,
-  hn as Sprites,
-  Ve as Textures,
-  gn as Voxels,
-  fn as Wxrs,
+  cn as Rays,
+  Qt as Scenes,
+  ln as Shadows,
+  un as Specials,
+  dn as Sprites,
+  We as Textures,
+  hn as Voxels,
+  gn as Wxrs,
   Lr as addGlowLayer
 };
 //# sourceMappingURL=index.js.map
