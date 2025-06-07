@@ -2,6 +2,7 @@
 
 
 ## 2025-06-07
+- why is hellowXrWorld undefined, wtf ([d11cc9d](https://github.com/mjt-engine/babs/commit/d11cc9d7adbb042c3f897abcb9aa2996e94c7a5e)) by Matt Taylor
 - get types out of the Wxrs.ts file ([d00b020](https://github.com/mjt-engine/babs/commit/d00b020704fad77115cac91d1885216eec268817)) by Matt Taylor
 - updated hellowVr -> helloXr ([671c57b](https://github.com/mjt-engine/babs/commit/671c57b036d1b07061a3157657044f1386d01dd9)) by Matt Taylor
 - added Wxr and updated helloXrWorld to use wrapped code ([7ac709a](https://github.com/mjt-engine/babs/commit/7ac709aa3a4ab6b50a6257f875717ffbb71c5e94)) by Matt Taylor
