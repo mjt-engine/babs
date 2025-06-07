@@ -2,6 +2,7 @@
 
 
 ## 2025-06-07
+- updated hellowVr -> helloXr ([671c57b](https://github.com/mjt-engine/babs/commit/671c57b036d1b07061a3157657044f1386d01dd9)) by Matt Taylor
 - added Wxr and updated helloXrWorld to use wrapped code ([7ac709a](https://github.com/mjt-engine/babs/commit/7ac709aa3a4ab6b50a6257f875717ffbb71c5e94)) by Matt Taylor
 
 ## 2025-06-06

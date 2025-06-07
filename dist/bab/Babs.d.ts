@@ -9,7 +9,7 @@ export declare const Babs: {
     c3: (color: string) => import("@babylonjs/core").Color3;
     c4: (color: string) => import("@babylonjs/core").Color4;
     helloWorld: (engine?: import("..").BabEngine) => import("@babylonjs/core").Scene;
-    helloVrWorld: (engine?: import("..").BabEngine) => Promise<{
+    helloXrWorld: (engine?: import("..").BabEngine) => Promise<{
         scene: import("@babylonjs/core").Scene;
         xr: Promise<import("@babylonjs/core").WebXRDefaultExperience>;
     }>;

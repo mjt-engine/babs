@@ -749,7 +749,7 @@ const ue = (e) => {
   c3: S,
   c4: X,
   helloWorld: er,
-  helloVrWorld: Oe,
+  helloXrWorld: Oe,
   attachEditorControls: Re
 }, rr = async ({
   canvas: e,
