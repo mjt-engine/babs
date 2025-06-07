@@ -16,6 +16,7 @@ export * from "./shadow/Shadows";
 export * from "./special/Specials";
 export * from "./sprite/Sprites";
 export * from "./voxel/Voxels";
+export * from "./wxr/Wxrs";
 
 export * from "./type/BabEngine";
 export * from "./type/BabScene";

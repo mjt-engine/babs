@@ -1,7 +1,9 @@
 import { ArcRotateCamera } from "@babylonjs/core";
 import type { Scene } from "@babylonjs/core";
 import { v3 } from "../bab/v3";
-import type { ArcRotateCameraOptions } from "./Cameras";
+import type {
+  ArcRotateCameraOptions,
+} from "./Cameras";
 import { getCamera } from "./getCamera";
 import { updateCamera } from "./updateCamera";
 
@@ -17,3 +19,5 @@ export const getArcRotateCamera = (
   updateCamera(camera, options);
   return camera;
 };
+
+
