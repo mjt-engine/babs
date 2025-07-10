@@ -1,6 +1,9 @@
 # Changelog
 
 
+## 2025-07-10
+- bump deps ([2a1024c](https://github.com/mjt-engine/babs/commit/2a1024c64d6a080d433ae06dd1d8fcf06c28ccb5)) by Matt Taylor
+
 ## 2025-06-07
 - added BabWebXrDefaultExpreience type ([eda5368](https://github.com/mjt-engine/babs/commit/eda5368c032bc6c114e1674c3e5d8a9d27cc8a27)) by Matt Taylor
 - cleaned up hellowXrWorld code ([fd18f9b](https://github.com/mjt-engine/babs/commit/fd18f9bf18d0909d81a663ae75d29499f5dc6f96)) by Matt Taylor
