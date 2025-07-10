@@ -23,18 +23,18 @@
   "license": "MIT",
   "devDependencies": {
     "@types/d3-array": "^3.2.1",
-    "@types/node": "^22.15.3",
+    "@types/node": "^22.16.2",
     "@types/offscreencanvas": "^2019.7.3",
     "typedoc": "^0.27.9",
     "typescript": "^5.8.3",
-    "vite": "^6.3.4",
-    "vitest": "^3.1.2"
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@babylonjs/core": "^8.6.1",
-    "@babylonjs/gui": "^8.11.0",
-    "@babylonjs/inspector": "^8.6.1",
-    "@babylonjs/loaders": "^8.6.1",
+    "@babylonjs/core": "^8.16.0",
+    "@babylonjs/gui": "^8.16.0",
+    "@babylonjs/inspector": "^8.16.0",
+    "@babylonjs/loaders": "^8.16.0",
     "@mjt-engine/animate": "github:mjt-engine/animate",
     "@mjt-engine/assert": "github:mjt-engine/assert",
     "@mjt-engine/color": "github:mjt-engine/color",
